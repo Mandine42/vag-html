@@ -1,0 +1,74 @@
+
+
+/* Media Query pour les petits écrans (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    :root{
+        --bleu: #163a53;
+        --vert: #256864;
+        --creme: #f6ecde;
+        --orange-clair:#EF9F64;
+        --orange-foncé: #DE6A38;
+        --h:'Noto Sans', sans-serif;
+        --p:'Work Sans', sans-serif;
+    }
+    
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    #carrousel {
+        width: 100vw;
+        background: var(--creme);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+      
+    }
+    h2{
+        font-family: var(--h);
+        font-size: 36px;
+        font-weight: 600;
+        color: var(--vert);
+        padding: 10vh;
+      
+    
+    }
+    
+    #carrousel img {
+        width: 100%;
+        vertical-align: middle;
+    }
+    .menu-point {
+        text-align: center;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .dot {
+        height: 12px;
+        width: 12px;
+        margin: 5px;
+        background-color: var(--vert);
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .dot.active {
+        background-color: rgba(37, 104, 100, 0.5);
+    }
+}
+
+/* Media Query pour les grands écrans (min-width: 769px) */
+ @media screen and (min-width: 769px) {
+    #carrousel{
+        display: none;
+    }
+ }

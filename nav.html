@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="nav.css">
+</head>
+
+<body>
+<!-- <a href="vscode://file/C:\Users\amand\OneDrive\vag\code\server\mongodb"></a> -->
+    <header role="banner">
+    
+        <li><a href="#"><img src="asset/Group 5.svg" alt="Logo"></img></a></li>
+        
+        <nav id="desktop-nav" role="navigation">
+            <ul>
+                <li><a href="#">Points de Collecte</a></li>
+                <li><a href="#">Faire un don</a></li>
+                <li><a href="#">Réserver un don</a></li>
+                <li><a href="#">Connexion|Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal pour tester le scroll -->
+    <main>
+        <h1>Bienvenue sur le site VAG</h1>
+        <p>Noytre mission, vous accompagner</p>
+    </main>
+
+    <nav id="smartphone-nav" role="navigation">
+        <li><a href="#"><img src="asset/img-smartphone/logo smartphone.svg" alt="Logo"></img></a></li>
+        <ul id="smartphone">
+            <li><a href="#"><img src="asset/img-smartphone/Profil.svg" alt="Logo de la collect"></img></a></li>
+            <li><a href="#"><img src="asset/img-smartphone/Dons.svg" alt="Logo de la don"></img></a></li>
+            <li><a href="#"><img src="asset/img-smartphone/Voir les dons.svg" alt="Logo Réserver"></img></a></li>
+            <li><a href="#"><img src="asset/img-smartphone/Collect.svg" alt="Logo de la profil"></img></a></li>
+        </ul>
+    </nav>
+
+    <footer role="footer">
+        <section id="footer">
+            <h3>VOISINS ANTI-GASPI</h3>
+            <ul id="menu-footer">
+                <li><a href="#">Plan du site</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">CDG</a></li>
+                <li><a href="#"><img src="asset/Contactez-nous.svg" alt="Logo de Contactez-nous"></img></a></li>
+               </ul>
+               <p>Copyright © 2024 Voisins anti-gaspi.Tous droits réservés.</p>
+            <ul id="reseaux-sociaux">
+                <li><a href="#"><img src="asset/TwitterX.svg" alt="Logo TwitterX"></img></a></li>
+                <li><a href="#"><img src="asset/Instagram.svg" alt="Logo Instagram"></img></a></li> 
+                <li><a href="#"><img src="asset/Facebook F.svg" alt="Logo Facebook"></img></a></li>
+             </ul>
+            
+     
+        </section>
+    </footer>
+
+    <script>         
+
+// window.onscroll :Déclenche une fonction chaque fois que l'utilisateur fait défiler la page
+//toggle:ajoute ou supprimesi la condition est vraie ou fausse. Ajoute le nom de la classe et une condition. 
+      window.onscroll = () => {
+    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+};
+    </script>
+</body>
+
+</html>

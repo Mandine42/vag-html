@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pop-up.css">
+    <link rel="stylesheet" href="inscription.css">
+    <script src="inscription.js" defer type="module"></script>
+
+    <title>Inscription | Connexion</title>
+</head>
+<>
+    <div id="form-container">
+        <!-- Section Inscription -->
+        <section id="contact">
+            <h2>S'inscrire</h2>
+            <form id="signupForm" action="" method="post">
+                <fieldset>
+                    <legend>Etat Civil</legend>
+                    <label for="Nom">Nom *</label>
+                    <input type="text" id="Nom" name="nom" required aria-required-autocomplete>
+                    <label for="prenom">Prénom *</label>
+                    <input type="text" id="prenom" name="prenom" required aria-required-autocomplete>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Vos Coordonnées</legend>
+                    <label for="tel">Téléphone</label>
+                    <input type="tel" name="telephone" id="tel">
+                    <label for="adresse">Adresse *</label>
+                    <input type="adresse" name="adresse" id="adresse" required aria-required-autocomplete>
+                    <label for="quartier">Quartier</label>
+                    <select name="msg quartier" id="quartier" required aria-required aria-autocomplete>
+                        <option value="#">Selectionnez</option>
+                        <optgroup label="Quartier">
+                            <option value="rdv">RDV</option>
+                            <option value="devis">DEVIS</option>
+                            <option value="invoice">FACTURE</option>
+                        </optgroup>
+                    </select>
+                    <label for="email">Email *</label>
+                    <input type="email" name="email" id="email" required aria-required-autocomplete>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Identifiants</legend>
+                    <label for="Nom d'utilisateur">Nom d'utilisateur *</label>
+                    <input type="text" id="Nom-utilisateur" name="nom-utilateur" required aria-required-autocomplete>
+                    <label for="img">Choisir une image</label>
+                    <input type="file" id="avatar" name="avatar">
+                    <label for="Mot de passe">Mot de passe *</label>
+                    <input type="password" id="password" name="password" required aria-required-autocomplete>
+                    <label for="Confirmer le mot de passe">Confirmer le mot de passe *</label>
+                    <input type="password" id="password" name="password" required aria-required-autocomplete>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Conditions d'utilisation</legend>
+                    <div id="condition">
+                    <input type="checkbox" id="condition" name="condition" required aria-required-autocomplete>
+                    <span id=""custom-checkbox></span>
+                    <label for="condition">J'accepte les conditions d'utilisation</label>
+                </div>
+                </fieldset>
+
+                <input type="submit" value="S'inscrire" id="submit-button">
+            </form>
+        </section>
+        <div id="popup" class="popup">
+            <section class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Bienvenue!</h2>
+                <figure>
+                    <img src="asset/img-pop-up/pop-up.svg" alt="illustration d'une femme avec des coeurs en forme de ballon" >
+                </figure>
+                <ul>
+                <li><a href="profil.html" id="profile-link"><h3>Voir mon profil</h3></a></li> 
+                </ul>
+            </section>
+        </div>
+
+
+  <!-- Section Connexion -->
+<section id="connexion">
+    <h2>Déjà inscrit</h2>
+    <form id="loginForm" class="loginForm" action="profil.html" method="post">
+        <fieldset>
+            <legend>Identifiants</legend>
+            <label for="Nom-utilisateur">Nom d'utilisateur *</label>
+            <input type="text" id="Nom-utilisateur" name="nom-utilisateur" required>
+            <label for="password">Mot de passe *</label>
+            <input type="password" id="password" name="password" required>
+        </fieldset>
+        <input type="submit" value="Se connecter">
+    </form>
+</section>
+
+<script>
+    // Formulaire de connexion
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Empêche la soumission par défaut
+        window.location.href = "profil.html"; // Redirige vers la page de profil
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Burger Responsive</title>
+    <style>
+        /* Réinitialisation des marges et du padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Styles de la barre de navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.burger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Media Query pour les petits écrans */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-radius: 10px;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    nav ul.open {
+        display: flex;
+        transform: translateX(0);
+        animation: slide-in 0.5s ease forwards;
+    }
+
+    @keyframes slide-in {
+        0% {
+            transform: perspective(600px) rotateY(90deg);
+            opacity: 0;
+        }
+        100% {
+            transform: perspective(600px) rotateY(0deg);
+            opacity: 1;
+        }
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
+    </style>
+   
+</head>
+<body>
+    <header>
+        <div class="burger-menu" id="burger-menu">
+            &#9776;
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>document.getElementById('burger-menu').addEventListener('click', function() {
+        const navMenu = document.getElementById('nav-menu').querySelector('ul');
+        navMenu.classList.toggle('open');
+    });
+    </script>
+   
+</body>
+</html>
+

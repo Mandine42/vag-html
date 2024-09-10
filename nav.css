@@ -1,0 +1,222 @@
+:root{
+    --bleu: #163a53;
+    --vert: #256864;
+    --creme: #f6ecde;
+    --orange-clair:#EF9F64;
+    --orange-foncé: #DE6A38;
+    --h:'Noto Sans', sans-serif;
+    --p:'Work Sans', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p{
+  font-family: var(--p);
+  font-size: 20px;
+  font-style: normal;
+  color: var(--bleu);
+
+}
+
+a {
+   text-decoration: none;
+  font-family: var(--p);
+  font-size: 20px;
+  font-style: normal;
+  color: var(--bleu);
+
+}
+h3{
+  font-family: var(--h);
+  font-size: 32px;
+  font-style: normal;
+  color: var(--vert);
+}
+
+/* footer */
+footer {
+    background-color: var(--creme);
+    padding: 5px;
+    position: relative;
+    width: 100%;
+  
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: var(--creme);
+    width: 100%;
+    min-height: 8vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#footer h3 {
+    font-family: var(--h);
+    margin-bottom: 3px; /* Espace sous le titre */
+}
+#footer img{
+    width: 48px;
+    height: auto;
+}
+
+#menu-footer {
+    display: flex; /* Aligne les éléments du menu en ligne */
+    gap: 10px; /* Espace entre les éléments du menu */
+    padding: 0;
+    margin-bottom: 5px; /* Espace sous le menu */
+    list-style-type: none; /* Supprime les puces */
+    align-items: center; /* Aligne les éléments verticalement */
+}
+
+#menu-footer li {
+    display: flex;
+    align-items: center; /* Centre verticalement les éléments à l'intérieur de chaque li */
+}
+
+#menu-footer img {
+    margin-left: 5px; /* Espace à gauche de l'image pour l'alignement */
+}
+
+#footer p {
+    text-align: center;
+    margin-top: 5px; /* Pousse le paragraphe vers le bas du footer */
+}
+
+#reseaux-sociaux {
+    position: absolute;
+    top: 5px; /* Place en haut du footer */
+    right: 5px; /* Place à droite du footer */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espacement entre les icônes */
+}
+#reseaux-sociaux img{
+    width: 25px;
+    height: auto;
+}
+
+#reseaux-sociaux li {
+    display: block;
+}
+
+ /*focus: permet aux liens de rester en mode "active"*/
+    /* Changement de couleur lors du survol, du focus et du clic */
+    #menu-footer li a:hover,
+    #menu-footer li a:focus,
+    #reseaux-sociaux li a:hover,
+    #reseaux-sociaux li a:focus,
+    #menu-footer li a:active,
+    #reseaux-sociaux li a:active {
+        color: var(--orange-foncé);
+    }
+
+/* nav */
+header {
+    background: var(--creme);
+    width: 100%;
+    min-height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: backdrop-filter 0.3s ease, background 0.3s ease;
+}
+header img{
+    width: 90px;
+}
+header.scrolled {
+    backdrop-filter: blur(10px);
+    background: var(--orange-clair);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--vert);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 20px;
+}
+/*focus: permet aux liens de rester en mode "active"*/
+nav ul li a:hover,
+nav ul li a:focus 
+{
+    color: var(--orange-foncé);
+}
+
+nav ul li a:active {
+    color: var(--orange-foncé);
+}
+/* 
+main {
+    padding-top: 10vh;
+    height: 200vh;
+    background: var(--creme);
+} */
+
+
+/* Media Query pour les petits écrans (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    /* Cache la nav desktop */
+    header {
+        display: none;
+    }
+
+    /* Affiche la nav smartphone */
+    nav#smartphone-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background-color: var(--creme);
+        z-index: 10;
+        padding: 10px 0;
+    }
+
+    /* Ajuste le logo et les éléments pour les petits écrans */
+    header img {
+        width: 80px;
+    }
+    footer {
+        display: none;
+    }
+}
+
+/* Media Query pour les grands écrans (min-width: 769px) */
+@media screen and (min-width: 769px) {
+    /* Cache la nav smartphone */
+    nav#smartphone-nav {
+        display: none;
+    }
+
+    /* Affiche la nav desktop */
+    nav#desktop-nav {
+        display: flex;
+    }
+    footer {
+        display: block;
+    }
+}

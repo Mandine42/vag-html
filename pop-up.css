@@ -1,0 +1,120 @@
+:root{
+    --bleu: #163a53;
+    --vert: #256864;
+    --creme: #f6ecde;
+    --orange-clair:#EF9F64;
+    --orange-foncé: #DE6A38;
+    --h:'Noto Sans', sans-serif;
+    --p:'Work Sans', sans-serif;
+}
+
+ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+/* Style de base du lien */
+a {
+    color: var(--bleu);
+    text-decoration: none;
+    transition: color 0.3s ease; /* Ajout d'une transition douce */
+}
+
+a.clicked {
+    color: var(--orange-foncé);
+}
+
+
+
+h2{
+    font-family: var(--h);
+    font-size: 3rem;
+    color: var(--bleu);
+}
+
+h3{
+    font-family: var(--h);
+    font-size: 2rem;
+    color: var(--bleu);
+}
+
+/* Style pour le pop-up (modal) */
+.popup {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    z-index: 1; /* Placer devant les autres éléments */
+    left: 0;
+    top: 0;
+    width: 100%; /* Prend toute la largeur de l'écran */
+    height: 100%; /* Prend toute la hauteur de l'écran */
+    background-color: rgba(246, 236, 222, 0.5); /* Fond transparent */
+    padding: 10px; /* Ajouter un padding pour petits écrans */
+    overflow: auto; /* Gérer le débordement si nécessaire */
+}
+
+/* Contenu du pop-up */
+.popup-content {
+    background-color: var(--creme);
+    margin: 10% auto; /* Centre verticalement */
+    padding: 20px;
+    border: 1px solid var(--bleu);
+    border-radius: 30px;
+    width: 100%; /* S'assure que le pop-up prend toute la largeur disponible */
+    max-width: 400px; /* Largeur maximale */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre */
+    overflow: hidden; /* Empêche le débordement du contenu */
+}
+
+/* Bouton de fermeture (croix) */
+.close {
+    color: rgba(22, 58, 83, 0.5);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--bleu);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media Queries pour petits écrans */
+@media screen and (max-width: 768px) {
+    .popup-content {
+        width: 90%; /* Ajuster la largeur à 90% de l'écran */
+        padding: 15px;
+        font-size: 1rem; /* Taille de texte légèrement plus petite */
+    }
+    
+    h2 {
+        font-size: 2.5rem; /* Diminuer la taille des titres */
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popup-content {
+        width: 80%; /* S'assurer que le pop-up prend presque toute la largeur de l'écran */
+        max-width: none; /* Enlever la largeur maximale pour petits écrans */
+        padding: 10px; /* Diminuer le padding */
+        margin: 40px 18px; /* Diminuer la marge en haut pour éviter les débordements */
+    }
+
+    h2 {
+        font-size: 2rem; /* Réduire encore les titres sur mobile */
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .close {
+        font-size: 24px; /* Réduire la taille du bouton de fermeture */
+    }
+}
+
+

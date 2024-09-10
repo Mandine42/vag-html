@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="carousel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="carousel.js" defer type="module"></script>
+
+    <!-- <style>
+        :root{
+    --bleu: #163a53;
+    --vert: #256864;
+    --creme: #f6ecde;
+    --orange-clair:#EF9F64;
+    --orange-foncé: #DE6A38;
+    --h:'Noto Sans', sans-serif;
+    --p:'Work Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#carrousel{
+    width: 100vw;
+    background: var(--creme);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+
+}
+.carrousel img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* Flèches */
+#flèche {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 100;
+}
+
+#gauche {
+  left: 0;
+}
+
+#droite {
+  right: 0;
+}
+.active{
+    transform : translateX(0) ;
+}
+    </style> -->
+   <body>
+    <header>
+
+    </header>
+    <main>
+        <section id="carrousel">
+            <h2>Ton quartier</h2>
+            <figure>
+                <img class="img" src="asset/img-caroussel/ton quartier.svg" alt="carte découpée en quartier">
+            </figure>
+        
+            <div class="menu-point">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+            </div>
+        </section>
+        
+    </main>
+
+
+</body>
+
+</html>

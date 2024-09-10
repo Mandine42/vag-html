@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="carousel.css">
+    <link rel="stylesheet" href="nav.css">
+    <script src="carousel.js" defer type="module"></script>
+
+    <style>
+    /* général */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+    width: 100%;
+}
+img {
+    max-width: 100%;
+    height: auto; /* Conserve les proportions */
+}
+
+
+    p{
+      font-family: "Work Sans", sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      color: #163a53;
+    
+    }
+    
+    a {
+       
+      font-family: "Noto Sans", sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      color: #163a53;
+    
+    }
+
+    /* main général*/
+    main {
+        padding-top: 22vh;
+        height: 197vh;
+        width:112vw;
+        background: #f6ecde;
+    }
+  
+    /* première section */
+    #presentation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative; /* Ajuste la hauteur pour compenser le header */
+        background: #f6ecde;
+        width: 100%;
+        margin-top: 20px;
+        padding-bottom: 100px; 
+    }
+    
+    #presentation img {
+        width: 40%; /* Ajustez la largeur de l'image selon vos besoins */
+        max-width: 100%;
+        height: auto; /* Pour garder les proportions */
+    }
+    
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; /* Aligne le texte à gauche */
+        margin:auto; /* Espacement entre l'image et le texte */
+    }
+    .text-content h2 {
+        margin: 0;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 64px; /* Ajustez selon vos besoins */
+        color: #256864;
+    }
+    
+    .text-content p {
+        margin: 0;
+        font-family: "Work Sans", sans-serif;
+        font-size: 20px; /* Ajustez selon vos besoins */
+        color: #256864;
+    }
+    
+    #bulle1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: auto;
+        padding: 20px;
+       
+    }
+    
+    #bulle1 :first-child {
+        margin-right: 20px;
+        
+    }
+    
+    #bulle1 :last-child {
+        margin-left: 20px;
+        transform: translateY(-30px); /* Décale vers le haut */
+        
+    }
+    
+    #bulle2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: auto;
+        padding: 20px;
+      
+    }
+    
+    #bulle2 :first-child {
+        margin-right: 20px;
+        transform: translateY(50px); /* Décale vers le bas */
+    
+    }
+    
+    #bulle2 :nth-child(2) {
+        margin-right: 20px;
+        transform: translateY(20px); /* Décale vers le bas */
+       
+        
+    }
+    
+    #bulle2 :last-child {
+        margin-left: 20px;
+        transform: translateY(-20px); /* Décale vers le haut */
+       
+    }
+    /* deuxième section */
+    #notre-mission {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Aligner horizontalement au centre */
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        padding-bottom: 100px; /* Ajoute de l'espace en bas pour l'image */
+        background: #f6ecde; /* Ajoute un fond pour visualiser l'espace */
+        background: #EF9F64;
+    }
+    
+    #notre-mission h2 {
+        font-family: "Noto Sans", sans-serif;
+        color: #256864;
+        font-weight: 800;
+        font-size: 64px;
+        margin-bottom: 20px; /* Ajuste l'espacement sous le titre */
+        text-align: left; /* Assure que le texte du h2 est aligné à gauche */
+        width: 100%; /* Occupe toute la largeur disponible */
+        margin-left: 0; /* Supprime toute marge gauche */
+    }
+    
+    #grille {
+        display: flex;
+        align-items: flex-start; /* Aligne les enfants au même niveau */
+        justify-content: space-between; /* Espacement entre #titre et #texte */
+        width: 100%; /* Prend toute la largeur disponible */
+        max-width: 1200px; /* Limite la largeur maximum pour ne pas s'étendre trop */
+    }
+    
+    #titre h3{
+        font-family: "Work Sans", sans-serif;
+        color: #256864;
+        font-weight: 400;
+        font-size: 20px;
+        margin-bottom: 50px;
+    }
+    
+    #texte {
+        font-family: "Work Sans", sans-serif;
+        color: #256864;
+        font-weight: 400;
+        font-size: 20px;
+        margin: 0;
+        max-width: 50%; /* Limite la largeur du texte pour éviter qu'il ne s'étende trop */
+    }
+    #texte p {
+        font-family: "Work Sans", sans-serif;
+        color: #256864;
+        font-weight: 400;
+        font-size: 20px;
+        margin-bottom: 20px; /* Espacement entre chaque paragraphe */
+    }
+    #texte p:last-child {
+        margin: 20px; /* Assure un espacement général autour du paragraphe */
+        transform: translate(20px, 20px); /* Déplace le dernier paragraphe vers la droite et vers le bas */
+        text-align: right; /* Aligne le texte à droite */
+    }
+    #notre-mission img {
+        position: absolute;
+        bottom: -47px; /* Aligne l'image en bas de la section */
+        left: 50%; /* Centre l'image horizontalement */
+        transform: translateX(-65%); /* Ajuste la position pour un centrage exact */
+        z-index: 2;
+    }
+    
+    .chiffre{
+        font-family: "Noto Sans", sans-serif;
+        color: #256864;
+        font-weight: 800;
+        font-size: 64px;
+    }
+    .médium{
+        font-family: "Noto Sans", sans-serif;
+        color: #256864;
+        font-weight: 400;
+        font-size: 48px;
+    }
+    
+    .couleur{
+        color: #163a53;
+    }
+    /* troisième section */
+    #fonctionnement {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: -40px;
+        margin-bottom: 20px;
+        width: 100%;
+        background: #163a53;
+        margin-top: -40px; /* Ajustez cette valeur selon vos besoins */
+        transform: translateY(-40px); /* Ajustez la valeur selon vos besoins */
+    }
+    
+    #fonctionnement h2 {
+        font-family: "Noto Sans", sans-serif;
+        color: #f6ecde;
+        font-weight: 800;
+        font-size: 64px;
+        margin-bottom: 20px;
+        text-align: end;
+    }
+    
+    #fonctionnement p {
+        font-family: "Noto Sans", sans-serif;
+        color: #f6ecde;
+        font-weight: 400;
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: end;
+        
+    }
+    #explication p {
+        font-family: "Noto Sans", sans-serif;
+        color: #f6ecde;
+        font-weight: 400;
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    
+    #grille2 {
+        display: flex;
+        align-items: flex-end; /* Aligne les enfants au même niveau */
+        justify-content: space-between; /* Espacement entre #titre et #texte */
+        width: 100%; /* Prend toute la largeur disponible */
+        max-width: 1200px; /* Limite la largeur maximum pour ne pas s'étendre trop */
+        margin-top: -10px;
+    }
+    span{
+        color: #EF9F64;
+        font-weight: 800;
+        font-size: 36px;
+    }
+    
+    
+    /* Media Query pour les petits écrans (max-width: 768px) */
+    @media screen and (max-width: 768px) {
+        
+    #presentation, #notre-mission, #fonctionnement {
+        padding: 10px; /* Ajustez la valeur selon vos besoins */
+    }
+
+    #presentation img, #notre-mission img, #fonctionnement img {
+        width: 100%; /* Assure que les images ne débordent pas */
+    }
+   
+    body {
+        width: 100vw;
+        overflow: hidden; 
+    }
+        /* Cache la nav desktop */
+        header {
+            display: none;
+        }
+     
+        #presentation {
+            display: none;
+    }
+    
+        #notre-mission {
+            display: none;;
+    }
+    #fonctionnement {
+        display: none;
+    }
+
+    }
+    /* Media Query pour les grands écrans (min-width: 769px) */
+    @media screen and (min-width: 769px) {
+  
+        #quartier {
+            display: none;
+        }
+        #dons{
+            display: none;
+        }
+        #reserver {
+            display: none;
+        }
+        #connection{
+            display: none;
+        }
+      
+    }
+    
+        </style>
+
+</head>
+
+<body>
+<!-- <a href="vscode://file/C:\Users\amand\OneDrive\vag\code\server\mongodb"></a> -->
+    <header role="banner">
+    <figure id="logo"><li><a href="#"><img src="asset/Group 5.svg" alt="Logo"></img></a></li></figure>
+      
+        
+        <nav id="desktop-nav" role="navigation">
+            <ul>
+                <li><a href="#">Points de Collecte</a></li>
+                <li><a href="#">Faire un don</a></li>
+                <li><a href="#">Réserver un don</a></li>
+                <li><a href="inscription.html">Connexion|Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="presentation">
+        <img src="asset/accueil.svg" alt="groupe de personnes"></img>
+        <div class="text-content">
+            <div id="bulle1">
+            <img src="asset/créer du lien.svg" alt="bulle créer du lien">
+            <img src="asset/partager.svg" alt="bulle partager">
+        </div>
+        
+            <h2>L'anti-gaspi</h2>
+            <p>Entre voisins, c'est quoi?</p>
+        
+        <div id="bulle2">
+            <img src="asset/echanger.svg" alt="bulle échanger">
+            <img src="asset/participer.svg" alt="bulle participer">
+            <img src="asset/se rencontrer.svg" alt="bulle se renconter">
+        </div>
+    </div>
+        </section>
+        <section id="notre-mission">
+            <h2>Notre mission</h2>
+            <div id="grille">
+                <div id="titre">
+                <h3><span class="chiffre">10</span><br> <span class="médium">Millions <br>de tonnes</span> <br>d’aliments jetés par an</h3>
+                <h3><span class="chiffre">29</span> <span class="médium">kg</span><br>d’aliments jetés<br> par an et par habitants</h3>
+            </div>
+            <div id="texte">
+                <p>Nous c’est Laetitia, Philippe et Marie.<br>
+                    On habite dans différents quartiers de Montreuil et on a <br>décidé de dire <span class="couleur">stop au gaspillage alimentaire</span>.
+                </p>
+                <p>Notre mission, avec Voisins Anti-Gaspi,<br> c’est de <span class="couleur">réduire</span> au maximum nos <br>déchets en rapprochant les gens et <br>ainsi faire vivre la vie d’un quartier.</p>
+            </div>
+        </div>
+            
+                <img src="asset/notre mission.svg" alt="illustrations 2 personnes qui prennent un café">
+        </section>
+        <section id="fonctionnement">
+            <div id="grille2">
+                <div id="explication">
+                    <p>Tu habites à Montreuil, tu veux<br> 
+                        participer à la vie de ton quartier par le biais d’un projet<br>
+                        commun, <span>l’anti gaspi</span>.</p>
+                        <p>Tu es au bon endroit.<br>
+                            Avec Voisins anti-gaspi tu peux donner et/ou bénéficier des<br>
+                            surplus alimentaires de tes voisins.
+                            </p>
+                            <p>Tu peux consulter si un de tes voisins veut faire un don sur<br> 
+                                le calendrier et réserver un don dans ton point de collecte</p>
+                                <p>Et si tu veux faire un don, tu peux t’inscrire et remplir le<br>
+                                    formulaire de don.<br> 
+                                    Ensuite rien de plus simple tu choisis la date et l’heure à<br>
+                                    laquelle tu es disponible et tu viens déposer ton don a ton point de collect.</p>
+        
+                </div>
+            <div id="comment">
+            <h2>Comment</h2>
+            <p>ça marche?</p>
+            <img src="asset/carte quartier montreuil 1.svg" alt="carte des différends quartier de montreuil">
+        </div>
+       
+    </div>
+    </section>
+    <!-- main smartphone -->
+   
+        <section id="carrousel">
+            <h2>Ton quartier</h2>
+            <figure>
+                <img class="img" src="asset/img-caroussel/ton quartier.svg" alt="carte découpée en quartier">
+            </figure>
+        
+            <div class="menu-point">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+            </div>
+        </section>
+<!-- navigation smartphone -->
+    <nav id="smartphone-nav" role="navigation">
+        <figure> <li><a href="#"><img src="asset/img-smartphone/logo smartphone.svg" alt="Logo"></img></a></li></figure>
+       
+        <ul id="smartphone">
+            <li><a href="#"><img src="asset/img-smartphone/Collect.svg" alt="Logo de la collect"></img></a></li>
+            <li><a href="#"><img src="asset/img-smartphone/Dons.svg" alt="Logo de la don"></img></a></li>
+            <li><a href="#"><img src="asset/img-smartphone/Voir les dons.svg" alt="Logo Réserver"></img></a></li>
+            <li><a href="inscription.html"><img src="asset/img-smartphone/Profil.svg" alt="Logo de la profil"></img></a></li>
+        </ul>
+    </nav>
+
+</main>
+<footer role="footer">
+    <section id="footer">
+        <h3>VOISINS ANTI-GASPI</h3>
+        <ul id="menu-footer">
+            <li><a href="#">Plan du site</a></li>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">CDG</a></li>
+            <li><a href="#"><img src="asset/Contactez-nous.svg" alt="Logo de Contactez-nous"></img></a></li>
+           </ul>
+           <p>Copyright © 2024 Voisins anti-gaspi.Tous droits réservés.</p>
+        <ul id="reseaux-sociaux">
+            <li><a href="#"><img src="asset/TwitterX.svg" alt="Logo TwitterX"></img></a></li>
+            <li><a href="#"><img src="asset/Instagram.svg" alt="Logo Instagram"></img></a></li> 
+            <li><a href="#"><img src="asset/Facebook F.svg" alt="Logo Facebook"></img></a></li>
+         </ul>
+        
+ 
+    </section>
+</footer>
+
+</body>
+
+    <script>         
+
+// window.onscroll :Déclenche une fonction chaque fois que l'utilisateur fait défiler la page
+//toggle:ajoute ou supprimesi la condition est vraie ou fausse. Ajoute le nom de la classe et une condition. 
+      window.onscroll = () => {
+    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+};
+    </script>
+
+
+</html>
