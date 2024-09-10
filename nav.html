@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nav1</title>
+    <title>header/footer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -16,16 +16,16 @@
 
 <body>
 <!-- <a href="vscode://file/C:\Users\amand\OneDrive\vag\code\server\mongodb"></a> -->
-    <header role="banner">
-    
-        <li><a href="#"><img src="asset/Group 5.svg" alt="Logo"></img></a></li>
-        
+<header id="scrolled" class="scrolled" role="banner">
+    <ol>
+        <li><a href="accueil.html"><img src="asset/Group 5.svg" alt="Logo"></img></a></li>
+    </ol>
         <nav id="desktop-nav" role="navigation">
             <ul>
                 <li><a href="#">Points de Collecte</a></li>
-                <li><a href="#">Faire un don</a></li>
+                <li><a href="formulaire-dons.html">Faire un don</a></li>
                 <li><a href="#">Réserver un don</a></li>
-                <li><a href="#">Connexion|Inscription</a></li>
+                <li><a href="inscription.html">Connexion|Inscription</a></li>
             </ul>
         </nav>
     </header>
@@ -35,17 +35,7 @@
         <h1>Bienvenue sur le site VAG</h1>
         <p>Noytre mission, vous accompagner</p>
     </main>
-
-    <nav id="smartphone-nav" role="navigation">
-        <li><a href="#"><img src="asset/img-smartphone/logo smartphone.svg" alt="Logo"></img></a></li>
-        <ul id="smartphone">
-            <li><a href="#"><img src="asset/img-smartphone/Profil.svg" alt="Logo de la collect"></img></a></li>
-            <li><a href="#"><img src="asset/img-smartphone/Dons.svg" alt="Logo de la don"></img></a></li>
-            <li><a href="#"><img src="asset/img-smartphone/Voir les dons.svg" alt="Logo Réserver"></img></a></li>
-            <li><a href="#"><img src="asset/img-smartphone/Collect.svg" alt="Logo de la profil"></img></a></li>
-        </ul>
-    </nav>
-
+   
     <footer role="footer">
         <section id="footer">
             <h3>VOISINS ANTI-GASPI</h3>
@@ -61,10 +51,22 @@
                 <li><a href="#"><img src="asset/Instagram.svg" alt="Logo Instagram"></img></a></li> 
                 <li><a href="#"><img src="asset/Facebook F.svg" alt="Logo Facebook"></img></a></li>
              </ul>
-            
-     
-        </section>
+            </section>
     </footer>
+    
+    <nav id="smartphone-nav" role="navigation">
+        <ol>
+        <li><a href="accueil.html"><img src="asset/img-smartphone/logo smartphone.svg" alt="Logo"></img></a></li>
+    </ol>
+        <ul id="smartphone">
+            <li><a href="#"><img src="asset/img-smartphone/Profil.svg" alt="Logo de la collect"></img></a></li>
+            <li><a href="formulaire-dons.html"><img src="asset/img-smartphone/Dons.svg" alt="Logo de la don"></img></a></li>
+            <li><a href="#"><img src="asset/img-smartphone/Voir les dons.svg" alt="Logo Réserver"></img></a></li>
+            <li><a href="inscription.html"><img src="asset/img-smartphone/Collect.svg" alt="Logo de la profil"></img></a></li>
+        </ul>
+    </nav>
+
+   
 
     <script>         
 

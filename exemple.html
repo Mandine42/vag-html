@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire avec Liste Dynamique</title>
+  <style>
+    /* Style pour cacher la liste des légumes par défaut */
+    #vegetable-list {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <section id="form-container">
+    <form id="donation-form" action="" method="post">
+      <fieldset>
+        <legend>Ce que je donne</legend>
+
+        <!-- Bouton ou lien pour afficher la liste des légumes -->
+        <button type="button" id="show-vegetables">Légumes</button>
+
+        <!-- Liste des légumes qui sera cachée/affichée -->
+        <div id="vegetable-list">
+          <div>
+            <input type="checkbox" id="ail" name="msg_légumes[]" value="ail">
+            <label for="ail">Ail</label>
+          </div>
+          <div>
+            <input type="checkbox" id="échalotte" name="msg_légumes[]" value="échalotte">
+            <label for="échalotte">Échalote</label>
+          </div>
+          <div>
+            <input type="checkbox" id="oignon" name="msg_légumes[]" value="oignon">
+            <label for="oignon">Oignon</label>
+          </div>
+          <div>
+            <input type="checkbox" id="persil" name="msg_légumes[]" value="persil">
+            <label for="persil">Persil</label>
+          </div>
+          <div>
+            <input type="checkbox" id="carotte" name="msg_légumes[]" value="carotte">
+            <label for="carotte">Carotte</label>
+          </div>
+
+          <!-- Option "Autre" avec champ texte -->
+          <div>
+            <input type="checkbox" id="autre" name="msg_légumes[]" value="other">
+            <label for="autre">Autre</label>
+            <input type="text" id="otherTextField" name="other_input" placeholder="Veuillez préciser..." style="display: none;">
+          </div>
+        </div>
+      </fieldset>
+
+      <input type="submit" value="Envoyer">
+    </form>
+  </section>
+
+  <script>
+    // Écoute l'événement de clic sur le bouton "Légumes"
+    document.getElementById("show-vegetables").addEventListener("click", function() {
+      var vegetableList = document.getElementById("vegetable-list");
+
+      // Bascule l'affichage de la liste des légumes
+      if (vegetableList.style.display === "none") {
+        vegetableList.style.display = "block";  // Affiche la liste
+      } else {
+        vegetableList.style.display = "none";   // Cache la liste
+      }
+    });
+
+    // Gère l'affichage du champ texte si "Autre" est coché
+    document.getElementById("autre").addEventListener("change", function() {
+      var otherTextField = document.getElementById("otherTextField");
+
+      if (this.checked) {
+        otherTextField.style.display = "block";  // Affiche le champ texte
+      } else {
+        otherTextField.style.display = "none";   // Cache le champ texte
+      }
+    });
+  </script>
+</body>
+</html>
+
+

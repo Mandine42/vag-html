@@ -1,0 +1,133 @@
+ :root{
+    --bleu: #163a53;
+    --vert: #256864;
+    --creme: #f6ecde;
+    --orange-clair:#EF9F64;
+    --orange-foncé: #DE6A38;
+    --h:'Noto Sans', sans-serif;
+    --p:'Work Sans', sans-serif;
+}
+ 
+
+/* main {
+    padding-top: 20vh;
+    height: 200vh;
+} */
+
+h2{
+    font-family: var(--h);
+    font-size: 3rem;
+    color: var(--vert);
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 2vh 0;
+}
+h3{
+    font-family: var(--h);
+    font-size: 2rem;
+    color: var(--bleu);
+}
+#form-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 70%;
+    margin: auto;
+}
+
+#formulaire {
+    flex: 1;
+    min-width: 280px;
+    max-width: 45%;
+}
+
+fieldset {
+   border-radius: 30px;
+   border: 1px solid var(--bleu);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2vh;
+    margin: 2vh 0;
+}
+
+input, select{
+    width: 90%;
+    margin: 1vh 5%;
+    background: var(--orange-clair);
+    font-family: var(--p);
+    font-size: 1.25rem;
+    color: var(--creme);
+    border-radius: 50px;
+    border: 1px solid var(--bleu);
+}
+
+.multiple{
+    width: 90%;
+    margin: 1vh 5%;
+    background: var(--orange-clair);
+    font-family: var(--p);
+    font-size: 1.25rem;
+    color: var(--creme);
+    border-radius: 50px;
+    border: 1px solid var(--bleu);
+}
+label, legend{
+   text-align: center;
+}
+
+label{
+    font-family: var(--p);
+    font-size: 1.25rem;
+    color:var(--bleu);
+}
+
+legend{
+    font-family: var(--h);
+    font-size: 2rem;
+    color: var(--vert);
+    width: 200px;
+    margin: auto;
+}
+
+.selection
+{
+    background: var(--orange-clair);
+}
+
+input[type="checkbox"]{
+    width: 30px;
+    margin: 2vh 0;
+}
+
+input[type="submit"]{
+    font-family: var(--p);
+    font-size: 1.25rem;
+    color: var(--bleu);
+    background: var(--orange-foncé);
+    border-radius: 50px;
+    border: 1px solid var(--bleu);
+    padding: 15px 40px; 
+    width: auto; 
+    height: 60px; 
+    cursor: pointer; 
+}
+
+@media screen and (max-width: 769px) {
+    #form-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #formulaire {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #formulaire {
+        width: 100%;
+    }
+}
