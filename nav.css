@@ -24,7 +24,7 @@ body {
 main {
     flex: 1; /* Le main occupe tout l'espace restant */
     padding-top: 10vh;
-    background: var(--creme); /* Ajustez le padding comme vous le souhaitez */
+    background: var(--creme); 
 }
 p{
   font-family: var(--p);
@@ -129,12 +129,12 @@ footer {
     margin-bottom: 3px; /* Espace sous le titre */
 }
 #footer img{
-    width: 48px;
+    width: 25vh;
     height: auto;
 }
 
 #menu-footer {
-    display: flex; /* Aligne les éléments du menu en ligne */
+    display: flex; 
     gap: 10px; /* Espace entre les éléments du menu */
     padding: 0;
     margin-bottom: 5px; /* Espace sous le menu */

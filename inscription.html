@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pop-up.css">
     <link rel="stylesheet" href="inscription.css">
-    <script src="inscription.js" defer type="module"></script>
+    <script src="pop-up.js" defer type="module"></script>
 
     <title>Inscription | Connexion</title>
 </head>
@@ -54,14 +54,16 @@
                     <input type="password" id="password" name="password" required aria-required-autocomplete>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Conditions d'utilisation</legend>
-                    <div id="condition">
-                    <input type="checkbox" id="condition" name="condition" required aria-required-autocomplete>
-                    <span id=""custom-checkbox></span>
-                    <label for="condition">J'accepte les conditions d'utilisation</label>
-                </div>
-                </fieldset>
+                
+                    <form id="registrationForm">
+                        <fieldset>
+                            <legend>Conditions d'utilisation</legend>
+                            <div id="condition">
+                                <input type="checkbox" id="condition" name="condition" required aria-required-autocomplete>
+                                <span id="custom-checkbox"></span>
+                                <label for="condition" id="condition-label">J'ai lu et j'accepte les conditions d'utilisation *</label>
+                            </div>
+                        </fieldset>
 
                 <input type="submit" value="S'inscrire" id="submit-button">
             </form>
@@ -78,29 +80,31 @@
                 </ul>
             </section>
         </div>
-
-
-  <!-- Section Connexion -->
-<section id="connexion">
-    <h2>Déjà inscrit</h2>
-    <form id="loginForm" class="loginForm" action="profil.html" method="post">
-        <fieldset>
-            <legend>Identifiants</legend>
-            <label for="Nom-utilisateur">Nom d'utilisateur *</label>
-            <input type="text" id="Nom-utilisateur" name="nom-utilisateur" required>
-            <label for="password">Mot de passe *</label>
-            <input type="password" id="password" name="password" required>
-        </fieldset>
-        <input type="submit" value="Se connecter">
-    </form>
-</section>
+    
 
 <script>
-    // Formulaire de connexion
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Empêche la soumission par défaut
-        window.location.href = "profil.html"; // Redirige vers la page de profil
+      document.getElementById('condition-label').addEventListener('click', function() {
+        window.location.href = 'condition-inscription.html'; // Redirection vers la page
+    });
+    // Sauvegarde l'état de la case à cocher avant de quitter la page
+    document.getElementById('condition').addEventListener('change', function() {
+        localStorage.setItem('conditionAccepted', this.checked);
+    });
+
+    // Récupère l'état de la case à cocher au chargement de la page
+    window.onload = function() {
+        var conditionAccepted = localStorage.getItem('conditionAccepted');
+        if (conditionAccepted === 'true') {
+            document.getElementById('condition').checked = true;
+        }
+    };
+
+    // Redirection vers la page des conditions d'utilisation
+    document.getElementById('condition-label').addEventListener('click', function() {
+        localStorage.setItem('formData', document.getElementById('registrationForm').innerHTML);
+        window.location.href = 'condition-inscription.html'; // Redirection
     });
 </script>
+
 </body>
 </html>

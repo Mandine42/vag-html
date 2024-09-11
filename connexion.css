@@ -1,4 +1,4 @@
- :root{
+:root{
     --bleu: #163a53;
     --vert: #256864;
     --creme: #f6ecde;
@@ -7,12 +7,12 @@
     --h:'Noto Sans', sans-serif;
     --p:'Work Sans', sans-serif;
 }
- 
-
-/* main {
-    padding-top: 20vh;
-    height: 200vh;
-} */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--creme);
+}
 
 h2{
     font-family: var(--h);
@@ -22,13 +22,20 @@ h2{
     width: 100%;
     text-align: center;
     padding: 2vh 0;
+    margin: 2vh;
 }
 h3{
     font-family: var(--h);
-    font-size: 2rem;
-    color: var(--bleu);
-    display: flex;
-    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--vert);
+    margin: 2vh auto;
+}
+ul{
+   
+    list-style-type: none;
+}
+li a{
+    text-decoration: none;
 }
 #form-container {
     display: flex;
@@ -39,7 +46,7 @@ h3{
     margin: auto;
 }
 
-#formulaire {
+#connexion {
     flex: 1;
     min-width: 280px;
     max-width: 45%;
@@ -55,20 +62,11 @@ fieldset {
     margin: 2vh 0;
 }
 
-input, select, button{
+input, select{
     width: 90%;
     margin: 1vh 5%;
-    background: var(--orange-clair);
-    font-family: var(--p);
-    font-size: 1.25rem;
-    color: var(--bleu);
-    border-radius: 50px;
-    border: 1px solid var(--bleu);
 }
-
-.multiple{
-    width: 90%;
-    margin: 1vh 5%;
+input{
     background: var(--orange-clair);
     font-family: var(--p);
     font-size: 1.25rem;
@@ -80,7 +78,7 @@ label, legend{
    text-align: center;
 }
 
-label{
+label {
     font-family: var(--p);
     font-size: 1.25rem;
     color:var(--bleu);
@@ -94,46 +92,63 @@ legend{
     margin: auto;
 }
 
-.selection
-{
-    background: var(--orange-clair);
-}
-
-input[type="checkbox"]{
-    width: 30px;
-    margin: 2vh 0;
-}
+#condition{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+ }
 
 input[type="submit"]{
     font-family: var(--p);
     font-size: 1.25rem;
-    color: var(--bleu);
+    color: var(--creme);
     background: var(--orange-foncé);
     border-radius: 50px;
     border: 1px solid var(--bleu);
     padding: 15px 40px; 
-    width: auto; 
+    width: 90%; 
     height: 60px; 
     cursor: pointer; 
 }
-.dropdown {
-    margin-top: 10px;
-    padding-left: 20px;
-  }
-  
+button{
+    font-family: var(--p);
+    font-size: 1.25rem;
+    color: var(--creme);
+    background: var(--orange-foncé);
+    border-radius: 50px;
+    border: 1px solid var(--bleu);
+    padding: 15px 40px; 
+    width: 90%; 
+    height: 60px; 
+    cursor: pointer;
+    margin: 10px;
+}
+.voisins, p{
+    font-family: var(--p);
+    font-size: 1rem;
+    color:var(--bleu);
+    margin: 2vh auto;
+}
+span{
+    font-family: var(--h);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--orange-foncé);
+}
 @media screen and (max-width: 769px) {
     #form-container {
         flex-direction: column;
         width: 100%;
     }
-
-    #formulaire {
+    #connexion {
         max-width: 100%;
     }
 }
 
 @media screen and (min-width: 768px) {
-    #formulaire {
+    #connexion {
         width: 100%;
     }
 }

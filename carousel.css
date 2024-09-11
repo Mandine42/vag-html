@@ -1,5 +1,3 @@
-
-
 /* Media Query pour les petits écrans (max-width: 768px) */
 @media screen and (max-width: 768px) {
     :root{
@@ -11,45 +9,47 @@
         --h:'Noto Sans', sans-serif;
         --p:'Work Sans', sans-serif;
     }
-    
-    
+
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
+
     #carrousel {
         width: 100vw;
+        height: 100vh; /* Occupe la totalité de la hauteur de l'écran */
         background: var(--creme);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        position: fixed;
-      
+        position: absolute; /* Position absolue pour éviter les problèmes de scrolling */
+        top: 0;
+        left: 0;
     }
-    h2{
+
+    h2 {
         font-family: var(--h);
-        font-size: 36px;
+        font-size: 1rem;
         font-weight: 600;
         color: var(--vert);
-        padding: 10vh;
-      
-    
+        padding-top: 10vh; /* Ajustement pour un espace en haut */
+        margin: 5vh;
     }
-    
+
     #carrousel img {
         width: 100%;
         vertical-align: middle;
+        max-height: 60vh; /* Limite la hauteur de l'image pour éviter de cacher les éléments */
     }
+
     .menu-point {
         text-align: center;
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+        position: relative; /* Position relative pour éviter de sortir du flux */
+        margin-top: 20px;
     }
-    
+
     .dot {
         height: 12px;
         width: 12px;
@@ -60,15 +60,16 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
-    
+
     .dot.active {
         background-color: rgba(37, 104, 100, 0.5);
     }
 }
 
 /* Media Query pour les grands écrans (min-width: 769px) */
- @media screen and (min-width: 769px) {
-    #carrousel{
+@media screen and (min-width: 769px) {
+    #carrousel {
         display: none;
     }
- }
+}
+
