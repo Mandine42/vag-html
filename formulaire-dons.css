@@ -54,6 +54,38 @@ fieldset {
     padding: 2vh;
     margin: 2vh 0;
 }
+.quantity {
+    width: 50%;
+    margin: 1vh 1vh;
+    padding: 0.5vh;
+    background: var(--orange-clair);
+    font-family: var(--p);
+    font-size: 0.9rem;
+    color: var(--bleu);
+    border-radius: 50px;
+    border: 1px solid var(--bleu);
+}
+
+/* Style spécifique pour l'input date ayant la classe .quantity */
+.form-group input[type="date"].quantity {
+    background: var(--orange-clair);
+    border: 1px solid var(--bleu);
+    color: var(--bleu);
+    font-family: var(--p);
+    font-size: 0.9rem;
+    width: 50%;
+    margin: 1vh 1vh;
+    padding: 0.5vh;
+    border-radius: 50px;
+}
+
+/* Suppression des boutons natifs pour certains navigateurs */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
 
 input, select, button{
     width: 90%;
@@ -120,7 +152,23 @@ input[type="submit"]{
     margin-top: 10px;
     padding-left: 20px;
   }
-  
+  .form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espace entre les éléments */
+}
+
+.form-group label, .form-group input, .form-group select {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.dropdown-options {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+
 @media screen and (max-width: 769px) {
     #form-container {
         flex-direction: column;

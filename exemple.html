@@ -57,6 +57,46 @@
     </form>
   </section>
 
+
+  <div>
+    <input type="checkbox" id="oeuf" name="msg_fresh[]" value="oeuf">
+    <label for="oeuf">Oeuf</label>
+
+    <!-- Menu déroulant pour la quantité -->
+    <select class="quantity" id="quantitySelect1" name="quantity1">
+        <option value="Non spécifiée">Sélectionnez la quantité</option>
+        <!-- Génération des options de 1 à 10 -->
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <!-- Checkbox pour activer la date de péremption -->
+    <input type="checkbox" class="date-peremption" id="datePeremptionCheckbox1" name="msg_fresh[]" value="date-peremption">
+    <label for="datePeremptionCheckbox1"></label>
+
+    <!-- Champ de sélection de la date de péremption -->
+    <input type="date" id="datePeremption1" name="date_input1" placeholder="Date de péremption" style="display: none;">
+</div>
+
+<script>
+    // JavaScript pour afficher/masquer le champ de date de péremption
+    document.getElementById('datePeremptionCheckbox1').addEventListener('change', function() {
+        var dateInput = document.getElementById('datePeremption1');
+        if (this.checked) {
+            dateInput.style.display = 'inline';  // Afficher le champ de date
+        } else {
+            dateInput.style.display = 'none';  // Masquer le champ de date
+        }
+    });
+</script>
   <script>
     // Écoute l'événement de clic sur le bouton "Légumes"
     document.getElementById("show-vegetables").addEventListener("click", function() {

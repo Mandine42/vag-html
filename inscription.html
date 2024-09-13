@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pop-up.css">
     <link rel="stylesheet" href="inscription.css">
-    <script src="pop-up.js" defer type="module"></script>
+    <script src="inscription.js" defer></script>
+    <script src="pop-up.js" defer></script>
 
     <title>Inscription | Connexion</title>
+     <style> 
+        .error {
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
     <div id="form-container">
@@ -17,8 +23,8 @@
             <form id="signupForm" action="" method="post">
                 <fieldset>
                     <legend>Etat Civil</legend>
-                    <label for="Nom">Nom *</label>
-                    <input type="text" id="Nom" name="nom" required aria-required-autocomplete>
+                    <label for="nom">Nom *</label>
+                    <input type="text" id="nom" name="nom" required aria-required-autocomplete>
                     <label for="prenom">Prénom *</label>
                     <input type="text" id="prenom" name="prenom" required aria-required-autocomplete>
                 </fieldset>
@@ -28,9 +34,9 @@
                     <label for="tel">Téléphone</label>
                     <input type="tel" name="telephone" id="tel">
                     <label for="adresse">Adresse *</label>
-                    <input type="adresse" name="adresse" id="adresse" required aria-required-autocomplete>
+                    <input type="text" name="adresse" id="adresse" required aria-required-autocomplete>
                     <label for="quartier">Quartier</label>
-                    <select name="msg quartier" id="quartier" required aria-required aria-autocomplete>
+                    <select name="quartier" id="quartier" required aria-required aria-autocomplete>
                         <option value="#">Selectionnez</option>
                         <optgroup label="Quartier">
                             <option value="rdv">RDV</option>
@@ -44,67 +50,58 @@
 
                 <fieldset>
                     <legend>Identifiants</legend>
-                    <label for="Nom d'utilisateur">Nom d'utilisateur *</label>
-                    <input type="text" id="Nom-utilisateur" name="nom-utilateur" required aria-required-autocomplete>
-                    <label for="img">Choisir une image</label>
+                    <label for="nom-utilisateur">Nom d'utilisateur *</label>
+                    <input type="text" id="nom-utilisateur" name="nom-utilisateur" required aria-required-autocomplete>
+                    <label for="avatar">Choisir une image</label>
                     <input type="file" id="avatar" name="avatar">
-                    <label for="Mot de passe">Mot de passe *</label>
+                    <label for="password">Mot de passe *</label>
                     <input type="password" id="password" name="password" required aria-required-autocomplete>
-                    <label for="Confirmer le mot de passe">Confirmer le mot de passe *</label>
-                    <input type="password" id="password" name="password" required aria-required-autocomplete>
+                    <label for="password-confirm">Confirmer le mot de passe *</label>
+                    <input type="password" id="password-confirm" name="password-confirm" required aria-required-autocomplete>
                 </fieldset>
 
+                <fieldset>
+                    <legend>Conditions d'utilisation</legend>
+                    <div id="condition-container">
+                        <input type="checkbox" id="condition" name="condition" required aria-required-autocomplete>
+                        <label for="condition">
+                            <a href="condition-inscription.html" id="condition-link">J'ai lu et j'accepte les conditions d'utilisation *</a>
+                        </label>
+                    </div>
+                </fieldset>
                 
-                    <form id="registrationForm">
-                        <fieldset>
-                            <legend>Conditions d'utilisation</legend>
-                            <div id="condition">
-                                <input type="checkbox" id="condition" name="condition" required aria-required-autocomplete>
-                                <span id="custom-checkbox"></span>
-                                <label for="condition" id="condition-label">J'ai lu et j'accepte les conditions d'utilisation *</label>
-                            </div>
-                        </fieldset>
 
                 <input type="submit" value="S'inscrire" id="submit-button">
             </form>
         </section>
+
         <div id="popup" class="popup">
             <section class="popup-content">
                 <span class="close">&times;</span>
                 <h2>Bienvenue!</h2>
                 <figure>
-                    <img src="asset/img-pop-up/pop-up.svg" alt="illustration d'une femme avec des coeurs en forme de ballon" >
+                    <img src="asset/img-pop-up/pop-up.svg" alt="illustration d'une femme avec des coeurs en forme de ballon">
                 </figure>
                 <ul>
-                <li><a href="profil.html" id="profile-link"><h3>Voir mon profil</h3></a></li> 
+                    <li><a href="profil.html" id="profile-link"><h3>Voir mon profil</h3></a></li>
                 </ul>
             </section>
         </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var conditionLink = document.getElementById('condition-link');
+        var conditionCheckbox = document.getElementById('condition');
     
-
-<script>
-      document.getElementById('condition-label').addEventListener('click', function() {
-        window.location.href = 'condition-inscription.html'; // Redirection vers la page
+        conditionLink.addEventListener('click', function(event) {
+            if (!conditionCheckbox.checked) {
+                event.preventDefault(); // Empêche la redirection si la case n'est pas cochée
+                alert('Vous devez accepter les conditions d\'utilisation pour continuer.');
+            }
+        });
     });
-    // Sauvegarde l'état de la case à cocher avant de quitter la page
-    document.getElementById('condition').addEventListener('change', function() {
-        localStorage.setItem('conditionAccepted', this.checked);
-    });
-
-    // Récupère l'état de la case à cocher au chargement de la page
-    window.onload = function() {
-        var conditionAccepted = localStorage.getItem('conditionAccepted');
-        if (conditionAccepted === 'true') {
-            document.getElementById('condition').checked = true;
-        }
-    };
-
-    // Redirection vers la page des conditions d'utilisation
-    document.getElementById('condition-label').addEventListener('click', function() {
-        localStorage.setItem('formData', document.getElementById('registrationForm').innerHTML);
-        window.location.href = 'condition-inscription.html'; // Redirection
-    });
-</script>
-
+    </script>
 </body>
 </html>
+
+
