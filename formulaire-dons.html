@@ -37,13 +37,14 @@
                 <form id="#" action="" method="post">
                     <fieldset>
                         <legend>Ce que je donne</legend>
-                        <button type="button" class="toggle-list" data-target="vegetable-list">Légumes</button>
-                        <div id="vegetable-list" style="display: none;">
-                    <div>
-                <input type="checkbox" id="ail" name="msg_légumes[]" value="ail">
-                <label for="ail">Ail</label>
+                        <button type="button" class="toggle-list btn-vegetable" data-target="vegetable-list">Légumes</button>
+                        <div id="vegetable-list" class="content-vegetable" style="display: none;">
+                    <div class="form-group">
+                <input type="checkbox" id="ail" name="msg_légumes[]" value="ail" class="input-vegetable">
+                <label for="ail" class="label-vegetable">Ail</label>
+          
                <!-- Menu déroulant pour la quantité -->
-                <select class="quantity" id="quantitySelect2" name="quantity2">
+                <select class="quantity quantity-vegetable" id="quantitySelect2" name="quantity2">
                 <option value="Non spécifiée">Quantité</option>
                 <!-- Génération des options de 1 à 10 -->
                     <option value="1">1</option>
@@ -57,11 +58,11 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                     </select>
-                    </div>
-                    <div>
-                 <input type="checkbox" id="echalotte" name="msg_légumes[]" value="echalotte">
-                <label for="echalotte">Echalotte</label>
-                  <select class="quantity" id="quantitySelect3" name="quantity3">
+                </div>
+                    <div class="form-group">
+                 <input type="checkbox" id="echalotte" name="msg_légumes[]" value="echalotte" class="input-vegetable">
+                <label for="echalotte" class="label-vegetable">Echalotte</label>
+                  <select class="quantity quantity-vegetable" id="quantitySelect3" name="quantity3">
                     <option value="Non spécifiée">Quantité</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -75,10 +76,10 @@
                         <option value="10">10</option>
                         </select>
                     </div>
-                    <div>
-                 <input type="checkbox" id="oignon" name="msg_légumes[]" value="oignon">
-                <label for="oignon">Oignon</label>
-                <select class="quantity" id="quantitySelect4" name="quantity4">
+                    <div class="form-group">
+                 <input type="checkbox" id="oignon" name="msg_légumes[]" value="oignon" class="input-vegetable">
+                <label for="oignon" class="label-vegetable">Oignon</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect4" name="quantity4">
                     <option value="Non spécifiée">Quantité</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -92,27 +93,10 @@
                         <option value="10">10</option>
                         </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="persil" name="msg_légumes[]" value="persil">
-                <label for="persil">Persil</label>
-                <select class="quantity" id="quantitySelect5" name="quantity5">
-                    <option value="Non spécifiée">Quantité</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        </select>
-                     </div>          
-                     <div>
-                <input type="checkbox" id="ciboulette" name="msg_légumes[]" value="ciboulette">
-                <label for="ciboulette">Ciboulette</label>
-                <select class="quantity" id="quantitySelect6" name="quantity6">
+                    <div class="form-group">
+                <input type="checkbox" id="persil" name="msg_légumes[]" value="persil" class="input-vegetable">
+                <label for="persil" class="label-vegetable">Persil</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect5" name="quantity5">
                     <option value="Non spécifiée">Quantité</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -126,10 +110,27 @@
                         <option value="10">10</option>
                         </select>
                      </div>          
-                     <div>
-                <input type="checkbox" id="coriandre" name="msg_légumes[]" value="coriandre">
-                <label for="coriandre">Coriandre</label>
-                <select class="quantity" id="quantitySelect7" name="quantity7">
+                     <div class="form-group">
+                <input type="checkbox" id="ciboulette" name="msg_légumes[]" value="ciboulette" class="input-vegetable">
+                <label for="ciboulette" class="label-vegetable">Ciboulette</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect6" name="quantity6">
+                    <option value="Non spécifiée">Quantité</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        </select>
+                     </div>          
+                     <div class="form-group">
+                <input type="checkbox" id="coriandre" name="msg_légumes[]" value="coriandre" class="input-vegetable">
+                <label for="coriandre"  class="label-vegetable">Coriandre</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect7" name="quantity7">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -143,10 +144,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="artichaut" name="msg_légumes[]" value="artichaut">
-                <label for="artichaut">Artichaut</label>
-                <select class="quantity" id="quantitySelect8" name="quantity8">
+                    <div class="form-group">
+                <input type="checkbox" id="artichaut" name="msg_légumes[]" value="artichaut" class="input-vegetable">
+                <label for="artichaut"  class="label-vegetable">Artichaut</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect8" name="quantity8">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -160,10 +161,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="aubergine" name="msg_légumes  []" value="aubergine">
-                <label for="aubergine">Aubergine</label>
-                <select class="quantity" id="quantitySelect9" name="quantity9">
+                    <div class="form-group">
+                <input type="checkbox" id="aubergine" name="msg_légumes  []" value="aubergine" class="input-vegetable">
+                <label for="aubergine"  class="label-vegetable">Aubergine</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect9" name="quantity9">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -177,10 +178,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="avocat" name="msg_légumes[]" value="avocat">
-                <label for="avocat">Avocat</label>
-                <select class="quantity" id="quantitySelect10" name="quantity10">
+                    <div class="form-group">
+                <input type="checkbox" id="avocat" name="msg_légumes[]" value="avocat" class="input-vegetable">
+                <label for="avocat"  class="label-vegetable">Avocat</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect10" name="quantity10">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -194,10 +195,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="betterave" name="msg_légumes[]" value="betterave">
-                <label for="betterave">Betterave</label>
-                <select class="quantity" id="quantitySelect11" name="quantity11">
+                    <div class="form-group">
+                <input type="checkbox" id="betterave" name="msg_légumes[]" value="betterave" class="input-vegetable">
+                <label for="betterave"  class="label-vegetable">Betterave</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect11" name="quantity11">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -211,10 +212,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="blette" name="msg_légumes[]" value="blette">
-                <label for="blette">Blette</label>
-                <select class="quantity" id="quantitySelect12" name="quantity12">
+                    <div class="form-group">
+                <input type="checkbox" id="blette" name="msg_légumes[]" value="blette" class="input-vegetable">
+                <label for="blette"  class="label-vegetable">Blette</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect12" name="quantity12">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -228,10 +229,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                     <div>
-                <input type="checkbox" id="brocoli" name="msg_légumes[]" value="brocoli">
-                <label for="brocoli">Brocoli</label>
-                <select class="quantity" id="quantitySelect13" name="quantity13">
+                     <div class="form-group">
+                <input type="checkbox" id="brocoli" name="msg_légumes[]" value="brocoli" class="input-vegetable">
+                <label for="brocoli"  class="label-vegetable">Brocoli</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect13" name="quantity13">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -245,10 +246,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>               
-                    <div>
-                <input type="checkbox" id="carotte" name="msg_légumes[]" value="carotte">
-                <label for="carotte">Carotte</label>
-                <select class="quantity" id="quantitySelect14" name="quantity14">
+                    <div class="form-group">
+                <input type="checkbox" id="carotte" name="msg_légumes[]" value="carotte" class="input-vegetable">
+                <label for="carotte"  class="label-vegetable">Carotte</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect14" name="quantity14">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -262,10 +263,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="celeri" name="msg_légumes[]" value="celeri">
-                <label for="celeri">Céleri</label>
-                <select class="quantity" id="quantitySelect15" name="quantity15">
+                    <div class="form-group">
+                <input type="checkbox" id="celeri" name="msg_légumes[]" value="celeri" class="input-vegetable">
+                <label for="celeri"  class="label-vegetable">Céleri</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect15" name="quantity15">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -279,10 +280,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="choux" name="msg_légumes[]" value="choux">
-                <label for="choux">Choux</label>
-                <select class="quantity" id="quantitySelect16" name="quantity16">
+                    <div class="form-group">
+                <input type="checkbox" id="choux" name="msg_légumes[]" value="choux" class="input-vegetable">
+                <label for="choux"  class="label-vegetable">Choux</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect16" name="quantity16">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -296,10 +297,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="choux-fleur" name="msg_légumes[]" value="choux-fleur">
-                <label for="choux-fleur">Choux-fleur</label>
-                <select class="quantity" id="quantitySelect17" name="quantity17">
+                    <div class="form-group">
+                <input type="checkbox" id="choux-fleur" name="msg_légumes[]" value="choux-fleur" class="input-vegetable">
+                <label for="choux-fleur"  class="label-vegetable">Choux-fleur</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect17" name="quantity17">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -313,10 +314,10 @@
                     <option value="10">10</option>
                     </select>
                      </div>          
-                    <div>
-                <input type="checkbox" id="chou-rouge" name="msg_légumes[]" value="chou-rouge">
-                <label for="chou-rouge">Chou rouge</label>
-                <select class="quantity" id="quantitySelect18" name="quantity18">
+                    <div class="form-group">
+                <input type="checkbox" id="chou-rouge" name="msg_légumes[]" value="chou-rouge" class="input-vegetable">
+                <label for="chou-rouge"  class="label-vegetable">Chou rouge</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect18" name="quantity18">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -330,10 +331,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="courge" name="msg_légumes[]" value="courge">
-                <label for="courge">Courge</label>
-                <select class="quantity" id="quantitySelect19" name="quantity19">
+                    <div class="form-group">
+                <input type="checkbox" id="courge" name="msg_légumes[]" value="courge" class="input-vegetable">
+                <label for="courge"  class="label-vegetable">Courge</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect19" name="quantity19">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -347,10 +348,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="potimaron" name="msg_légumes[]" value="potimaron">
-                <label for="potimaron">Potimaron</label>
-                <select class="quantity" id="quantitySelect20" name="quantity20">
+                    <div class="form-group">
+                <input type="checkbox" id="potimaron" name="msg_légumes[]" value="potimaron" class="input-vegetable">
+                <label for="potimaron"  class="label-vegetable">Potimaron</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect20" name="quantity20">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -364,10 +365,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="courgette" name="msg_légumes[]" value="courgette">
-                <label for="courgette">Courgette</label>
-                <select class="quantity" id="quantitySelect21" name="quantity21">
+                    <div class="form-group">
+                <input type="checkbox" id="courgette" name="msg_légumes[]" value="courgette" class="input-vegetable">
+                <label for="courgette"  class="label-vegetable">Courgette</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect21" name="quantity21">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -381,10 +382,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="endive" name="msg_légumes[]" value="endive">
-                <label for="endive">Endive</label>
-                <select class="quantity" id="quantitySelect22" name="quantity22">
+                    <div class="form-group">
+                <input type="checkbox" id="endive" name="msg_légumes[]" value="endive" class="input-vegetable">
+                <label for="endive"  class="label-vegetable">Endive</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect22" name="quantity22">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -398,10 +399,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="epinard" name="msg_légumes[]" value="epinard">
-                <label for="epinard">Epinard</label>
-                <select class="quantity" id="quantitySelect23" name="quantity23">
+                    <div class="form-group">
+                <input type="checkbox" id="epinard" name="msg_légumes[]" value="epinard" class="input-vegetable">
+                <label for="epinard"  class="label-vegetable">Epinard</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect23" name="quantity23">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -415,10 +416,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="fenouil" name="msg_légumes[]" value="fenouil">
-                <label for="fenouil">Fenouil</label>
-                <select class="quantity" id="quantitySelect24" name="quantity24">
+                    <div class="form-group">
+                <input type="checkbox" id="fenouil" name="msg_légumes[]" value="fenouil" class="input-vegetable">
+                <label for="fenouil"  class="label-vegetable">Fenouil</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect24" name="quantity24">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -432,10 +433,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                     <div>
-                <input type="checkbox" id="haricot" name="msg_légumes[]" value="haricot">
-                <label for="haricot">Haricot</label>
-                <select class="quantity" id="quantitySelect26" name="quantity26">
+                     <div class="form-group">
+                <input type="checkbox" id="haricot" name="msg_légumes[]" value="haricot" class="input-vegetable">
+                <label for="haricot"  class="label-vegetable">Haricot</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect26" name="quantity26">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -449,10 +450,10 @@
                     <option value="10">10</option>
                     </select>
                     </div> 
-                    <div>
-                <input type="checkbox" id="mais" name="msg_légumes[]" value="mais">
-                <label for="mais">Mais</label>
-                <select class="quantity" id="quantitySelect27" name="quantity27">
+                    <div class="form-group">
+                <input type="checkbox" id="mais" name="msg_légumes[]" value="mais" class="input-vegetable">
+                <label for="mais"  class="label-vegetable">Mais</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect27" name="quantity27">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -466,10 +467,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="panais" name="msg_légumes[]" value="panais">
-                <label for="panais">Panais</label>
-                <select class="quantity" id="quantitySelect28" name="quantity28">
+                    <div class="form-group">
+                <input type="checkbox" id="panais" name="msg_légumes[]" value="panais" class="input-vegetable">
+                <label for="panais"  class="label-vegetable">Panais</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect28" name="quantity28">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -483,10 +484,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="pdt" name="msg_légumes[]" value="pdt">
-                <label for="pdt">PDT</label>
-                <select class="quantity" id="quantitySelect29" name="quantity29">
+                    <div class="form-group">
+                <input type="checkbox" id="pdt" name="msg_légumes[]" value="pdt" class="input-vegetable">
+                <label for="pdt"  class="label-vegetable">PDT</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect29" name="quantity29">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -500,10 +501,10 @@
                     <option value="10">10</option>
                     </select>
                      </div>  
-                     <div>
-                <input type="checkbox" id="patate douce" name="msg_légumes[]" value="patate douce">
-                <label for="patate douce">Patate douce</label>
-                <select class="quantity" id="quantitySelect30" name="quantity30">
+                     <div class="form-group">
+                <input type="checkbox" id="patate douce" name="msg_légumes[]" value="patate douce" class="input-vegetable">
+                <label for="patate douce"  class="label-vegetable">Patate douce</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect30" name="quantity30">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -517,10 +518,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="poireaux" name="msg_légumes[]" value="poireaux">
-                <label for="poireaux">Poireaux</label>
-                <select class="quantity" id="quantitySelect31" name="quantity31">
+                    <div class="form-group">
+                <input type="checkbox" id="poireaux" name="msg_légumes[]" value="poireaux" class="input-vegetable">
+                <label for="poireaux"  class="label-vegetable">Poireaux</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect31" name="quantity31">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -534,10 +535,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="poivron" name="msg_légumes[]" value="poivron">
-                <label for="poivron">Poivron</label>
-                <select class="quantity" id="quantitySelect32" name="quantity32">
+                    <div class="form-group">
+                <input type="checkbox" id="poivron" name="msg_légumes[]" value="poivron" class="input-vegetable">
+                <label for="poivron"  class="label-vegetable">Poivron</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect32" name="quantity32">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -551,10 +552,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>   
-                    <div>
-                <input type="checkbox" id="radis" name="msg_légumes[]" value="radis">
-                <label for="radis">Radis</label>
-                <select class="quantity" id="quantitySelect33" name="quantity33">
+                    <div class="form-group">
+                <input type="checkbox" id="radis" name="msg_légumes[]" value="radis" class="input-vegetable">
+                <label for="radis"  class="label-vegetable">Radis</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect33" name="quantity33">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -568,10 +569,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="salade" name="msg_légumes[]" value="salade">
-                <label for="salade">Salade</label>
-                <select class="quantity" id="quantitySelect33" name="quantity33">
+                    <div class="form-group">
+                <input type="checkbox" id="salade" name="msg_légumes[]" value="salade" class="input-vegetable">
+                <label for="salade"  class="label-vegetable">Salade</label>
+                <select class="quantity quantity-vegetable" id="quantitySelect33" name="quantity33">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -587,17 +588,17 @@
                     </div>                         
                        
                     <div>
-                        <input type="checkbox" class="autre" data-target="otherTextField1" name="msg_légumes[]" value="other1">
+                        <input type="checkbox" class="autre" data-target="otherTextField1" name="msg_légumes[]" value="other1" class="input-vegetable">
                         <label for="autre">Autre</label>
-                        <input type="text" id="otherTextField1" name="other_input1" placeholder="Veuillez préciser..." style="display: none;">
+                        <input type="text" id="otherTextField1" name="other_input1" placeholder="Veuillez préciser..." style="display: none;" class="input-vegetable">
                       </div>
                     </div>
-<button type="button" class="toggle-list" data-target="fruit-list">Fruits</button>
-                <div id="fruit-list" style="display: none;">
-                <div>
-                <input type="checkbox" id="pomme" name="msg_fruits[]" value="pomme">
-                 <label for="pomme">Pomme</label>
-                 <sel class="quantity" id="quantitySelect35" name="quantity35">
+<button type="button" class="toggle-list btn-fruit" data-target="fruit-list">Fruits</button>
+                <div id="fruit-list" class="content-fruit"style="display: none;">
+                <div class="form-group">
+                <input type="checkbox" id="pomme" name="msg_fruits[]" value="pomme" class="input-fruit">
+                 <label for="pomme" class="label-fruit">Pomme</label>
+                 <select class="quantity quantity-fruit" id="quantitySelect35" name="quantity35">
                  <option value="Non spécifiée">Quantité</option>
                      <option value="1">1</option>
                      <option value="2">2</option>
@@ -611,10 +612,10 @@
                      <option value="10">10</option>
                      </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="poire" name="msg_fruits[]" value="poire">
-                <label for="poire">Poire</label>
-                <select class="quantity" id="quantitySelect36" name="quantity36">
+                    <div class="form-group">
+                <input type="checkbox" id="poire" name="msg_fruits[]" value="poire" class="input-fruit">
+                <label for="poire" class="label-fruit">Poire</label>
+                <select class="quantity quantity-fruit" id="quantitySelect36" name="quantity36">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -628,10 +629,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                <div>
-                <input type="checkbox" id="kiwi" name="msg_fruits[]" value="kiwi">
-                <label for="kiwi">Kiwi</label>
-                <select class="quantity" id="quantitySelect37" name="quantity37">
+                <div class="form-group">
+                <input type="checkbox" id="kiwi" name="msg_fruits[]" value="kiwi" class="input-fruit">
+                <label for="kiwi" class="label-fruit">Kiwi</label>
+                <select class="quantity quantity-fruit" id="quantitySelect37" name="quantity37">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -645,10 +646,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>                         
-                    <div>
-                <input type="checkbox" id="kiwi jaune" name="msg_fruits[]" value="kiwi jaune">
-                <label for="kiwi jaune">Kiwi jaune</label>
-                <select class="quantity" id="quantitySelect38" name="quantity38">
+                    <div class="form-group">
+                <input type="checkbox" id="kiwi jaune" name="msg_fruits[]" value="kiwi jaune" class="input-fruit">
+                <label for="kiwi jaune" class="label-fruit">Kiwi jaune</label>
+                <select class="quantity quantity-fruit" id="quantitySelect38" name="quantity38">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -662,10 +663,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="banane" name="msg_fruits[]" value="banane">
-                <label for="banane">Banane</label>
-                <select class="quantity" id="quantitySelect39" name="quantity39">
+                    <div class="form-group">
+                <input type="checkbox" id="banane" name="msg_fruits[]" value="banane" class="input-fruit">
+                <label for="banane" class="label-fruit">Banane</label>
+                <select class="quantity quantity-fruit" id="quantitySelect39" name="quantity39">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -679,10 +680,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="orange" name="msg_fruits[]" value="orange">
-                <label for="orange">Orange</label>
-                <select class="quantity" id="quantitySelect40" name="quantity40">
+                    <div class="form-group">
+                <input type="checkbox" id="orange" name="msg_fruits[]" value="orange" class="input-fruit">
+                <label for="orange" class="label-fruit">Orange</label>
+                <select class="quantity quantity-fruit" id="quantitySelect40" name="quantity40">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -696,10 +697,10 @@
                     <option value="10">10</option>
                     </select>
                     </div> 
-                    <div>
-                <input type="checkbox" id="clémentine" name="msg_fruits[]" value="clémentine">
-                <label for="clémentine">Clémentine</label>
-                <select class="quantity" id="quantitySelect41" name="quantity41">
+                    <div class="form-group">
+                <input type="checkbox" id="clémentine" name="msg_fruits[]" value="clémentine" class="input-fruit">
+                <label for="clémentine" class="label-fruit">Clémentine</label>
+                <select class="quantity quantity-fruit" id="quantitySelect41" name="quantity41">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -713,10 +714,10 @@
                     <option value="10">10</option>
                     </select>
                      </div>
-                     <div>
-                <input type="checkbox" id="citron" name="msg_fruits[]" value="citron">
-                <label for="citron">Citron</label>
-                <select class="quantity" id="quantitySelect42" name="quantity42">
+                     <div class="form-group">
+                <input type="checkbox" id="citron" name="msg_fruits[]" value="citron" class="input-fruit">
+                <label for="citron" class="label-fruit">Citron</label>
+                <select class="quantity quantity-fruit" id="quantitySelect42" name="quantity42">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -730,10 +731,10 @@
                     <option value="10">10</option>
                     </select>
                        </div>          
-                     <div>
-                <input type="checkbox" id="tomate" name="msg_fruits[]" value="tomate">
-                <label for="tomate">Tomate</label>
-                <select class="quantity" id="quantitySelect43" name="quantity43">
+                     <div class="form-group">
+                <input type="checkbox" id="tomate" name="msg_fruits[]" value="tomate" class="input-fruit">
+                <label for="tomate" class="label-fruit">Tomate</label>
+                <select class="quantity quantity-fruit" id="quantitySelect43" name="quantity43">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -747,10 +748,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>                         
-                    <div>
-                <input type="checkbox" id="tomate cerise" name="msg_fruits[]" value="tomate cerise">
-                <label for="tomate cerise">Tomate cerise</label>
-                <select class="quantity" id="quantitySelect44" name="quantity44">
+                    <div class="form-group">
+                <input type="checkbox" id="tomate cerise" name="msg_fruits[]" value="tomate cerise" class="input-fruit">
+                <label for="tomate cerise" class="label-fruit">Tomate cerise</label>
+                <select class="quantity quantity-fruit" id="quantitySelect44" name="quantity44">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -764,10 +765,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="tomate ancienne" name="msg_fruits[]" value="tomate ancienne">
-                <label for="tomate ancienne">Tomate ancienne</label>
-                <select class="quantity" id="quantitySelect45" name="quantity45">
+                    <div class="form-group">
+                <input type="checkbox" id="tomate ancienne" name="msg_fruits[]" value="tomate ancienne" class="input-fruit">
+                <label for="tomate ancienne" class="label-fruit">Tomate ancienne</label>
+                <select class="quantity quantity-fruit" id="quantitySelect45" name="quantity45">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -781,10 +782,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="fraise" name="msg_fruits[]" value="fraise">
-                <label for="fraise">Fraise</label>
-                <select class="quantity" id="quantitySelect46" name="quantity46">
+                    <div class="form-group">
+                <input type="checkbox" id="fraise" name="msg_fruits[]" value="fraise" class="input-fruit">
+                <label for="fraise" class="label-fruit">Fraise</label>
+                <select class="quantity quantity-fruit" id="quantitySelect46" name="quantity46">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -798,10 +799,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>  
-                    <div>
-                <input type="checkbox" id="kaki" name="msg_fruits[]" value="kaki">
-                <label for="kaki">Kaki</label>
-                <select class="quantity" id="quantitySelect47" name="quantity47">
+                    <div class="form-group">
+                <input type="checkbox" id="kaki" name="msg_fruits[]" value="kaki" class="input-fruit">
+                <label for="kaki" class="label-fruit">Kaki</label>
+                <select class="quantity quantity-fruit" id="quantitySelect47" name="quantity47">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -815,10 +816,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="mangue" name="msg_fruits[]" value="mangue">
-                <label for="mangue">Mangue</label>
-                <select class="quantity" id="quantitySelect48" name="quantity48">
+                    <div class="form-group">
+                <input type="checkbox" id="mangue" name="msg_fruits[]" value="mangue" class="input-fruit">
+                <label for="mangue" class="label-fruit">Mangue</label>
+                <select class="quantity quantity-fruit" id="quantitySelect48" name="quantity48">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -832,10 +833,10 @@
                     <option value="10">10</option>
                     </select>
                     </div> 
-                    <div>
-                <input type="checkbox" id="melon" name="msg_fruits[]" value="melon">
-                <label for="melon">Melon</label>
-                <select class="quantity" id="quantitySelect49" name="quantity49">
+                    <div class="form-group">
+                <input type="checkbox" id="melon" name="msg_fruits[]" value="melon" class="input-fruit">
+                <label for="melon" class="label-fruit">Melon</label>
+                <select class="quantity quantity-fruit" id="quantitySelect49" name="quantity49">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -849,10 +850,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="pastèque" name="msg_fruits[]" value="pastèque">
-                <label for="pastèque">Pastèque</label>
-                <select class="quantity" id="quantitySelect50" name="quantity50">
+                    <div class="form-group">
+                <input type="checkbox" id="pastèque" name="msg_fruits[]" value="pastèque" class="input-fruit">
+                <label for="pastèque" class="label-fruit">Pastèque</label>
+                <select class="quantity quantity-fruit" id="quantitySelect50" name="quantity50">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -866,10 +867,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="pamplemousse" name="msg_fruits[]" value="pamplemousse">
-                <label for="pamplemousse">Pamplemousse</label>
-                <select class="quantity" id="quantitySelect51" name="quantity51">
+                    <div class="form-group">
+                <input type="checkbox" id="pamplemousse" name="msg_fruits[]" value="pamplemousse" class="input-fruit">
+                <label for="pamplemousse" class="label-fruit">Pamplemousse</label>
+                <select class="quantity quantity-fruit" id="quantitySelect51" name="quantity51">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -883,10 +884,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>                         
-                    <div>
-                <input type="checkbox" id="pêche" name="msg_fruits[]" value="pêche">
-                <label for="pêche">Pêche</label>
-                <select class="quantity" id="quantitySelect52" name="quantity52">
+                    <div class="form-group">
+                <input type="checkbox" id="pêche" name="msg_fruits[]" value="pêche" class="input-fruit">
+                <label for="pêche" class="label-fruit">Pêche</label>
+                <select class="quantity quantity-fruit" id="quantitySelect52" name="quantity52">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -900,10 +901,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>
-                    <div>
-                <input type="checkbox" id="prune" name="msg_fruits[]" value="prune">
-                <label for="prune">Prune</label>
-                <select class="quantity" id="quantitySelect53" name="quantity53">
+                    <div class="form-group">
+                <input type="checkbox" id="prune" name="msg_fruits[]" value="prune" class="input-fruit">
+                <label for="prune" class="label-fruit">Prune</label>
+                <select class="quantity quantity-fruit" id="quantitySelect53" name="quantity53">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -917,10 +918,10 @@
                     <option value="10">10</option>
                     </select>
                     </div>          
-                    <div>
-                <input type="checkbox" id="raisin" name="msg_fruits[]" value="raisin">
-                <label for="raisin">Raisin</label>
-                <select class="quantity" id="quantitySelect54" name="quantity54">
+                    <div class="form-group">
+                <input type="checkbox" id="raisin" name="msg_fruits[]" value="raisin" class="input-fruit">
+                <label for="raisin" class="label-fruit">Raisin</label>
+                <select class="quantity quantity-fruit" id="quantitySelect54" name="quantity54">
                 <option value="Non spécifiée">Quantité</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -934,22 +935,22 @@
                     <option value="10">10</option>
                     </select>
                     </div>        
-                    <div>
-                <input type="checkbox" class="autre" data-target="otherTextField2" name="msg_fruits[]" value="other2">
-                <label for="autre">Autre</label>
-                <input type="text" id="otherTextField2" name="other_input2" placeholder="Veuillez préciser..." style="display: none;">
+                    <div class="form-group">
+                <input type="checkbox" class="autre" data-target="otherTextField2" name="msg_fruits[]" value="other2" class="input-fruit">
+                <label for="autre" class="label-fruit">Autre</label>
+                <input type="text" id="otherTextField2" name="other_input2" placeholder="Veuillez préciser..." style="display: none;" class="input-fruit">
                     </div>
                 
                 
             </div>
-                <button type="button" class="toggle-list" data-target="fresh-list">Produits frais</button>
+                <button type="button" class="toggle-list btn-fresh" data-target="fresh-list">Produits frais</button>
 
-                <div id="fresh-list" style="display: none;">
+                <div id="fresh-list" class="content-fresh" style="display: none;">
                     
                         <div class="form-group">
-                        <input type="checkbox" class="toggle-dropdown" data-target="poisson-options" id="poisson" name="msg_fresh[]" value="poisson">
-                        <label for="poisson">Poisson</label>
-                        <select class="quantity" id="quantitySelect55" name="quantity55">
+                        <input type="checkbox" class="toggle-dropdown" data-target="poisson-options" id="poisson" name="msg_fresh[]" value="poisson" class="input-fresh">
+                        <label for="poisson" class="label-fresh">Poisson</label>
+                        <select class="quantity quantity-fresh" id="quantitySelect55" name="quantity55">
                         <option value="Non spécifiée">Quantité</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -957,13 +958,13 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                            </select>
-                            <input type="checkbox" class="date-peremption" id="datePeremptionCheckbox2" name="msg_fresh[]" value="date-peremption">
-                            <label for="datePeremptionCheckbox2"></label>
-                            <input type="date" class="quantity" id="datePeremption2" name="date_input2">
-                        <div id="poisson-options" class="dropdown-options" style="display: none;">
-                          <input type="checkbox" id="poisson-pane" name="msg_fresh_sub[]" value="poisson-pane">
-                          <label for="poisson-pane">Poisson pané</label>
-                          <select class="quantity" id="quantitySelect56" name="quantity56">
+                            <input type="checkbox" class="date-peremption date-peremption-fresh" id="datePeremptionCheckbox2" name="msg_fresh[]" value="date-peremption">
+                            <label for="datePeremptionCheckbox2" class="label-fresh"></label>
+                            <input type="date" class="date-fresh" id="datePeremption2" name="date_input2">
+                        <div id="poisson-options" class="dropdown-options-fresh" style="display: none;">
+                          <input type="checkbox" id="poisson-pane" name="msg_fresh_sub[]" value="poisson-pane" class="input-fresh">
+                          <label for="poisson-pane" class="label-fresh">Poisson pané</label>
+                          <select class="quantity quantity-fresh" id="quantitySelect56" name="quantity56">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -971,12 +972,12 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                </select>
-                               <input type="checkbox" class="date-peremption" id="datePeremptionCheckbox3" name="msg_fresh[]" value="date-peremption">
+                               <input type="checkbox" class="date-peremption date-peremption-fresh" id="datePeremptionCheckbox3" name="msg_fresh[]" value="date-peremption">
                             <label for="datePeremptionCheckbox3"></label>
-                            <input type="date" class="quantity" id="datePeremption3" name="date_input3"><br>
-                          <input type="checkbox" id="saumon" name="msg_fresh_sub[]" value="saumon">
-                          <label for="saumon">Saumon</label>
-                          <select class="quantity" id="quantitySelect57" name="quantity57">
+                            <input type="date" class="date-fresh" id="datePeremption3" name="date_input3"><br>
+                          <input type="checkbox" id="saumon" name="msg_fresh_sub[]" value="saumon" class="input-fresh">
+                          <label for="saumon" class="label-fresh">Saumon</label>
+                          <select class="quantity quantity-fresh" id="quantitySelect57" name="quantity57">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -984,20 +985,20 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                </select>  
-                               <input type="checkbox" class="date-peremption" id="datePeremptionCheckbox4" name="msg_fresh[]" value="date-peremption">
+                               <input type="checkbox" class="date-peremption date-peremption-fresh" id="datePeremptionCheckbox4" name="msg_fresh[]" value="date-peremption">
                                <label for="datePeremptionCheckbox4"></label>
-                               <input type="date" class="quantity" id="datePeremption4" name="date_input4"><br>
-                          <input type="checkbox" class="autre" data-target="otherTextField4" name="msg_fresh[]" value="other4">
-                          <label for="autre">Autre</label>
-                          <input type="text" id="otherTextField4" name="other_input4" placeholder="Veuillez préciser..." style="display: none;">
+                               <input type="date" class="date-fresh" id="datePeremption4" name="date_input4"><br>
+                          <input type="checkbox" class="autre" data-target="otherTextField4" name="msg_fresh[]" value="other4" class="input-fresh">
+                          <label for="autre" class="label-fresh">Autre</label>
+                          <input type="text" id="otherTextField4" name="other_input4" placeholder="Veuillez préciser..." style="display: none;" class="input-fresh">
                         </div>
                       </div>
                       
                       <div class="form-group">
-                        <input type="checkbox" id="oeuf" name="msg_fresh[]" value="oeuf">
-                        <label for="oeuf">Oeuf</label>
+                        <input type="checkbox" id="oeuf" name="msg_fresh[]" value="oeuf" class="input-fresh">
+                        <label for="oeuf" class="label-fresh">Oeuf</label>
                        <!-- Menu déroulant pour la quantité -->
-                        <select class="quantity" id="quantitySelect1" name="quantity1">
+                        <select class="quantity quantity-fresh" id="quantitySelect1" name="quantity1">
                         <option value="Non spécifiée">Quantité</option>
                         <!-- Génération des options de 1 à 10 -->
                         <option value="1">1</option>
@@ -1013,17 +1014,17 @@
                         </select>
                       
                            <!-- Checkbox pour activer la date de péremption -->
-    <input type="checkbox" class="date-peremption" id="datePeremptionCheckbox1" name="msg_fresh[]" value="date-peremption">
+    <input type="checkbox" class="date-peremption date-peremption-fresh" id="datePeremptionCheckbox1" name="msg_fresh[]" value="date-peremption">
     <label for="datePeremptionCheckbox1"></label>
 
     <!-- Champ de sélection de la date de péremption -->
-    <input type="date" class="quantity" id="datePeremption1" name="date_input1">
+    <input type="date" class="date-fresh" id="datePeremption1" name="date_input1">
                       </div>
                                
                 <div class="form-group">
-                <input type="checkbox" id="plat cuisiner" name="msg_fresh[]" value="plat cuisiner">
-                <label for="plat cuisiner">Plat cuisiner</label>
-                <select class="quantity" id="quantitySelect58" name="quantity58">
+                <input type="checkbox" id="plat cuisiner" name="msg_fresh[]" value="plat cuisiner" class="input-fresh">
+                <label for="plat cuisiner" class="label-fresh">Plat cuisiner</label>
+                <select class="quantity quantity-fresh" id="quantitySelect58" name="quantity58">
                     <option value="Non spécifiée">Quantité</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -1031,15 +1032,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                        </select>
-                       <input type="checkbox" class="date-peremption" id="datePeremptionCheckbox5" name="msg_fresh[]" value="date-peremption">
-                       <label for="datePeremptionCheckbox5"></label>
-                       <input type="date" class="quantity" id="datePeremption5" name="date_input5">
+                       <input type="checkbox" class="date-peremption date-peremption-fresh" id="datePeremptionCheckbox5" name="msg_fresh[]" value="date-peremption" class="input-fresh">
+                       <label for="datePeremptionCheckbox5" class="label-fresh"></label>
+                       <input type="date" class="date-fresh" id="datePeremption5" name="date_input5">
 
                     </div>                         
-                    <div>
-                        <input type="checkbox" class="toggle-dropdown" data-target="viande-options" id="viande" name="msg_fresh[]" value="viande">
-                        <label for="viande">Viande</label>
-                        <select class="quantity" id="quantitySelect59" name="quantity59">
+                    <div class="form-group">
+                        <input type="checkbox" class="toggle-dropdown" data-target="viande-options" id="viande" name="msg_fresh[]" value="viande" class="input-fresh">
+                        <label for="viande" class="label-fresh">Viande</label>
+                        <select class="quantity quantity-fresh" id="quantitySelect59" name="quantity59">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -1047,65 +1048,80 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                </select>
-                        <div id="viande-options" class="dropdown-options" style="display: none;">
-                          <input type="checkbox" id="saucisses" name="msg_fresh_sub[]" value="saucisses">
-                          <label for="saucisses">Saucisses</label>
-                          <select class="quantity" id="quantitySelect60" name="quantity60">
+                               <input type="checkbox" class="date-peremption date-peremption-fresh" id="datePeremptionCheckbox6" name="msg_fresh[]" value="date-peremption">
+                       <label for="datePeremptionCheckbox6"></label>
+                       <input type="date" class="date-fresh" id="datePeremption6" name="date_input6">
+                        <div id="viande-options" class="dropdown-options-fresh" style="display: none;">
+                          <input type="checkbox" id="saucisses" name="msg_fresh_sub[]" value="saucisses" class="input-fresh">
+                          <label for="saucisses" class="label-fresh">Saucisses</label>
+                          <select class="quantity quantity-fresh" id="quantitySelect60" name="quantity60">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                          <input type="checkbox" id="jambon" name="msg_fresh_sub[]" value="jambon">
-                          <label for="jambon">Jambon</label>
-                          <select class="quantity" id="quantitySelect61" name="quantity61">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-fresh" id="datePeremptionCheckbox7" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox7"></label>
+                               <input type="date" class="date-fresh" id="datePeremption7" name="date_input7"><br>
+                          <input type="checkbox" id="jambon" name="msg_fresh_sub[]" value="jambon"  class="input-fresh">
+                          <label for="jambon"   class="label-fresh">Jambon</label>
+                          <select class="quantity quantity-fresh" id="quantitySelect61" name="quantity61">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                          <input type="checkbox" id="steack" name="msg_fresh_sub[]" value="steack">
-                          <label for="steack">Steack haché</label>
-                          <select class="quantity" id="quantitySelect62" name="quantity62">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-fresh" id="datePeremptionCheckbox8" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox8"></label>
+                               <input type="date" class="date-fresh" id="datePeremption8" name="date_input8"><br>
+                          <input type="checkbox" id="jambon" name="msg_fresh_sub[]" value="jambon"  class="input-fresh"><br>
+                          <input type="checkbox" id="steack" name="msg_fresh_sub[]" value="steack" class="input-fresh">
+                          <label for="steack" class="label-fresh">Steack haché</label>
+                          <select class="quantity quantity-fresh" id="quantitySelect62" name="quantity62">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                          <input type="checkbox" id="poulet" name="msg_fresh_sub[]" value="poulet">
-                          <label for="poulet">Poulet</label>
-                          <select class="quantity" id="quantitySelect63" name="quantity63">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-fresh" id="datePeremptionCheckbox9" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox9"></label>
+                               <input type="date" class="date-fresh" id="datePeremption9" name="date_input9"><br>
+                          <input type="checkbox" id="poulet" name="msg_fresh_sub[]" value="poulet" class="input-fresh">
+                          <label for="poulet" class="label-fresh">Poulet</label>
+                          <select class="quantity quantity-fresh" id="quantitySelect63" name="quantity63">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                          <input type="checkbox" class="autre" data-target="otherTextField5" name="msg_fresh[]" value="other5">
-                          <label for="autre">Autre</label>
-                          <input type="text" id="otherTextField5" name="other_input5" placeholder="Veuillez préciser..." style="display: none;">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-fresh" id="datePeremptionCheckbox10" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox10"></label>
+                               <input type="date" class="date-fresh" id="datePeremption10" name="date_input10"><br>
+                          <input type="checkbox" class="autre" data-target="otherTextField5" name="msg_fresh[]" value="other5" class="input-fresh">
+                          <label for="autre" class="label-fresh">Autre</label>
+                          <input type="text" id="otherTextField5" name="other_input5" placeholder="Veuillez préciser..." style="display: none;" class="input-fresh">
                         </div>
-                <div>
-                <input type="checkbox" class="autre" data-target="otherTextField3" name="msg_fresh[]" value="other3">
-                <label for="autre">Autre</label>
-                <input type="text" id="otherTextField3" name="other_input3" placeholder="Veuillez préciser..." style="display: none;">
+                    </div>
+                <div class="form-group">
+                <input type="checkbox" class="autre" data-target="otherTextField3" name="msg_fresh[]" value="other3" class="input-fresh">
+                <label for="autre" class="label-fresh">Autre</label>
+                <input type="text" id="otherTextField3" name="other_input3" placeholder="Veuillez préciser..." style="display: none;" class="input-fresh">
                     </div>
                 </div>
-              
-                </div>
-                <button type="button" class="toggle-list" data-target="milk-list">Produits laitiers</button>
-                <div id="milk-list" style="display: none;">
-                    <div>
+                <button type="button" class="toggle-list btn-milk" data-target="milk-list">Produits laitiers</button>
+                <div id="milk-list" class="content-milk" style="display: none;">
+                    <div class="form-group">
                         <input type="checkbox" class="toggle-dropdown" data-target="fromage-options" id="fromage" name="msg_milk[]" value="fromage">
-                        <label for="fromage">Fromage</label>
-                        <select class="quantity" id="quantitySelect64" name="quantity64">
+                        <label for="fromage" class="label-milk">Fromage</label>
+                        <select class="quantity quantity-milk" id="quantitySelect64" name="quantity64">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -1113,57 +1129,72 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                </select>
-                        <div id="fromage-options" class="dropdown-options" style="display: none;">
-                          <input type="checkbox" id="camembert" name="msg_milk_sub[]" value="camembert">
-                          <label for="camembert">Camembert</label>
-                          <select class="quantity" id="quantitySelect65" name="quantity65">
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox11" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox11"></label>
+                               <input type="date" class="date-milk" id="datePeremption11" name="date_input11">
+                        <div id="fromage-options" class="dropdown-options-milk" style="display: none;">
+                          <input type="checkbox" id="camembert" name="msg_milk_sub[]" value="camembert" class="input-milk">
+                          <label for="camembert" class="label-milk">Camembert</label>
+                          <select class="quantity quantity-milk" id="quantitySelect65" name="quantity65">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                          <input type="checkbox" id="chèvre" name="msg_milk_sub[]" value="chèvre">
-                          <label for="chèvre">Chèvre</label>
-                          <select class="quantity" id="quantitySelect66" name="quantity66">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox12" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox12"></label>
+                               <input type="date" class="date-milk" id="datePeremption12" name="date_input12"><br>
+                          <input type="checkbox" id="chèvre" name="msg_milk_sub[]" value="chèvre" class="input-milk">
+                          <label for="chèvre" class="label-milk">Chèvre</label>
+                          <select class="quantity quantity-milk" id="quantitySelect66" name="quantity66">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                          <input type="checkbox" id="gruyère" name="msg_milk_sub[]" value="gruyère">
-                          <label for="gruyère">Gruyère</label>
-                          <select class="quantity" id="quantitySelect67" name="quantity67">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox13" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox13"></label>
+                               <input type="date" class="date-milk" id="datePeremption13" name="date_input13"><br>
+                          <input type="checkbox" id="gruyère" name="msg_milk_sub[]" value="gruyère" class="input-milk">
+                          <label for="gruyère" class="label-milk">Gruyère</label>
+                          <select class="quantity quantity-milk" id="quantitySelect67" name="quantity67">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                          <input type="checkbox" id="kiri" name="msg_milk_sub[]" value="kiri">
-                          <label for="kiri">Kiri</label>
-                          <select class="quantity" id="quantitySelect68" name="quantity68">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox14" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox14"></label>
+                               <input type="date" class="date-milk" id="datePeremption14" name="date_input14"><br>
+                          <input type="checkbox" id="kiri" name="msg_milk_sub[]" value="kiri" class="input-milk">
+                          <label for="kiri" class="label-milk">Kiri</label>
+                          <select class="quantity quantity-milk" id="quantitySelect68" name="quantity68">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                          <input type="checkbox" class="autre" data-target="otherTextField6" name="msg_milk[]" value="other6">
-                          <label for="autre">Autre</label>
-                          <input type="text" id="otherTextField6" name="other_input6" placeholder="Veuillez préciser..." style="display: none;">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox15" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox15"></label>
+                               <input type="date" class="date-milk" id="datePeremption15" name="date_input15"><br>
+                          <input type="checkbox" class="autre" data-target="otherTextField6" name="msg_milk[]" value="other6" class="input-milk">
+                          <label for="autre" class="label-milk">Autre</label>
+                          <input type="text" id="otherTextField6" name="other_input6" placeholder="Veuillez préciser..." style="display: none;" class="input-milk">
                         </div>
                       </div>
                       
-                    <div>
-                <input type="checkbox" id="crème fraiche" name="msg_milk[]" value="crème fraiche">
-                <label for="crème fraiche">Crème fraîche</label>
-                <select class="quantity" id="quantitySelect69" name="quantity69">
+                    <div class="form-group">
+                <input type="checkbox" id="crème fraiche" name="msg_milk[]" value="crème fraiche" class="input-milk">
+                <label for="crème fraiche" class="label-milk">Crème fraîche</label>
+                <select class="quantity quantity-milk" id="quantitySelect69" name="quantity69">
                     <option value="Non spécifiée">Quantité</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -1171,12 +1202,14 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                        </select>
-                
+                       <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox16" name="msg_fresh[]" value="date-peremption">
+                       <label for="datePeremptionCheckbox16"></label>
+                       <input type="date" class="date-milk" id="datePeremption16" name="date_input16">
                       </div>
-                      <div>
-                        <input type="checkbox" id="beurre" name="msg_milk[]" value="beurre">
-                        <label for="beurre">Beurre</label>
-                        <select class="quantity" id="quantitySelect70" name="quantity70">
+                      <div class="form-group">
+                        <input type="checkbox" id="beurre" name="msg_milk[]" value="beurre" class="input-milk">
+                        <label for="beurre" class="label-milk">Beurre</label>
+                        <select class="quantity quantity-milk" id="quantitySelect70" name="quantity70">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -1184,13 +1217,15 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                </select>
-                      
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox17" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox17"></label>
+                               <input type="date" class="date-milk" id="datePeremption17" name="date_input17">
                               </div>
 
-                        <div>
+                        <div class="form-group">
                         <input type="checkbox" class="toggle-dropdown" data-target="lait-options" id="lait" name="msg_milk[]" value="lait">
-                        <label for="lait">Lait</label>
-                        <select class="quantity" id="quantitySelect71" name="quantity71">
+                        <label for="lait" class="label-milk">Lait</label>
+                        <select class="quantity quantity-milk" id="quantitySelect71" name="quantity71">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -1198,56 +1233,71 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                </select>
-                        <div id="lait-options" class="dropdown-options" style="display: none;">
-                        <input type="checkbox" id="lait chèvre" name="msg_milk_sub[]" value="lait chèvre">
-                        <label for="lait chèvre">Lait de chèvre</label>
-                        <select class="quantity" id="quantitySelect72" name="quantity72">
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox18" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox18"></label>
+                               <input type="date" class="date-milk" id="datePeremption18" name="date_input18">
+                        <div id="lait-options" class="dropdown-options-milk" style="display: none;">
+                        <input type="checkbox" id="lait chèvre" name="msg_milk_sub[]" value="lait chèvre" class="input-milk">
+                        <label for="lait chèvre" class="label-milk">Lait de chèvre</label>
+                        <select class="quantity quantity-milk" id="quantitySelect72" name="quantity72">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                        <input type="checkbox" id="lait brebis" name="msg_milk_sub[]" value="lait brebis">
-                        <label for="lait brebis">Lait de brebis</label>
-                        <select class="quantity" id="quantitySelect73" name="quantity73">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox19" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox19"></label>
+                               <input type="date" class="date-milk" id="datePeremption19" name="date_input19"><br>
+                        <input type="checkbox" id="lait brebis" name="msg_milk_sub[]" value="lait brebis" class="input-milk">
+                        <label for="lait brebis" class="label-milk">Lait de brebis</label>
+                        <select class="quantity quantity-milk" id="quantitySelect73" name="quantity73">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                        <input type="checkbox" id="lait végétal" name="msg_milk_sub[]" value="lait végétal">
-                        <label for="lait végétal">Lait végétal</label>
-                        <select class="quantity" id="quantitySelect74" name="quantity74">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox20" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox20"></label>
+                               <input type="date" class="date-milk" id="datePeremption20" name="date_input20"><br>
+                        <input type="checkbox" id="lait végétal" name="msg_milk_sub[]" value="lait végétal" class="input-milk">
+                        <label for="lait végétal" class="label-milk">Lait végétal</label>
+                        <select class="quantity quantity-milk" id="quantitySelect74" name="quantity74">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                        <input type="checkbox" id="lait aromatisé" name="msg_milk_sub[]" value="lait aromatisé">
-                        <label for="lait aromatisé">Lait aromatisé</label>
-                        <select class="quantity" id="quantitySelect75" name="quantity75">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox21" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox21"></label>
+                               <input type="date" class="date-milk" id="datePeremption21" name="date_input21"><br>
+                        <input type="checkbox" id="lait aromatisé" name="msg_milk_sub[]" value="lait aromatisé" class="input-milk">
+                        <label for="lait aromatisé" class="label-milk">Lait aromatisé</label>
+                        <select class="quantity quantity-milk" id="quantitySelect75" name="quantity75">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                               </select><br>
-                        <input type="checkbox" class="autre" data-target="otherTextField9" name="msg_milk[]" value="other9">
-                        <label for="autre">Autre</label>
-                        <input type="text" id="otherTextField9" name="other_input9" placeholder="Veuillez préciser..." style="display: none;">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox22" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox22"></label>
+                               <input type="date" class="date-milk" id="datePeremption22" name="date_input22"><br>
+                        <input type="checkbox" class="autre" data-target="otherTextField9" name="msg_milk[]" value="other9" class="input-milk">
+                        <label for="autre" class="label-milk">Autre</label>
+                        <input type="text" id="otherTextField9" name="other_input9" placeholder="Veuillez préciser..." style="display: none;" class="input-milk">
                             </div>
                             </div>
-                            <div>
+                            <div class="form-group">
                         <input type="checkbox" class="toggle-dropdown" data-target="yaourt-options" id="yaourt" name="msg_milk[]" value="yaourt">
-                        <label for="lait">Yaourt</label>
-                        <select class="quantity" id="quantitySelect76" name="quantity76">
+                        <label for="yaourt" class="label-milk">Yaourt</label>
+                        <select class="quantity quantity-milk" id="quantitySelect76" name="quantity76">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -1260,10 +1310,13 @@
                                 <option value="9">9</option>
                                 <option value="10">10</option>
                                </select>
-                        <div id="yaourt-options" class="dropdown-options" style="display: none;">
-                        <input type="checkbox" id="yaourt chèvre" name="msg_milk_sub[]" value="yaourt chèvre">
-                        <label for="yaourt chèvre">Yaourt chèvre</label>
-                        <select class="quantity" id="quantitySelect77" name="quantity77">
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox23" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox23"></label>
+                               <input type="date" class="date-milk" id="datePeremption23" name="date_input23">
+                        <div id="yaourt-options" class="dropdown-options-milk" style="display: none;">
+                        <input type="checkbox" id="yaourt chèvre" name="msg_milk_sub[]" value="yaourt chèvre" class="input-milk">
+                        <label for="yaourt chèvre" class="label-milk">Yaourt chèvre</label>
+                        <select class="quantity quantity-milk" id="quantitySelect77" name="quantity77">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -1275,10 +1328,13 @@
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                                 <option value="10">10</option>
-                               </select><br>
-                        <input type="checkbox" id="yaourt brebis" name="msg_milk_sub[]" value="yaourt brebis">
-                        <label for="yaourt brebis">Yaourt brebis</label>
-                        <select class="quantity" id="quantitySelect78" name="quantity78">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox24" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox24"></label>
+                               <input type="date" class="date-milk" id="datePeremption24" name="date_input24"><br>
+                        <input type="checkbox" id="yaourt brebis" name="msg_milk_sub[]" value="yaourt brebis" class="input-milk">
+                        <label for="yaourt brebis" class="label-milk">Yaourt brebis</label>
+                        <select class="quantity quantity-milk" id="quantitySelect78" name="quantity78">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -1290,10 +1346,13 @@
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                                 <option value="10">10</option>
-                               </select><br>
-                        <input type="checkbox" id="yaourt végétal" name="msg_milk_sub[]" value="yaourt végétal">
-                        <label for="yaourt végétal">Yaourt végétal</label>
-                        <select class="quantity" id="quantitySelect79" name="quantity79">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox25" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox25"></label>
+                               <input type="date" class="date-milk" id="datePeremption25" name="date_input25"><br>
+                        <input type="checkbox" id="yaourt végétal" name="msg_milk_sub[]" value="yaourt végétal" class="input-milk">
+                        <label for="yaourt végétal" class="label-milk">Yaourt végétal</label>
+                        <select class="quantity quantity-milk" id="quantitySelect79" name="quantity79">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -1305,10 +1364,13 @@
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                                 <option value="10">10</option>
-                               </select><br>
-                        <input type="checkbox" id="yaourt aromatisé" name="msg_milk_sub[]" value="yaourt aromatisé">
-                        <label for="yaourt aromatisé">Yaourt aromatisé</label>
-                        <select class="quantity" id="quantitySelect80" name="quantity80">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox26" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox26"></label>
+                               <input type="date" class="date-milk" id="datePeremption26" name="date_input26"><br>
+                        <input type="checkbox" id="yaourt aromatisé" name="msg_milk_sub[]" value="yaourt aromatisé" class="input-milk">
+                        <label for="yaourt aromatisé" class="label-milk">Yaourt aromatisé</label>
+                        <select class="quantity quantity-milk" id="quantitySelect80" name="quantity80">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -1320,10 +1382,13 @@
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                                 <option value="10">10</option>
-                               </select><br>
-                        <input type="checkbox" id="yaourt vache" name="msg_milk_sub[]" value="yaourt vache">
-                        <label for="yaourt vache">Yaourt vache</label>
-                        <select class="quantity" id="quantitySelect81" name="quantity81">
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox27" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox27"></label>
+                               <input type="date" class="date-milk" id="datePeremption27" name="date_input27"><br>
+                        <input type="checkbox" id="yaourt vache" name="msg_milk_sub[]" value="yaourt vache" class="input-milk">
+                        <label for="yaourt vache" class="label-milk">Yaourt vache</label>
+                        <select class="quantity quantity-milk" id="quantitySelect81" name="quantity81">
                             <option value="Non spécifiée">Quantité</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -1335,19 +1400,257 @@
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                                 <option value="10">10</option>
-                               </select><br>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-milk" id="datePeremptionCheckbox28" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox28"></label>
+                               <input type="date" class="date-milk" id="datePeremption28" name="date_input28"><br>
                         <input type="checkbox" class="autre" data-target="otherTextField8" name="msg_milk[]" value="otherTextField8">
                         <label for="autre">Autre</label>
                         <input type="text" id="otherTextField8" name="other_input8" placeholder="Veuillez préciser..." style="display: none;">
                                 </div>
                                     </div>
-                      <div>
-                        <input type="checkbox" class="autre" data-target="otherTextField7" name="msg_milk[]" value="other7">
-                        <label for="autre">Autre</label>
-                        <input type="text" id="otherTextField7" name="other_input7" placeholder="Veuillez préciser..." style="display: none;">
+                      <div class="column">
+                        <input type="checkbox" class="autre" data-target="otherTextField7" name="msg_milk[]" value="other7" class="input-milk">
+                        <label for="autre" class="label-milk">Autre</label>
+                        <input type="text" id="otherTextField7" name="other_input7" placeholder="Veuillez préciser..." style="display: none;" class="input-milk">
                             </div>
                      </div>
-                    
+                 <button type="button" class="toggle-list btn-keep" data-target="keep-list">Conserves</button> 
+                 <div id="keep-list" class="content-keep" style="display: none;">
+                    <div class="form-group">
+                        <input type="checkbox" class="toggle-dropdown" data-target="conserve-options" id="conserve" name="msg_keep[]" value="conserve">
+                        <label for="conserve" class="label-keep">Conserves de tomates</label>
+                        <select class="quantity quantity-keep" id="quantitySelect69" name="quantity69">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox16" name="msg_keep[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox16"></label>
+                               <input type="date" class="date-keep" id="datePeremption16" name="date_input16">
+                        <div id="conserve-options" class="dropdown-options-keep" style="display: none;">
+                          <input type="checkbox" id="sauce-tomate" name="msg_keep_sub[]" value="sauce-tomate" class="input-keep">
+                          <label for="sauce-tomate" class="label-keep">Sauce tomate</label>
+                          <select class="quantity quantity-keep" id="quantitySelect70" name="quantity70">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox17" name="msg_keep[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox17"></label>
+                               <input type="date" class="date-keep" id="datePeremption17" name="date_input17"><br>
+                          <input type="checkbox" id="tomate entière" name="msg_keep_sub[]" value="tomate entière" class="input-keep">
+                          <label for="chèvre" class="label-keep">Tomate entière</label>
+                          <select class="quantity quantity-keep" id="quantitySelect71" name="quantity71">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox18" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox18"></label>
+                               <input type="date" class="date-keep" id="datePeremption18" name="date_input18"><br>
+                          <input type="checkbox" id="tomate concassée" name="msg_keep_sub[]" value="tomate concassée" class="input-keep">
+                          <label for="tomate concassée" class="label-keep">Tomate concassée</label>
+                          <select class="quantity quantity-keep" id="quantitySelect72" name="quantity72">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox20" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox20"></label>
+                               <input type="date" class="date-keep" id="datePeremption20" name="date_input20"><br>
+                         
+                          <input type="checkbox" class="autre" data-target="otherTextField7" name="msg_keep[]" value="other7" class="input-keep">
+                          <label for="autre" class="label-keep">Autre</label>
+                          <input type="text" id="otherTextField7" name="other_input7" placeholder="Veuillez préciser..." style="display: none;" class="input-keep">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" class="toggle-dropdown" data-target="conserve-legume-options" id="conserve-legume" name="msg_keep[]" value="conserve-legume">
+                        <label for="conserve-legume" class="label-keep">Conserves de légumes</label>
+                        <select class="quantity quantity-keep" id="quantitySelect73" name="quantity73">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox21" name="msg_keep[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox21"></label>
+                               <input type="date" class="date-keep" id="datePeremption21" name="date_input21">
+                               <div id="conserve-legume-options" class="dropdown-options-keep" style="display: none;">
+
+                        <input type="checkbox" id="haricot-vert" name="msg_keep_sub[]" value="haricot-vert" class="input-keep">
+                          <label for="haricot-vert" class="label-keep">Haricot vert</label>
+                          <select class="quantity quantity-keep" id="quantitySelect74" name="quantity74">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox22" name="msg_keep[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox22"></label>
+                               <input type="date" class="date-keep" id="datePeremption22" name="date_input22"><br>
+                          <input type="checkbox" id="mais-boite" name="msg_keep_sub[]" value="mais-boite" class="input-keep">
+                          <label for="mais-boite" class="label-keep">Mais</label>
+                          <select class="quantity quantity-keep" id="quantitySelect75" name="quantity75">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox29" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox29"></label>
+                               <input type="date" class="date-keep" id="datePeremption29" name="date_input29"><br>
+                          <input type="checkbox" id="petit-pois" name="msg_keep_sub[]" value="petit-pois" class="input-keep">
+                          <label for="petit-pois" class="label-keep">Petit pois</label>
+                          <select class="quantity quantity-keep" id="quantitySelect76" name="quantity76">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox30" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox30"></label>
+                               <input type="date" class="date-keep" id="datePeremption30" name="date_input30"><br>
+                               <input type="checkbox" id="pois-chiche" name="msg_keep_sub[]" value="pois-chiche" class="input-keep">
+                               <label for="poit-chiche" class="label-keep">Pois chiche</label>
+                               <select class="quantity quantity-keep" id="quantitySelect77" name="quantity77">
+                                 <option value="Non spécifiée">Quantité</option>
+                                     <option value="1">1</option>
+                                     <option value="2">2</option>
+                                     <option value="3">3</option>
+                                     <option value="4">4</option>
+                                     <option value="5">5</option>
+                                    </select>
+                                    <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox31" name="msg_fresh[]" value="date-peremption">
+                                    <label for="datePeremptionCheckbox31"></label>
+                                    <input type="date" class="date-keep" id="datePeremption31" name="date_input31"><br>
+                                    <input type="checkbox" id="macédoine" name="msg_keep_sub[]" value="macédoine" class="input-keep">
+                                    <label for="macédoine" class="label-keep">Petit pois</label>
+                                    <select class="quantity quantity-keep" id="quantitySelect78" name="quantity78">
+                                      <option value="Non spécifiée">Quantité</option>
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                         </select>
+                                         <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox32" name="msg_fresh[]" value="date-peremption">
+                                         <label for="datePeremptionCheckbox32"></label>
+                                         <input type="date" class="date-keep" id="datePeremption32" name="date_input32"><br>
+                         
+                          <input type="checkbox" class="autre" data-target="otherTextField8" name="msg_keep[]" value="other8" class="input-keep">
+                          <label for="autre" class="label-keep">Autre</label>
+                          <input type="text" id="otherTextField8" name="other_input8" placeholder="Veuillez préciser..." style="display: none;" class="input-keep">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" class="toggle-dropdown" data-target="conserve-options" id="conserve-legume" name="msg_keep[]" value="conserve-legume">
+                        <label for="conserve-legume" class="label-keep">Conserves de légumes</label>
+                        <select class="quantity quantity-conserve" id="quantitySelect73" name="quantity73">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox21" name="msg_keep[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox21"></label>
+                               <input type="date" class="date-keep" id="datePeremption21" name="date_input21">
+                        <div id="conserve-options" class="dropdown-options-keep" style="display: none;">
+                          <input type="checkbox" id="haricot-vert" name="msg_keep_sub[]" value="haricot-vert" class="input-keep">
+                          <label for="haricot-vert" class="label-keep">Haricot vert</label>
+                          <select class="quantity quantity-keep" id="quantitySelect74" name="quantity74">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox22" name="msg_keep[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox22"></label>
+                               <input type="date" class="date-keep" id="datePeremption22" name="date_input22"><br>
+                          <input type="checkbox" id="mais-boite" name="msg_keep_sub[]" value="mais-boite" class="input-keep">
+                          <label for="mais-boite" class="label-keep">Mais</label>
+                          <select class="quantity quantity-keep" id="quantitySelect75" name="quantity75">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox29" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox29"></label>
+                               <input type="date" class="date-keep" id="datePeremption29" name="date_input29"><br>
+                          <input type="checkbox" id="petit-pois" name="msg_keep_sub[]" value="petit-pois" class="input-keep">
+                          <label for="petit-pois" class="label-keep">Petit pois</label>
+                          <select class="quantity quantity-keep" id="quantitySelect76" name="quantity76">
+                            <option value="Non spécifiée">Quantité</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                               </select>
+                               <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox30" name="msg_fresh[]" value="date-peremption">
+                               <label for="datePeremptionCheckbox30"></label>
+                               <input type="date" class="date-keep" id="datePeremption30" name="date_input30"><br>
+                               <input type="checkbox" id="pois-chiche" name="msg_keep_sub[]" value="pois-chiche" class="input-keep">
+                               <label for="poit-chiche" class="label-keep">Pois chiche</label>
+                               <select class="quantity quantity-keep" id="quantitySelect77" name="quantity77">
+                                 <option value="Non spécifiée">Quantité</option>
+                                     <option value="1">1</option>
+                                     <option value="2">2</option>
+                                     <option value="3">3</option>
+                                     <option value="4">4</option>
+                                     <option value="5">5</option>
+                                    </select>
+                                    <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox31" name="msg_fresh[]" value="date-peremption">
+                                    <label for="datePeremptionCheckbox31"></label>
+                                    <input type="date" class="date-keep" id="datePeremption31" name="date_input31"><br>
+                                    <input type="checkbox" id="macédoine" name="msg_keep_sub[]" value="macédoine" class="input-keep">
+                                    <label for="macédoine" class="label-keep">Petit pois</label>
+                                    <select class="quantity quantity-keep" id="quantitySelect78" name="quantity78">
+                                      <option value="Non spécifiée">Quantité</option>
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                         </select>
+                                         <input type="checkbox" class="date-peremption date-peremption-keep" id="datePeremptionCheckbox32" name="msg_fresh[]" value="date-peremption">
+                                         <label for="datePeremptionCheckbox32"></label>
+                                         <input type="date" class="date-keep" id="datePeremption32" name="date_input32"><br>
+                         
+                          <input type="checkbox" class="autre" data-target="otherTextField8" name="msg_keep[]" value="other8" class="input-keep">
+                          <label for="autre" class="label-keep">Autre</label>
+                          <input type="text" id="otherTextField8" name="other_input8" placeholder="Veuillez préciser..." style="display: none;" class="input-keep">
+                        </div>
+                    </div>
+                 </div>
 <!-- Bouton de validation -->
 <button type="button" id="validate-all">Voir ma sélection</button>
 
@@ -1438,12 +1741,28 @@
       window.onscroll = () => {
     document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
 };
+// Fonction pour basculer l'affichage de la liste des éléments sélectionnés
+function toggleSelectedItemsDisplay() {
+  var displayDiv = document.getElementById('selected-items');
+  
+  if (displayDiv.style.maxHeight && displayDiv.style.maxHeight !== '0px') {
+    // Si la liste est déjà visible, on la cache
+    displayDiv.style.opacity = '0';
+    displayDiv.style.maxHeight = '0';
+  } else {
+    // Sinon, on l'affiche
+    displayDiv.style.opacity = '1';
+    displayDiv.style.maxHeight = '1000px'; // Hauteur suffisante pour afficher le contenu
+  }
+}
 
-/// Fonction pour basculer l'affichage d'une liste
+// Fonction pour basculer l'affichage d'une liste
 function toggleList(targetId) {
   var list = document.getElementById(targetId);
   list.style.display = (list.style.display === "none") ? "block" : "none";
 }
+
+// Fonction pour afficher les éléments sélectionnés depuis plusieurs divs
 function displaySelectedItemsFromMultipleDivs(divIds, displayId) {
   var displayDiv = document.getElementById(displayId);
   var allSelectedItems = [];
@@ -1453,84 +1772,67 @@ function displaySelectedItemsFromMultipleDivs(divIds, displayId) {
 
     // Récupère les éléments cochés dans chaque div
     var selectedItems = Array.from(div.querySelectorAll('input[type="checkbox"]:checked')).map(checkbox => {
-      var itemName = checkbox.nextElementSibling.textContent;
       var parentDiv = checkbox.parentElement;
       var quantitySelect = parentDiv.querySelector('select');
       var dateInput = parentDiv.querySelector('input[type="date"]');
+      var otherTextField = parentDiv.querySelector('input[type="text"]'); // Champ texte "Autre"
+      var isSubCategory = parentDiv.closest('.dropdown-options') !== null; // Vérifie si c'est une sous-catégorie
 
-      var quantity = quantitySelect ? quantitySelect.value : "Non spécifiée";
-      var datePeremption = dateInput ? dateInput.value : "Non spécifiée";
+      var itemName = checkbox.nextElementSibling.textContent;
+      if (otherTextField && otherTextField.style.display !== "none" && otherTextField.value.trim() !== "") {
+        itemName = otherTextField.value;  // Remplace le texte avec "Autre" si rempli
+      }
+
+      var quantity = quantitySelect ? quantitySelect.value : "";
+      var datePeremption = dateInput ? dateInput.value : "";
+
+      // Ne pas ajouter la catégorie principale si une sous-catégorie est sélectionnée
+      if (!isSubCategory && parentDiv.querySelector('.dropdown-options input:checked')) {
+        return null;
+      }
 
       return {
         name: itemName,
         quantity: quantity,
         datePeremption: datePeremption
       };
-    });
+    }).filter(item => item !== null && item.name.trim() !== ""); // Filtre les catégories principales et les noms vides
 
     allSelectedItems = allSelectedItems.concat(selectedItems);
   });
 
-  // Affiche les éléments sélectionnés avec les informations supplémentaires
+  // Éliminer les doublons en fonction du nom et de la quantité, même pour "Autre"
+  allSelectedItems = allSelectedItems.filter((item, index, self) =>
+    index === self.findIndex(i => i.name === item.name && i.quantity === item.quantity && i.datePeremption === item.datePeremption)
+  );
+
+  // Affiche les éléments sélectionnés
   if (allSelectedItems.length > 0) {
     displayDiv.innerHTML = "<p>Vous avez sélectionné :</p><ul>" +
       allSelectedItems.map(item => 
-        `<li>${item.name} - ${item.quantity} - ${item.datePeremption}</li>`
+        `<li>${item.name} ${item.quantity ? `- ${item.quantity}` : ''} ${item.datePeremption ? `- ${item.datePeremption}` : ''}</li>`
       ).join('') +
       "</ul>";
   } else {
     displayDiv.innerHTML = "<p>Aucune sélection</p>";
   }
-
-  // Cacher toutes les listes après validation
-  divIds.forEach(function(divId) {
-    document.getElementById(divId).style.display = "none";
-  });
-}
+};
 
 // Écouteur d'événement pour le bouton de validation
 document.getElementById('validate-all').addEventListener('click', function() {
-  var divIds = ['vegetable-list', 'fruit-list', 'fresh-list', 'milk-list']; // Liste des divs à valider
+  var divIds = ['vegetable-list', 'fruit-list', 'fresh-list', 'milk-list', 'keep-list']; // Liste des divs à valider
   var displayId = 'selected-items';
+  
   displaySelectedItemsFromMultipleDivs(divIds, displayId);
-});
-
-// Fonction pour afficher les éléments sélectionnés et cacher la liste
-function displaySelectedItems(targetId, displayId) {  
-  var list = document.getElementById(targetId);
-  var displayDiv = document.getElementById(displayId);
-
-  // Récupère les éléments sélectionnés
-  var selectedItems = Array.from(list.querySelectorAll('input:checked')).map(checkbox => {
-    var itemName = checkbox.nextElementSibling.textContent;
-    var quantityInput = checkbox.parentElement.querySelector('input[type="text"]');
-    var dateInput = checkbox.parentElement.querySelector('input[type="date"]');
-    
-    var quantity = quantityInput && quantityInput.style.display !== "none" ? quantityInput.value : "Non spécifiée";
-    var datePeremption = dateInput && dateInput.style.display !== "none" ? dateInput.value : "Non spécifiée";
-
-    return {
-      name: itemName,
-      quantity: quantity,
-      datePeremption: datePeremption
-    };
+  
+  // Cacher toutes les listes après validation
+  divIds.forEach(function(divId) {
+    document.getElementById(divId).classList.add('hidden');
   });
-
-  // Affiche les éléments sélectionnés avec les informations supplémentaires
-  if (selectedItems.length > 0) {
-    displayDiv.innerHTML = "<p>Vous avez sélectionné :</p><ul>" +
-      selectedItems.map(item => 
-        `<li>${item.name} - Quantité: ${item.quantity} - Date de péremption: ${item.datePeremption}</li>`
-      ).join('') +
-      "</ul>";
-  } else {
-    displayDiv.innerHTML = "<p>Aucune sélection</p>";
-  }
-
-  // Cacher la liste après validation
-  list.style.display = "none";
-}
-
+  
+  // Basculer l'affichage de la liste des éléments sélectionnés
+  toggleSelectedItemsDisplay();
+});
 // Écouteurs d'événements pour les boutons de basculement de liste
 document.querySelectorAll('.toggle-list').forEach(button => {
   button.addEventListener('click', function() {
@@ -1550,17 +1852,29 @@ document.querySelectorAll('.validate-selection').forEach(button => {
 
 // Gère l'affichage du dropdown (choix multiple)
 document.querySelectorAll('.toggle-dropdown').forEach(function(checkbox) {
-    checkbox.addEventListener('change', function() {
-        var targetId = this.getAttribute('data-target');
-        var dropdown = document.getElementById(targetId);
+  checkbox.addEventListener('change', function() {
+    var targetId = this.getAttribute('data-target');
+    var dropdown = document.getElementById(targetId);
+console.log("Checkbox clicked, target:", targetId);
 
-        if (this.checked) {
-            dropdown.style.display = "block";  // Affiche le dropdown
-        } else {
-            dropdown.style.display = "none";   // Cache le dropdown
-        }
-    });
+    if (this.checked) {
+      dropdown.style.display = "block";  // Affiche le dropdown
+    } else {
+      dropdown.style.display = "none";   // Cache le dropdown
+    }
+  });
 });
+	// Affichage de la date de péremption si la case est cochée
+	const dateCheckboxes = document.querySelectorAll(".date-peremption");
+	dateCheckboxes.forEach((checkbox) => {
+		checkbox.addEventListener("change", function () {
+			const dateInput = document.getElementById(
+				this.id.replace("Checkbox", ""),
+			);
+			dateInput.style.display = this.checked ? "block" : "none";
+		});
+	});
+
 // Gère l'affichage du menu déroulant si "Quantité" est coché
 document.querySelectorAll('.quantite').forEach(function(checkbox) {
   checkbox.addEventListener('change', function() {
@@ -1574,58 +1888,19 @@ document.querySelectorAll('.quantite').forEach(function(checkbox) {
     }
   });
 });
+// Gère l'affichage du champ texte si "Autre" est coché
+document.querySelectorAll('.autre').forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+    var targetId = this.getAttribute('data-target');
+    var otherTextField = document.getElementById(targetId);
 
-
-
-    // Gère l'affichage du champ texte si "Autre" est coché
-    document.querySelectorAll('.autre').forEach(function(checkbox) {
-    checkbox.addEventListener('change', function() {
-        var targetId = this.getAttribute('data-target');
-        var otherTextField = document.getElementById(targetId);
-
-        if (this.checked) {
-            otherTextField.style.display = "block";  // Affiche le champ texte
-        } else {
-            otherTextField.style.display = "none";   // Cache le champ texte
-        }
-    });
+    if (this.checked) {
+      otherTextField.style.display = "block";  // Affiche le champ texte
+    } else {
+      otherTextField.style.display = "none";   // Cache le champ texte
+    }
+  });
 });
-   // Gère l'affichage du champ texte si "Quantité" est coché
-//    document.querySelectorAll('.quantite').forEach(function(checkbox) {
-//     checkbox.addEventListener('change', function() {
-//         var targetId = this.getAttribute('data-target');
-//         var otherQuantite = document.getElementById(targetId);
-
-//         if (this.checked) {
-//             otherQuantite.style.display = "block";  // Affiche le champ texte
-//         } else {
-//             otherQuantite.style.display = "none";   // Cache le champ texte
-//         }
-//     });
-// });
-// Gère l'affichage du champ texte si "Date de péremption" est coché
-// document.querySelectorAll('.date-peremption').forEach(function(checkbox) {
-//     checkbox.addEventListener('change', function() {
-//         var targetId = this.getAttribute('data-target');
-//         var expirationDate = document.getElementById(targetId);
-
-//         if (this.checked) {
-//             expirationDate.style.display = "block";  // Affiche le champ date pour la péremption
-//         } else {
-//             expirationDate.style.display = "none";   // Cache le champ date pour la péremption
-//         }
-//     });
-// });
- //  afficher/masquer le champ de date de péremption
- document.getElementById('datePeremptionCheckbox1').addEventListener('change', function() {
-        var dateInput = document.getElementById('datePeremption1');
-        if (this.checked) {
-            dateInput.style.display = 'inline';  // Afficher le champ de date
-        } else {
-            dateInput.style.display = 'none';  // Masquer le champ de date
-        }
-    });
-
-    </script>
+</script>
 </body>
 </html>
