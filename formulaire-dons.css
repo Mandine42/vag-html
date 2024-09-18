@@ -96,7 +96,7 @@ fieldset {
 }
 
 /* Spécificités pour les éléments de sélection */
-.quantity-vegetable {
+.quantity-vegetable, .input-vegetable {
     border: 1px solid var(--bleu);
     border-radius: 8px;
     padding: 5px;
@@ -147,7 +147,7 @@ fieldset {
 }
 
 /* Spécificités pour les éléments de sélection */
-.quantity-fruit {
+.quantity-fruit, .input-fruit {
     border: 1px solid var(--bleu);
     border-radius: 8px;
     padding: 5px;
@@ -212,7 +212,7 @@ fieldset {
 }
 
 /* Spécificités pour les éléments de sélection */
-.quantity-fresh {
+.quantity-fresh, .input-fresh {
     border: 1px solid var(--orange-clair);
     border-radius: 8px;
     padding: 5px;
@@ -286,7 +286,7 @@ fieldset {
 }
 
 /* Spécificités pour les éléments de sélection */
-.quantity-milk {
+.quantity-milk, .input-milk {
     border: 1px solid var(--orange-clair);
     border-radius: 8px;
     padding: 5px;
@@ -313,21 +313,21 @@ fieldset {
     width: fit-content; /* Adapte la largeur à son contenu */
 }
 .date-keep {
-    border: 1px solid var(--orange-clair);
+    border: 1px solid var(--bleu);
     border-radius: 8px;
     padding: 5px;
-    background: var(--bleu);
+    background: var(--orange-foncé);
     font-family: var(--p);
     font-size: 0.9rem;
     color: var(--creme);
 }
 .btn-keep, .content-keep {
-    background-color: var(--bleu);
+    background-color: var(--orange-foncé);
     color: var(--creme);
 }
 
 .btn-keep {
-    border: 1px solid var(--orange-clair);
+    border: 1px solid var(--bleu);
     border-radius: 30px;
     padding: 10px 20px;
     font-family: var(--h);
@@ -339,12 +339,12 @@ fieldset {
 
 .btn-keep:hover {
     background-color: var(--creme);
-    color: var(--bleu);
-    border: 1px solid var(--orange-clair);
+    color: var(--orange-foncé);
+    border: 1px solid var(--bleu);
 }
 
 .content-keep {
-    color: var(--bleu);
+    color: var(--creme);
     width: 80%;
     margin: 2vh 2vh;
     padding: 1vh;
@@ -354,9 +354,9 @@ fieldset {
 }
 
 .input-keep, .quantity-keep {
-    background-color: var(--bleu);
+    background-color: var(--orange-foncé);
     color: var(--creme);
-    border: 1px solid var(--orange-clair);
+    border: 1px solid var(--bleu);
 }
 
 .input-keep:checked + .label-keep {
@@ -366,11 +366,11 @@ fieldset {
 .label-keep{
     color:var(--creme);
 }
-.quantity-keep {
-    border: 1px solid var(--orange-clair);
+.quantity-keep, .input-keep{
+    border: 1px solid var(--bleu);
     border-radius: 8px;
     padding: 5px;
-    background: var(--bleu);
+    background: var(--orange-foncé);
     font-family: var(--p);
     font-size: 0.9rem;
     color: var(--creme);
@@ -378,8 +378,68 @@ fieldset {
 .dropdown-options-keep{
     margin-top: 10px; /* Espacement au-dessus des sous-options */
     padding-left: 20px; /* Un léger décalage à gauche pour une meilleure lisibilité */
-    background-color: var(--bleu); /* Conserver votre couleur de fond */
-    border: 1px solid var(--orange-clair); /* Bordure selon votre charte graphique */
+    background-color: var(--orange-foncé); /* Conserver votre couleur de fond */
+    border: 1px solid var(--bleu); /* Bordure selon votre charte graphique */
+    border-radius: 8px;
+    width: fit-content; /* Adapte la largeur à son contenu */
+}
+
+.btn-condiment, .content-condiment {
+    background-color: var(--orange-clair);
+    color: var(--bleu);
+}
+
+.btn-condiment {
+    border: 1px solid var(--bleu);
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family: var(--h);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+
+.btn-condiment:hover {
+    background-color: var(--bleu);
+    color: var(--orange-clair);
+    border: 1px solid var(--bleu);
+}
+
+.content-condiment {
+    color: var(--bleu);
+    width: 80%;
+    margin: 2vh 2vh;
+    padding: 1vh;
+    border-radius: 30px;
+}
+
+.input-condiment, .quantity-condiment {
+    background-color: var(--orange-clair);
+    color: var(--bleu);
+    border: 1px solid var(--bleu);
+}
+
+.input-condiment:checked + .label-condiment {
+    color: var(--creme);
+}
+
+/* Spécificités pour les éléments de sélection */
+.quantity-condiment, .input-condiment {
+    border: 1px solid var(--bleu);
+    border-radius: 8px;
+    padding: 5px;
+    background: var(--orange-clair);
+    font-family: var(--p);
+    font-size: 0.9rem;
+    color: var(--bleu);
+}
+
+.dropdown-options-condiment{
+    margin-top: 10px; /* Espacement au-dessus des sous-options */
+    padding-left: 20px; /* Un léger décalage à gauche pour une meilleure lisibilité */
+    background-color: var(--orange-clair); /* Conserver votre couleur de fond */
+    border: 1px solid var(--bleu); /* Bordure selon votre charte graphique */
     border-radius: 8px;
     width: fit-content; /* Adapte la largeur à son contenu */
 }
@@ -482,9 +542,12 @@ input[type="submit"]{
 .hidden {
     display: none;
   }
-.dropdown {
-    margin-top: 10px;
-    padding-left: 20px;
+  .dropdown-options {
+    display: none;
+  }
+  
+  .toggle-dropdown:checked + .dropdown-options {
+    display: block;
   }
   .form-group {
     display: flex;
