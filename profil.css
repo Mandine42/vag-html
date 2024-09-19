@@ -15,6 +15,289 @@
 
 main {
     padding-top: 20vh;
-    height: 200vh;
+    height: 1000vh;
     background: var(--creme);
+}
+
+h1{
+    font-family: var(--h);
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--vert);
+    margin: 2vh;
+}
+h2{
+    font-family: var(--h);
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--vert);
+    text-align: center;
+    margin: 2vh;
+    padding-bottom: 5vh;
+
+}
+#profil img{
+    border-radius: 50%;
+    width: 400vw;
+    height: 400vh; 
+    max-width: 400px; /* Limite la taille maximum sur les grands écrans */
+    max-height: 400px;
+}
+
+#profil{
+    display:block;
+    width: 40%;
+    margin: 0 auto; 
+    text-align: center;
+    padding: inherit;
+}
+/* Centrage des sections et des listes */
+
+#dons-container {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 90%;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 10vh;
+}
+
+/* Style pour chaque section */
+.don {
+    border: 2px solid var(--vert);
+    border-radius: 30px;
+    padding: 20px;
+    flex: 1;
+    max-width: 48%;
+    text-align: center;
+}
+/* Styles pour les listes */
+.don ul {
+    margin: 0 auto; /* Centre les listes horizontalement */
+    padding-left: 0; /* Supprime le padding gauche par défaut */
+    list-style-type: circle ;
+ 
+}
+
+/* Alignement du lien <a> à droite */
+.don .gift {
+    display: block; /* Pour forcer le lien à occuper toute la largeur */
+    text-align: right; /* Aligne le lien à droite */
+    margin-top: 10px;
+    text-decoration: none; /* Pour enlever le soulignement */
+    transition: color 0.3s ease;
+}
+.gift{
+    font-family: var(--p);
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--vert);
+
+}
+.gift:hover,
+.gift:focus 
+{
+    color: var(--orange-foncé);
+}
+
+.gift:active {
+    color: var(--orange-foncé);
+}
+/* Pour les éléments de la liste */
+li {
+    font-family: var(--p);
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--bleu);
+    text-align: left; /* Assure que le texte des items est aligné à gauche */
+}
+
+.donation-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.donation-date .date {
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.donation-date ul {
+    margin: 0 auto; /* Centre les sous-listes */
+    padding-left: 0;
+}
+
+.donation-date ul li {
+    margin-left: 20px;
+    font-family: var(--p);
+}
+
+#quartier {
+    border: 2px solid var(--vert);
+    border-radius: 30px;
+    padding: 20px;
+    margin: 2vh auto;
+    max-width: 80vw;
+}
+
+#quartier h2 {
+    text-align: center;
+    font-family: var(--h);
+    font-size: 2rem;
+    color: var(--vert);
+}
+
+.quartiers{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.quartier-info {
+    flex: 1;
+}
+
+#plan {
+    flex: 1;
+    border: 2px solid var(--vert);
+    border-radius: 30px;
+    width: 40vw;
+    height: 50vh;
+}
+
+.quartier-info h3, .quartier-info p {
+    text-align: left;
+    font-family: var(--p);
+    font-size: 1.2rem;
+    color: var(--bleu);
+}
+
+
+@media screen and (max-width: 769px) {
+    #profil img{
+    width: 200vh; 
+    height: 200vh; 
+    max-width: 200px; 
+    max-height: 200px;
+    }
+    
+    #profil{
+        width: 60%;
+        padding: 0;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+
+    h2{
+        font-size: 1.5rem;
+        padding-bottom: 0;
+    }
+    h3{
+        font-size: 0.5rem;
+    }
+    p{
+        font-size:1rem ;
+    }
+   
+    #dons-container {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 5vh;
+    }
+
+    .don {
+        max-width: 100%;
+        margin-bottom: 20px;
+    
+}
+
+/* Styles pour les listes */
+.don ul {
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+/* Alignement du lien <a> à droite */
+.don .gift {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.gift{
+    font-size:1rem ;
+}
+.gift:hover,
+.gift:focus 
+{
+    color: var(--orange-foncé);
+}
+
+.gift:active {
+    color: var(--orange-foncé);
+}
+
+/* Pour les éléments de la liste */
+li {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--bleu);
+    text-align: left;
+}
+
+.donation-date {
+    display: block;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.donation-date .date {
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.donation-date ul {
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+.donation-date ul li {
+    margin-left: 20px;
+    font-family: var(--p);
+}
+.quartiers {
+    flex-direction: column; /* Change la disposition en colonne */
+    align-items: center; /* Centre les éléments verticalement */
+}
+
+#plan {
+    width: 70vw; /* Ajuste la largeur pour les petits écrans */
+    height: auto;
+    margin-top: 20px; /* Ajoute un peu d'espace entre les éléments */
+}
+
+.quartier-info {
+    width: 100%;
+    text-align: center; /* Centre le texte sur les petits écrans */
+}
+
+.quartier-info h3, .quartier-info p {
+    text-align: center; /* Centre aussi les paragraphes */
+}
+
+}
+
+@media  screen and (min-width:769px) {
+    #dons-container{
+        display: flex;
+    }
+
 }

@@ -19,7 +19,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Assure que le contenu occupe toute la hauteur */
+    height: 240vh; /* Assure que le contenu occupe toute la hauteur */
 }
 main {
     flex: 1; /* Le main occupe tout l'espace restant */
@@ -28,7 +28,7 @@ main {
 }
 p{
   font-family: var(--p);
-  font-size: 20px;
+  font-size: 1rem;
   font-style: normal;
   color: var(--bleu);
 
@@ -44,7 +44,7 @@ a {
 }
 h3{
   font-family: var(--h);
-  font-size: 32px;
+  font-size: 1.5rem;
   font-style: normal;
   color: var(--vert);
 }
@@ -185,6 +185,10 @@ footer {
     }
 /* Media Query pour les petits écrans (max-width: 768px) */
 @media screen and (max-width: 768px) {
+    body {
+        margin: 0; /* Réinitialise toute marge */
+        padding-bottom: 70px; /* Crée de l'espace pour la nav, ajusté à la hauteur */
+    }
     /* Cache la nav desktop */
     header {
         display: none;
@@ -198,11 +202,12 @@ footer {
         width: 100%;
         position: fixed;
         bottom: 0;
+        left: 0;
         background-color: var(--creme);
         z-index: 10;
         padding: 10px 0;
     }
-
+  
     /* Ajuste le logo et les éléments pour les petits écrans */
     header img {
         width: 80px;
