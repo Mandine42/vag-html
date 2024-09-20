@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="parametre.css">
+   
+    <title>Paramètres</title>
+</head>
+<body>
+    <div id="popup" class="popup">
+        <section class="popup-content">
+            <span class="close">&times;</span>
+            <ul>
+                <li>
+                    <img src="asset/img-params/Manual.svg" alt="logo avec une main">
+                    <h3>Comment fonctionne Voisins Anti-Gaspi</h3>
+                    <a href="fonctionnement.htm"><img src="asset/img-params/Forward.svg" alt="fleche"></a>
+                </li>
+                <li>
+                    <img src="asset/img-params/User.svg" alt="logo avec un profil">
+                    <h3>Détail du compte</h3>
+                    <a href="detail-compte.htm"><img src="asset/img-params/Forward.svg" alt="fleche"></a>
+                </li>
+                <li>
+                    <img src="asset/img-params/Auction.svg" alt="logo avec un maillet pour juge">
+                    <h3>Mentions légales</h3>
+                    <a href="mentions-legales.htm"><img src="asset/img-params/Forward.svg" alt="fleche"></a>
+                </li>
+                <li>
+                    <img src="asset/img-params/Postal.svg" alt="logo avec une boîte aux lettres">
+                    <h3>Nous contacter</h3>
+                    <a href="formulaire-contact.htm"><img src="asset/img-params/Forward.svg" alt="fleche"></a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        // Cibler l'élément avec la classe "close" et le popup
+        const closePopup = document.querySelector('.close');
+        const popup = document.getElementById('popup');
+
+        // Quand l'utilisateur clique sur la croix (x), fermer le pop-up
+        closePopup.onclick = () => {
+            popup.style.display = "none";
+        };
+
+        // Quand l'utilisateur clique en dehors du pop-up, fermer le pop-up
+        window.onclick = (event) => {
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+        };
+    </script>
+</body>
+
+</html>

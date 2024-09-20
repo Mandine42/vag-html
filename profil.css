@@ -36,6 +36,7 @@ h2{
     padding-bottom: 5vh;
 
 }
+
 #profil img{
     border-radius: 50%;
     width: 400vw;
@@ -178,6 +179,37 @@ li {
 
 
 @media screen and (max-width: 769px) {
+    #profil-params {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        position: fixed;  
+        top: 0;           
+        left: 0;
+        right: 0;
+        z-index: 10;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+   /* Lorsque la div doit disparaître */
+   .hide {
+    transform: translateY(-100%); /* Glisse la barre hors de l'écran vers le haut */
+    opacity: 0; /* Rend la barre invisible */
+}
+    #profil-params .params {
+        max-width: 10vw;
+        max-height: 10vh;
+    }
+
+    #profil-params h1 {
+        font-size: 1.5rem;  
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    figure {
+        margin: 0;
+    }
     #profil img{
     width: 200vh; 
     height: 200vh; 
@@ -204,7 +236,6 @@ li {
     p{
         font-size:1rem ;
     }
-   
     #dons-container {
         flex-direction: column;
         max-width: 100%;
@@ -299,5 +330,19 @@ li {
     #dons-container{
         display: flex;
     }
-
+    #profil-params {
+        display: block; /* Ou flex, selon ta structure */
+        text-align: center;
+    }
+    
+    #profil-params h1 {
+        display: block; /* Affiche uniquement le titre en mode ordinateur */
+        font-size: 2rem; /* Ajuste la taille du titre pour le mode ordinateur */
+        text-align: center;
+    }
+    
+    /* Masque les images sur les grands écrans */
+    #profil-params figure {
+        display: none; /* Cache les images en mode ordinateur */
+    }
 }

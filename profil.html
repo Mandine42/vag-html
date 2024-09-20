@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="parametre.css">
     <link rel="stylesheet" href="profil.css">
     <link rel="stylesheet" href="nav.css">
+    
     <title>Profil</title>
 </head>
 <body>
@@ -24,17 +26,52 @@
 
    
     <main role="main">
+       
         <section id="profil"> 
+            <div id="profil-params">
+            <figure role="figure"><a href=""><img class="params" src="asset/img-profil/Chevron Left.svg" alt="flèche retour"></img></a></figure>
        <h1>Mon Profil</h1>
+       <figure role="figure"><a href=""id="open-popup-link"><img class="params" src="asset/img-profil/Services.svg" alt="paramètre"></img></a></figure>
+    </div>
         <figure>
-        <img src="asset/img-profil/paul.png" alt="hoto de profil de Paul">
+        <img src="asset/img-profil/paul.png" alt="photo de profil de Paul">
     </figure>
+
+   
   
     <h3>Paul</h3><br>
     <p>paulmontreuil@gmail.com</p><br>
     <p>Quartier Centre ville</p>
     
 </section>
+<div id="popup" class="popup">
+    <section class="popup-content">
+        <span class="close">&times;</span>
+        <ul>
+            <li>
+                <img class="params"src="asset/img-params/Manual.svg" alt="logo avec une main">
+                <h3 class="param-title">Comment fonctionne VAG</h3>
+
+                <a href="fonctionnement.html"><img class="params"src="asset/img-params/Forward.svg" alt="fleche"></a>
+            </li>
+            <li>
+                <img class="params"src="asset/img-params/User.svg" alt="logo avec un profil">
+                <h3 class="param-title">Détail du compte</h3>
+                <a href="detail-compte.html"><img class="params"src="asset/img-params/Forward.svg" alt="fleche"></a>
+            </li>
+            <li>
+                <img class="params"src="asset/img-params/Auction.svg" alt="logo avec un maillet pour juge">
+                <h3 class="param-title">Mentions légales</h3>
+                <a href="mentions-legales.html"><img class="params"src="asset/img-params/Forward.svg" alt="fleche"></a>
+            </li>
+            <li>
+                <img class="params"src="asset/img-params/Postal.svg" alt="logo avec une boîte aux lettres">
+                <h3 class="param-title">Nous contacter</h3>
+                <a href="formulaire-contact.html"><img class="params"src="asset/img-params/Forward.svg" alt="fleche"></a>
+            </li>
+        </ul>
+    </section>
+</div>
 <div id="dons-container">
 <section class="don">
     <h2>Mes dons récupérés</h2>
@@ -159,6 +196,34 @@
       window.onscroll = () => {
     document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
 };
-    </script>
+let lastScrollTop = 0;
+const profilParams = document.getElementById('profil-params');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // Scroll vers le bas - cacher la div
+        profilParams.classList.add('hide');
+    } else {
+        // Scroll vers le haut - montrer la div
+        profilParams.classList.remove('hide');
+    }
+
+    lastScrollTop = scrollTop;
+});
+const openPopupLink = document.getElementById('open-popup-link');
+const popup = document.getElementById('popup');
+const closePopup = document.querySelector('.close');
+
+openPopupLink.onclick = (event) => {
+    event.preventDefault();
+    popup.style.display = "block";
+};
+
+closePopup.onclick = () => {
+    popup.style.display = "none";
+};
+</script>
 </body>
 </html>
