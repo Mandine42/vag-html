@@ -1,0 +1,108 @@
+:root {
+    --bleu: #163a53;
+    --vert: #256864;
+    --creme: #f6ecde;
+    --orange-clair: #EF9F64;
+    --orange-fonce: #DE6A38;
+    --h: 'Noto Sans', sans-serif;
+    --p: 'Work Sans', sans-serif;
+}
+
+h2.contact {
+    font-family: var(--h);
+    font-size: 2.5rem;
+    color: var(--bleu);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+body {
+   background-color: var(--creme);
+}
+#fleche{
+    display: flex;
+  }
+  #fleche {
+    max-width: 8vw;
+    max-height: 8vh;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Contenu du pop-up */
+.formulaire {
+    background-color: var(--creme);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid var(--bleu);
+    border-radius: 30px;
+    width: 100%;
+    max-width: 300vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.formulaire-wrapper {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fomulaire figure {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.formulaire img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--bleu);
+    border-radius: 30px;
+    background-color: var(--creme);
+}
+a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: var(--p);
+    font-weight: 400;
+    color: var(--bleu);
+    text-align: end;
+    transition: color 0.3s ease; /* Transition douce pour l'effet */
+}
+
+/* Changer la couleur lors du clic */
+a:active, a:focus {
+    color: var(--orange-fonce);
+}
+
+/* Media Queries pour petits écrans */
+@media screen and (max-width: 768px) {
+    .formulaire-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formulaire figure {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .contact {
+        font-size: 2rem;
+    }
+}

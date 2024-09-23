@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pop-up-formulaire-contact.css">
     <link rel="stylesheet" href="parametre.css">
     <link rel="stylesheet" href="profil.css">
     <link rel="stylesheet" href="nav.css">
@@ -67,11 +68,29 @@
             <li>
                 <img class="params"src="asset/img-params/Postal.svg" alt="logo avec une boîte aux lettres">
                 <h3 class="param-title">Nous contacter</h3>
-                <a href="formulaire-contact.html"><img class="params"src="asset/img-params/Forward.svg" alt="fleche"></a>
+                <a href="" id="contact-popup-params"><img class="params"src="asset/img-params/Forward.svg" alt="fleche"></a>
             </li>
         </ul>
     </section>
 </div>
+    <div class="popup1" id="popup1">
+        <section class="popup-content1">
+            <span class="close1" onclick="closePopup()">&times;</span>
+            <h2 class="contact">Nous Contacter</h2>
+            <div class="content-wrapper">
+                <figure>
+                    <img src="asset/img-pop-up/pop-up-contact.svg" alt="illustration de contact">
+                </figure>
+                <form action="[URL_DE_TRAITEMENT]" method="POST">
+                    <input type="text" name="nom" placeholder="Votre nom" required>
+                    <input type="email" name="email" placeholder="Votre email" required>
+                    <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
+                    <a href="#">Envoyer</a>
+                </form>
+            </div>
+        </section>
+    </div>
+
 <div id="dons-container">
 <section class="don">
     <h2>Mes dons récupérés</h2>
@@ -174,9 +193,10 @@
             <h3>VOISINS ANTI-GASPI</h3>
             <ul id="menu-footer">
                 <li><a href="#">Plan du site</a></li>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">CDG</a></li>
-                <li><a href="#"><img src="asset/Contactez-nous.svg" alt="Logo de Contactez-nous"></img></a></li>
+                <li><a href="mentions-legales.html">Mentions légales</a></li>
+                <li><a href="CGU.html">CGU</a></li>
+                <li><a href="formulaire-contact.html"><img src="asset/Contactez-nous.svg" alt="Logo de Contactez-nous"></a></li>
+
                </ul>
                <p>Copyright © 2024 Voisins anti-gaspi.Tous droits réservés.</p>
             <ul id="reseaux-sociaux">
@@ -199,6 +219,7 @@
 let lastScrollTop = 0;
 const profilParams = document.getElementById('profil-params');
 
+// Gérer le défilement
 window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -212,18 +233,39 @@ window.addEventListener('scroll', function() {
 
     lastScrollTop = scrollTop;
 });
-const openPopupLink = document.getElementById('open-popup-link');
-const popup = document.getElementById('popup');
-const closePopup = document.querySelector('.close');
+// Fonction pour ouvrir le pop-up des paramètres
+const openParamsPopup = document.getElementById('open-popup-link');
+const paramsPopup = document.getElementById('popup');
+const closeParamsPopup = document.querySelector('.popup .close');
 
-openPopupLink.onclick = (event) => {
+openParamsPopup.onclick = (event) => {
     event.preventDefault();
-    popup.style.display = "block";
+    paramsPopup.style.display = "block";
 };
 
-closePopup.onclick = () => {
-    popup.style.display = "none";
+// Fonction pour fermer le pop-up des paramètres
+closeParamsPopup.onclick = () => {
+    paramsPopup.style.display = "none";
 };
-</script>
+
+// Fonction pour ouvrir le pop-up de contact
+const contactPopupLink = document.getElementById('contact-popup-params');
+const contactPopup = document.getElementById('popup1');
+const closeContactPopup = document.querySelector('.popup1 .close1');
+
+contactPopupLink.onclick = (event) => {
+    event.preventDefault();
+    contactPopup.style.display = "block";
+};
+
+// Fonction pour fermer le pop-up de contact
+closeContactPopup.onclick = () => {
+    contactPopup.style.display = "none";
+};
+
+
+
+
+    </script>
 </body>
 </html>

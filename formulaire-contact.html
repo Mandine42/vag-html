@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulaire-contact.css">
+    <title>Formulaire de contact</title>
+</head>
+<body>
+   <main>
+        <section class="formulaire">
+            <header role="banner">
+                <figure role="figure"><a href="profil.html"><img id="fleche" src="asset/img-profil/Chevron Left.svg" alt="flèche retour"></img></a></figure>
+            <h2 class="contact">Nous Contacter</h2>
+            </header>
+            <div class="formulaire-wrapper">
+                <figure>
+                    <img src="asset/img-pop-up/pop-up-contact.svg" alt="illustration de contact">
+                </figure>
+                <form action="[URL_DE_TRAITEMENT]" method="POST">
+                    <input type="text" name="nom" placeholder="Votre nom" required>
+                    <input type="email" name="email" placeholder="Votre email" required>
+                    <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
+                    <a href="#">Envoyer</a>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

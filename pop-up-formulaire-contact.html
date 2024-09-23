@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous Contacter</title>
+    <link rel="stylesheet" href="formulaire-contact.css">
+</head>
+<body>
+
+
+
+<!-- Pop-up -->
+<div class="popup1" id="popup1">
+    <section class="popup-content1">
+        <span class="close1" onclick="closePopup()">&times;</span>
+        <h2 class="contact">Nous Contacter</h2>
+        <div class="content-wrapper">
+            <figure>
+                <img src="asset/img-pop-up/pop-up-contact.svg" alt="illustration de contact">
+            </figure>
+            <form action="[URL_DE_TRAITEMENT]" method="POST">
+                <input type="text" name="nom" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
+                <a href="#">Envoyer</a>
+            </form>
+        </div>
+    </section>
+</div>
+
+<script>
+    function openPopup() {
+        document.getElementById('popup1').style.display = 'flex'; // Afficher le pop-up
+    }
+
+    function closePopup() {
+        document.getElementById('popup1').style.display = 'none'; // Masquer le pop-up
+    }
+</script>
+
+</body>
+</html>
+
+

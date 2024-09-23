@@ -81,7 +81,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin: 2vw;
 }
 
 nav ul li a {
@@ -194,20 +194,38 @@ footer {
         display: none;
     }
 
-    /* Affiche la nav smartphone */
-    nav#smartphone-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        background-color: var(--creme);
-        z-index: 10;
-        padding: 10px 0;
-    }
-  
+  /* Affiche la nav smartphone */
+nav#smartphone-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Utiliser 100% pour la largeur */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0; /* Assurez-vous que cela est défini pour étendre sur toute la largeur */
+    background-color: var(--creme);
+    z-index: 10;
+    padding: 10px 0;
+}
+
+#smartphone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Assurez-vous que cela remplit la largeur disponible */
+}
+
+#smartphone li {
+    flex: 1; /* Chaque élément prendra une part égale de l'espace disponible */
+    text-align: center; /* Centrez le contenu de chaque élément */
+}
+
+#smartphone li img {
+    width: 40px; /* Ajustez la taille des images pour une meilleure apparence */
+    height: auto; /* Conserve le ratio d'aspect */
+}
+
     /* Ajuste le logo et les éléments pour les petits écrans */
     header img {
         width: 80px;
