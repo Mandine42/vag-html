@@ -1,0 +1,153 @@
+:root{
+    --bleu: #163a53;
+    --vert: #256864;
+    --creme: #f6ecde;
+    --orange-clair:#EF9F64;
+    --orange-foncé: #DE6A38;
+    --h:'Noto Sans', sans-serif;
+    --p:'Work Sans', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    overflow: auto; /* Permet le défilement */
+}
+
+main {
+    padding-top: 20vh;
+    height: 1050vh;
+    background: var(--creme);
+}
+
+
+#quartier{
+    font-family: var(--h);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--orange-foncé);
+}
+#collect{
+    font-family: var(--h);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--vert);
+}
+
+.quartier {
+    border: 2px solid var(--vert);
+    border-radius: 30px;
+    padding: 20px;
+    margin: 2vh auto;
+    max-width: 80vw;
+}
+
+.quartier h2 {
+    text-align: start;
+    font-family: var(--h);
+    font-size: 2rem;
+    color: var(--vert);
+}
+
+.quartiers{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.quartier-info {
+    flex: 1;
+    margin: 3vw;
+}
+
+.plan {
+    flex: 1;
+    border: 2px solid var(--vert);
+    border-radius: 30px;
+    width: 40vw;
+    height: 50vh;
+}
+
+.quartier-info h3, .quartier-info p {
+    text-align: left;
+    font-family: var(--p);
+    font-size: 1.2rem;
+    color: var(--vert);
+}
+.quartier h2 {
+    color: var(--vert); /* Couleur par défaut */
+}
+
+.selected h2{
+    color: var(--orange-fonce) ; /* Couleur lorsque sélectionné */
+}
+/* Cible spécifiquement les h2 dans les liens */
+a.quartier-link h2 {
+    color: var(--vert); /* Surcharger la couleur par défaut */
+    transition: color 0.3s ease;
+}
+
+/* Applique la couleur lors du clic ou du focus */
+a.quartier-link:focus h2, a.quartier-link:active h2 {
+    color: var(--orange-fonce);
+}
+
+/* Change la couleur au survol */
+a.quartier-link:hover h2 {
+    color: var(--orange-clair);
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .title-collect{
+        display: block;
+        text-align: end;
+        justify-content: space-between;
+    }
+    #fleche{
+        display: flex;
+      }
+      #fleche {
+        max-width: 8vw;
+        max-height: 8vh;
+    }
+    .quartiers {
+        flex-direction: column; /* Change la disposition en colonne */
+        align-items: center; /* Centre les éléments verticalement */
+    }
+    .quartier h2{
+    font-size: 1.5rem;
+    }
+    .plan {
+        width: 70vw; /* Ajuste la largeur pour les petits écrans */
+        height: auto;
+        margin-top: 20px; /* Ajoute un peu d'espace entre les éléments */
+    }
+    
+    .quartier-info {
+        width: 100%;
+        text-align: center; /* Centre le texte sur les petits écrans */
+    }
+    
+    .quartier-info h3, .quartier-info p {
+        text-align: center; /* Centre aussi les paragraphes */
+    }
+    
+}
+@media screen and (min-width: 769px) {
+    .title-collect{
+        display: block;
+        text-align: end;
+        margin: 15vh;
+    }
+    #fleche{
+        display: none;
+      }
+}

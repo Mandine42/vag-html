@@ -35,7 +35,7 @@ h3{
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    width: 70%;
+    width: 90%;
     margin: auto;
 }
 
@@ -54,6 +54,7 @@ fieldset {
     padding: 2vh;
     margin: 2vh 0;
 }
+
 /* Couleurs pour le bouton et le contenu des légumes */
 .btn-vegetable, .content-vegetable {
     background-color: var(--orange-foncé);
@@ -443,17 +444,6 @@ fieldset {
     border-radius: 8px;
     width: fit-content; /* Adapte la largeur à son contenu */
 }
-/* .quantity {
-    width: 50%;
-    margin: 1vh 1vh;
-    padding: 0.5vh;
-    background: var(--orange-clair);
-    font-family: var(--p);
-    font-size: 0.9rem;
-    color: var(--bleu);
-    border-radius: 50px;
-    border: 1px solid var(--bleu);
-} */
 
 /* Style spécifique pour l'input date ayant la classe .quantity */
 .form-group input[type="date"].quantity {
@@ -618,22 +608,231 @@ button {
 button:hover {
     background-color: var(--orange-clair);
 }
-
+.quartier{
+    border-radius: 30px;
+    border: 1px solid var(--bleu);
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     padding: 2vh;
+     margin: 2vh 0;
+     background-color: var(--vert);
    
+}
+#donne{
+    padding: 0 10px;
+    background-color:var(--creme);
+    border-radius: 30px;
+    display: inline-block; 
+    margin-bottom: 10px; /* Espace entre la légende et le contenu */
+    font-family: var(--h);
+    font-size: 2rem;
+    color: var(--vert);
+    width: 200px;
+    margin: auto;
+    
+}
+#quartier{
+    border-radius: 30px;
+    border: 1px solid var(--bleu);
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     padding: 1vh;
+     margin: 1vh 0;
+     background-color: var(--vert);
+     color:var(--creme);
+}   
+.label-quartier{
+    color: var(--creme);
+}
+#view-map{
+    background: var(--vert);
+}
+.date-heure{
+    border-radius: 30px;
+    border: 1px solid var(--bleu);
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     padding: 2vh;
+     margin: 2vh 0;
+     background-color: var(--bleu);
+   
+}
+#quand{
+    padding: 0 10px;
+    background-color:var(--creme);
+    border-radius: 30px;
+    display: inline-block; 
+    margin-bottom: 10px; /* Espace entre la légende et le contenu */
+    font-family: var(--h);
+    font-size: 2rem;
+    color: var(--vert);
+    width: 200px;
+    margin: auto;
+    
+}
+#date-heure{
+    border-radius: 30px;
+    border: 1px solid var(--creme);
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     padding: 1vh;
+     margin: 1vh 0;
+     background-color: var(--bleu);
+     color:var(--creme);
+}  
+.label-date{
+    color: var(--creme);
+}
 
+#choose-time{
+    background: var(--bleu);
+    border: 1px solid var(--creme);
+}
+#date-time p{
+    color:var(--creme);
+}
+#date{
+    background-color: var(--bleu);
+    color: var(--creme);
+    border: 1px solid var(--creme);
+    border-radius: 30px;
+    padding:5px;
+}
+#time{
+    background-color: var(--bleu);
+    color: var(--creme);
+    border: 1px solid var(--creme);
+    border-radius: 30px;
+    padding:5px;
+}
+textarea {
+    border: 1px solid var(--vert);
+    border-radius: 30px;
+    background: var(--creme);
+    font-family: var(--p);
+    font-size: 1rem;
+    font-weight: 400;
+    width: 90%;
+    margin: 1vh 5%;
+    color: var(--vert);
+    min-height: 20vh;
+    resize: none;
+    padding: 10px; /* Ajout du padding */
+}
+textarea p{
+    color: var(--vert);
+    font-size: 0.7rem;
+}
+.label-commentaire{
+    color: var(--vert);
+}
+/* pop-up */
+ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+/* Style de base du lien */
+a {
+    color: var(--bleu);
+    text-decoration: none;
+    transition: color 0.3s ease; /* Ajout d'une transition douce */
+}
+
+a.clicked {
+    color: var(--orange-foncé);
+}
+
+
+
+h2{
+    font-family: var(--h);
+    font-size: 3rem;
+    color: var(--bleu);
+}
+
+h3{
+    font-family: var(--h);
+    font-size: 2rem;
+    color: var(--bleu);
+}
+
+/* Style pour le pop-up (modal) */
+.popup {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    z-index: 1; /* Placer devant les autres éléments */
+    left: 0;
+    top: 0;
+    width: 100%; /* Prend toute la largeur de l'écran */
+    height: 100%; /* Prend toute la hauteur de l'écran */
+    background-color: rgba(246, 236, 222, 0.5); /* Fond transparent */
+    padding: 10px; /* Ajouter un padding pour petits écrans */
+    overflow: auto; /* Gérer le débordement si nécessaire */
+}
+
+/* Contenu du pop-up */
+.popup-content {
+    background-color: var(--creme);
+    margin: 10% auto; /* Centre verticalement */
+    padding: 20px;
+    border: 1px solid var(--bleu);
+    border-radius: 30px;
+    width: 100%; /* S'assure que le pop-up prend toute la largeur disponible */
+    max-width: 400px; /* Largeur maximale */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre */
+    overflow: hidden; /* Empêche le débordement du contenu */
+}
+
+/* Bouton de fermeture (croix) */
+.close {
+    color: rgba(22, 58, 83, 0.5);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--bleu);
+    text-decoration: none;
+    cursor: pointer;
+}
 @media screen and (max-width: 769px) {
     #form-container {
         flex-direction: column;
-        width: 100%;
+        width: 90%;
     }
 
     #formulaire {
         max-width: 100%;
     }
+    #quand{
+        font-size: 1.5rem;
+      }
+    #donne{
+        font-size: 1.5rem;
+    }
+    #commentaire{
+        font-size: 1.5rem;
+    }
+    #share{
+        font-size: 1.5rem;
+    }
+   h3{
+    font-size: 1rem;
+   }
+  
 }
+
+
 
 @media screen and (min-width: 768px) {
     #formulaire {
         width: 100%;
     }
+
 }

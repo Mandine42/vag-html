@@ -15,8 +15,8 @@
     </ol>
         <nav id="desktop-nav" role="navigation">
             <ul>
-                <li><a href="#">Points de Collecte</a></li>
-                <li><a href="#">Faire un don</a></li>
+                <li><a href="collect.html">Points de Collecte</a></li>
+                <li><a href="formulaire-dons.html">Faire un don</a></li>
                 <li><a href="#">Réserver un don</a></li>
                 <li><a href="connexion.html">Connexion|Inscription</a></li>
             </ul>
@@ -36,7 +36,7 @@
                
                 <form id="#" action="" method="post">
                     <fieldset>
-                        <legend>Ce que je donne</legend>
+                        <legend id="share">Ce que je donne</legend>
                         <button type="button" class="toggle-list btn-vegetable" data-target="vegetable-list">Légumes</button>
                         <div id="vegetable-list" class="content-vegetable" style="display: none;">
                     <div class="form-group">
@@ -1854,57 +1854,83 @@
 
                     </fieldset>
     
-                    <fieldset>
-                        <legend>Vos Coordonnées</legend>
-                        <label for="tel">Téléphone</label>
-                        <input type="tel" name="telephone" id="tel">
-                        <label for="adresse">Adresse *</label>
-                        <input type="adresse" name="adresse" id="adresse" required aria-required-autocomplete>
-                        <label for="quartier">Quartier</label>
+                    <fieldset class="quartier">
+                        <legend id="donne">Où je donne</legend>
+                        <label for="quartier" class="label-quartier">Quartier</label>
                         <select name="msg quartier" id="quartier" required aria-required aria-autocomplete>
                             <option value="#">Selectionnez</option>
                             <optgroup label="Quartier">
-                                <option value="rdv">RDV</option>
-                                <option value="devis">DEVIS</option>
-                                <option value="invoice">FACTURE</option>
+                                <option value="republique">Bas Montreuil - République</option>
+                                <option value="chanzy">Etienne Marcel - Chanzy</option>
+                                <option value="bobillot">Bobillot</option>
+                                <option value="la noue">La Noue - Clos français</option>
+                                <option value="villiers">Villiers - Barbusse</option>
+                                <option value="solidarite">Solidarité - Carnot</option>
+                                <option value="centre">Centre-ville</option>
+                                <option value="beaumonts">Jean Moulin - Beaumonts</option>
+                                <option value="ramenas">Ramenas - Léo Lagrange</option>
+                                <option value="branly">Branly - Boissière</option>
+                                <option value="bel air">Bel Air - Grands Pêchers - Renan</option>
+                                <option value="signac">Signac - Murs à pêches</option>
+                                <option value="ruffins">Ruffins - Théophile Sueur</option>
+                                <option value="montreau">Montreau - Le Morillon</option>
                             </optgroup>
                         </select>
-                        <label for="email">Email *</label>
-                        <input type="email" name="email" id="email" required aria-required-autocomplete>
+                        <!-- Bouton qui redirige vers la carte -->
+<button type="button" id="view-map">Voir la carte</button>
+
+<!-- Div où les éléments validés seront affichés -->
+<div id="selected-quartier"></div>
+<button type="button" id="validate-quartier">Valider mon quartier</button>
+    <div id="map"></div>
                     </fieldset>
     
-                    <fieldset>
-                        <legend>Identifiants</legend>
-                        <label for="Nom d'utilisateur">Nom d'utilisateur *</label>
-                        <input type="text" id="Nom-utilisateur" name="nom-utilateur" required aria-required-autocomplete>
-                        <label for="img">Choisir une image</label>
-                        <input type="file" id="avatar" name="avatar">
-                        <label for="Mot de passe">Mot de passe *</label>
-                        <input type="password" id="password" name="password" required aria-required-autocomplete>
-                        <label for="Confirmer le mot de passe">Confirmer le mot de passe *</label>
-                        <input type="password" id="password" name="password" required aria-required-autocomplete>
+                    <fieldset class="date-heure">
+                        <legend id="quand">Quand je donne</legend>
+                        <label for="date" class="label-date">Date</label>
+                        <input type="date" id="date" name="date" required aria-required>
+                        <label for="time" class="label-date">Heure</label>
+                        <input type="time" id="time" name="time">
+            <button type="button" id="choose-time">Valider date et heure</button>
+
+<!-- Div où les éléments validés seront affichés -->
+<div id="date-time"></div>
+                     
                     </fieldset>
     
-                    <fieldset>
-                        <legend>Conditions d'utilisation</legend>
-                        <div id="condition">
-                        <input type="checkbox" id="condition" name="condition" required aria-required-autocomplete>
-                        <span id=""custom-checkbox></span>
-                        <label for="condition">J'accepte les conditions d'utilisation</label>
-                    </div>
+                    <fieldset class="commentaire">
+                        <legend id="commentaire">Je laisse un commentaire</legend>
+                        
+                      
+                        <label for="msg" class="label-commentaire">Votre Message</label>
+                        <textarea name="message" id="msg" maxlength="2000"></textarea>
+                        <p>Limite de 2000 caractères</p>
+                        <button type="button" id="validate-comment">Valider le commentaire</button>
+
+                        <!-- Div où les éléments validés seront affichés -->
+                        <div id="comment"></div>
                     </fieldset>
     
-                    <input type="submit" value="S'inscrire" id="submit-button">
+                    <input type="submit" value="Valider mon don" id="validate-donation">
                 </form>
+                <!-- Pop-up de remerciement -->
+<div id="thank-you-modal" class="modal hidden">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Merci pour votre don !</h2>
+      <p>Votre soutien est précieux.</p>
+      <button id="close-modal">Fermer</button>
+  </div>
+</div>
     </main>
 
     <nav id="smartphone-nav" role="navigation">
         <ol>
-        <li><a href="#"><img src="asset/img-smartphone/logo smartphone.svg" alt="Logo"></img></a></li>
+        <li><a href="accueil.html"><img src="asset/img-smartphone/logo smartphone.svg" alt="Logo"></img></a></li>
     </ol>
         <ul id="smartphone">
-            <li><a href="#"><img src="asset/img-smartphone/Profil.svg" alt="Logo de la collect"></img></a></li>
-            <li><a href="#"><img src="asset/img-smartphone/Dons.svg" alt="Logo de la don"></img></a></li>
+            <li><a href="collect.html"><img src="asset/img-smartphone/Profil.svg" alt="Logo de la collect"></img></a></li>
+            <li><a href="formulaire-dons.html"><img src="asset/img-smartphone/Dons.svg" alt="Logo de la don"></img></a></li>
             <li><a href="#"><img src="asset/img-smartphone/Voir les dons.svg" alt="Logo Réserver"></img></a></li>
             <li><a href="connexion.html"><img src="asset/img-smartphone/Collect.svg" alt="Logo de la profil"></img></a></li>
         </ul>
@@ -1915,9 +1941,9 @@
             <h3>VOISINS ANTI-GASPI</h3>
             <ul id="menu-footer">
                 <li><a href="#">Plan du site</a></li>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">CDG</a></li>
-                <li><a href="#"><img src="asset/Contactez-nous.svg" alt="Logo de Contactez-nous"></img></a></li>
+                <li><a href="mentions-legales.html">Mentions légales</a></li>
+                <li><a href="CGU.html">CGU</a></li>
+                <li><a href="formulaire-contact.html"><img src="asset/Contactez-nous.svg" alt="Logo de Contactez-nous"></img></a></li>
                </ul>
                <p>Copyright © 2024 Voisins anti-gaspi.Tous droits réservés.</p>
             <ul id="reseaux-sociaux">
@@ -2015,7 +2041,8 @@ function displaySelectedItemsFromMultipleDivs(divIds, displayId) {
 };
 
 // Écouteur d'événement pour le bouton de validation
-document.getElementById('validate-all').addEventListener('click', function() {
+document.getElementById('validate-all').addEventListener('click', function(event) {
+  event.preventDefault();
   var divIds = ['vegetable-list', 'fruit-list', 'fresh-list', 'milk-list', 'keep-list', 'condiment-list']; // Liste des divs à valider
   var displayId = 'selected-items';
   
@@ -2028,6 +2055,7 @@ document.getElementById('validate-all').addEventListener('click', function() {
   
   // Basculer l'affichage de la liste des éléments sélectionnés
   toggleSelectedItemsDisplay();
+
 });
 // Écouteurs d'événements pour les boutons de basculement de liste
 document.querySelectorAll('.toggle-list').forEach(button => {
@@ -2098,6 +2126,165 @@ document.querySelectorAll('.autre').forEach(function(checkbox) {
     }
   });
 });
+document.getElementById('view-map').addEventListener('click', function() {
+        var quartier = document.getElementById('quartier').value;
+        
+        if (quartier === "#") {
+            alert("Veuillez sélectionner un quartier !");
+        } else {
+            // Redirige vers Google Maps avec une recherche spécifique pour chaque quartier
+            var mapLinks = {
+                "republique": "https://www.google.com/maps?q=Bas+Montreuil+-+République+Montreuil",
+                "chanzy": "https://www.google.com/maps?q=Etienne+Marcel+-+Chanzy+Montreuil",
+                "bobillot": "https://www.google.com/maps?q=Bobillot+Montreuil",
+                "la noue": "https://www.google.com/maps?q=La+Noue+-+Clos+français+Montreuil",
+                "villiers": "https://www.google.com/maps?q=Villiers+-+Barbusse+Montreuil",
+                "solidarite": "https://www.google.com/maps?q=Solidarité+-+Carnot+Montreuil",
+                "centre": "https://www.google.com/maps?q=Centre-ville+Montreuil",
+                "beaumonts": "https://www.google.com/maps?q=Jean+Moulin+-+Beaumonts+Montreuil",
+                "ramenas": "https://www.google.com/maps?q=Ramenas+-+Léo+Lagrange+Montreuil",
+                "branly": "https://www.google.com/maps?q=Branly+-+Boissière+Montreuil",
+                "bel air": "https://www.google.com/maps?q=Bel+Air+-+Grands+Pêchers+-+Renan+Montreuil",
+                "signac": "https://www.google.com/maps?q=Signac+-+Murs+à+pêches+Montreuil",
+                "ruffins": "https://www.google.com/maps?q=Ruffins+-+Théophile+Sueur+Montreuil",
+                "montreau": "https://www.google.com/maps?q=Montreau+-+Le+Morillon+Montreuil"
+            };
+
+            // Redirection vers le lien correspondant
+            window.open(mapLinks[quartier], '_blank');
+        }
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+    const validateButton = document.getElementById('validate-quartier');
+    const quartierSelect = document.getElementById('quartier');
+    const selectedQuartierDiv = document.getElementById('selected-quartier');
+
+    validateButton.addEventListener('click', function () {
+        const selectedQuartier = quartierSelect.value;
+
+        // Vérifiez si une option a été sélectionnée
+        if (selectedQuartier) {
+            selectedQuartierDiv.innerText = `Quartier sélectionné : ${selectedQuartier}`;
+        } else {
+            alert("Veuillez sélectionner un quartier avant de valider.");
+        }
+    });
+    document.getElementById('choose-time').addEventListener('click', function() {
+        var date = document.getElementById('date').value;
+        var time = document.getElementById('time').value;
+
+        // Vérification si la date est sélectionnée
+        if (!date) {
+            alert("Veuillez sélectionner une date !");
+        } else {
+            // Si l'heure n'est pas sélectionnée, elle est optionnelle
+            var timeDisplay = time ? time : "Heure non spécifiée";
+
+            // Afficher la date et l'heure validées
+            var selectedItemsDiv = document.getElementById('date-time');
+            selectedItemsDiv.innerHTML = `<p>Date : ${date}</p><p>Heure : ${timeDisplay}</p>`;
+        }
+    });
+    document.getElementById('validate-comment').addEventListener('click', function() {
+    // Récupérer le contenu du textarea
+    const message = document.getElementById('msg').value;
+
+    // Vérifier si le champ n'est pas vide
+    if (message.trim() !== '') {
+        // Créer un nouvel élément pour afficher le commentaire
+        const commentDiv = document.getElementById('comment');
+        const newComment = document.createElement('p');
+        newComment.textContent = message;
+
+        // Ajouter le nouveau commentaire à la div
+        commentDiv.appendChild(newComment);
+
+        // Vider le textarea après validation
+        document.getElementById('msg').value = '';
+    } else {
+        alert('Veuillez entrer un commentaire avant de valider.');
+    }
+});
+
+});
+// Écouteur d'événement pour le bouton de validation de don
+document.getElementById('validate-donation').addEventListener('click', function(event) {
+    event.preventDefault(); // Empêche le comportement par défaut du formulaire si c'est un formulaire
+
+    // Vérifiez toutes les validations que vous avez
+    const selectedQuartier = document.getElementById('quartier').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const message = document.getElementById('msg').value.trim();
+
+    // Vérifiez les validations du bouton validate-all
+    const divIds = ['vegetable-list', 'fruit-list', 'fresh-list', 'milk-list', 'keep-list', 'condiment-list'];
+    let allValid = true;
+
+    // Vérifiez si les éléments existent et ont été sélectionnés
+    divIds.forEach(function(divId) {
+        const div = document.getElementById(divId);
+        if (div) { // Assurez-vous que l'élément existe avant de l'utiliser
+            const checkedItems = div.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedItems.length === 0) {
+                allValid = false; // S'il n'y a pas d'éléments sélectionnés, on définit allValid à false
+            }
+        } else {
+            console.error(`L'élément avec l'ID ${divId} est introuvable.`);
+        }
+    });
+
+    // Debug: afficher les valeurs pour chaque validation
+    console.log("Quartier sélectionné: ", selectedQuartier);
+    console.log("Date sélectionnée: ", date);
+    console.log("Tous les éléments validés dans les listes: ", allValid);
+    console.log("Message: ", message);
+
+    // Assurez-vous que toutes les validations sont remplies
+    if (!selectedQuartier || !date || !allValid || message === '') {
+        alert("Veuillez vous assurer que toutes les sélections et champs sont remplis.");
+        return; // Si ce n'est pas valide, sortez de la fonction
+    }
+
+    // Si toutes les validations sont remplies, affichez le pop-up
+    alert("Merci pour votre don !");
+
+    // Appelle la fonction pour afficher les éléments sélectionnés (seulement si les éléments sont validés)
+    displaySelectedItemsFromMultipleDivs(divIds, 'selected-items');
+
+    // Vous pouvez également cacher toutes les listes après validation si nécessaire
+    divIds.forEach(function(divId) {
+        const div = document.getElementById(divId);
+        if (div) {
+            div.classList.add('hidden');
+        }
+    });
+
+    // Basculer l'affichage de la liste des éléments sélectionnés
+    toggleSelectedItemsDisplay();
+});
+
+// POP-UP
+// Écouteur d'événement pour le bouton de validation du don
+document.getElementById('validate-donation').addEventListener('click', function(event) {
+    event.preventDefault(); // Empêche l'envoi du formulaire (si applicable)
+
+    // Affiche la modale
+    document.getElementById('donation-modal').style.display = "block";
+});
+
+// Écouteur d'événement pour fermer la modale
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('donation-modal').style.display = "none";
+});
+
+// Ferme la modale si l'utilisateur clique en dehors de celle-ci
+window.onclick = function(event) {
+    if (event.target == document.getElementById('donation-modal')) {
+        document.getElementById('donation-modal').style.display = "none";
+    }
+}
+
 </script>
 </body>
 </html>
