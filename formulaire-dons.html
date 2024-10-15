@@ -1878,7 +1878,6 @@
                         </select>
                         <!-- Bouton qui redirige vers la carte -->
 <button type="button" id="view-map">Voir la carte</button>
-
 <!-- Div où les éléments validés seront affichés -->
 <div id="selected-quartier"></div>
 <button type="button" id="validate-quartier">Valider mon quartier</button>
@@ -1910,18 +1909,28 @@
                         <!-- Div où les éléments validés seront affichés -->
                         <div id="comment"></div>
                     </fieldset>
-    
-                    <input type="submit" value="Valider mon don" id="validate-donation">
-                </form>
-                <!-- Pop-up de remerciement -->
-<div id="thank-you-modal" class="modal hidden">
-  <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Merci pour votre don !</h2>
-      <p>Votre soutien est précieux.</p>
-      <button id="close-modal">Fermer</button>
-  </div>
+                    <form id="donationForm">
+                        <button id="validate-donation" type="button">Valider mon don</button>
+                    </form>
+
+  <!-- Confirmation de don -->
+  
+  <div id="popup3" class="popup3 hidden">
+    <section class="popup-content3">
+        <span class="close" id="close-popup3">&times;</span>
+        <h2>Merci pour votre don !</h2>
+        <figure>
+            <img src="asset/img-pop-up/pop-up.svg" alt="illustration d'une femme avec des coeurs en forme de ballon">
+        </figure>
+        <ul>
+            <li><a href="voir-dons.html" id="don-link"><h3>Voir mon don</h3></a></li>
+        </ul>
+    </section>
 </div>
+<div id="donationConfirmation" class="hidden"></div>
+</div>
+
+
     </main>
 
     <nav id="smartphone-nav" role="navigation">
@@ -1940,7 +1949,7 @@
         <section id="footer">
             <h3>VOISINS ANTI-GASPI</h3>
             <ul id="menu-footer">
-                <li><a href="#">Plan du site</a></li>
+                <li><a href="plan-site.html">Plan du site</a></li>
                 <li><a href="mentions-legales.html">Mentions légales</a></li>
                 <li><a href="CGU.html">CGU</a></li>
                 <li><a href="formulaire-contact.html"><img src="asset/Contactez-nous.svg" alt="Logo de Contactez-nous"></img></a></li>
@@ -1955,336 +1964,5 @@
      
         </section>
     </footer>
-
-    <script>         
-
-// window.onscroll :Déclenche une fonction chaque fois que l'utilisateur fait défiler la page
-//toggle:ajoute ou supprimesi la condition est vraie ou fausse. Ajoute le nom de la classe et une condition. 
-      window.onscroll = () => {
-    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
-};
-// Fonction pour basculer l'affichage de la liste des éléments sélectionnés
-function toggleSelectedItemsDisplay() {
-  var displayDiv = document.getElementById('selected-items');
-  
-  if (displayDiv.style.maxHeight && displayDiv.style.maxHeight !== '0px') {
-    // Si la liste est déjà visible, on la cache
-    displayDiv.style.opacity = '0';
-    displayDiv.style.maxHeight = '0';
-  } else {
-    // Sinon, on l'affiche
-    displayDiv.style.opacity = '1';
-    displayDiv.style.maxHeight = '1000px'; // Hauteur suffisante pour afficher le contenu
-  }
-}
-
-// Fonction pour basculer l'affichage d'une liste
-function toggleList(targetId) {
-  var list = document.getElementById(targetId);
-  list.style.display = (list.style.display === "none") ? "block" : "none";
-}
-
-// Fonction pour afficher les éléments sélectionnés depuis plusieurs divs
-function displaySelectedItemsFromMultipleDivs(divIds, displayId) {
-  var displayDiv = document.getElementById(displayId);
-  var allSelectedItems = [];
-
-  divIds.forEach(function(divId) {
-    var div = document.getElementById(divId);
-
-    // Récupère les éléments cochés dans chaque div
-    var selectedItems = Array.from(div.querySelectorAll('input[type="checkbox"]:checked')).map(checkbox => {
-      var parentDiv = checkbox.parentElement;
-      var quantitySelect = parentDiv.querySelector('select');
-      var dateInput = parentDiv.querySelector('input[type="date"]');
-      var otherTextField = parentDiv.querySelector('input[type="text"]'); // Champ texte "Autre"
-      var isSubCategory = parentDiv.closest('.dropdown-options') !== null; // Vérifie si c'est une sous-catégorie
-
-      var itemName = checkbox.nextElementSibling.textContent;
-      if (otherTextField && otherTextField.style.display !== "none" && otherTextField.value.trim() !== "") {
-        itemName = otherTextField.value;  // Remplace le texte avec "Autre" si rempli
-      }
-
-      var quantity = quantitySelect ? quantitySelect.value : "";
-      var datePeremption = dateInput ? dateInput.value : "";
-
-      // Ne pas ajouter la catégorie principale si une sous-catégorie est sélectionnée
-      if (!isSubCategory && parentDiv.querySelector('.dropdown-options input:checked')) {
-        return null;
-      }
-
-      return {
-        name: itemName,
-        quantity: quantity,
-        datePeremption: datePeremption
-      };
-    }).filter(item => item !== null && item.name.trim() !== ""); // Filtre les catégories principales et les noms vides
-
-    allSelectedItems = allSelectedItems.concat(selectedItems);
-  });
-
-  // Éliminer les doublons en fonction du nom et de la quantité, même pour "Autre"
-  allSelectedItems = allSelectedItems.filter((item, index, self) =>
-    index === self.findIndex(i => i.name === item.name && i.quantity === item.quantity && i.datePeremption === item.datePeremption)
-  );
-
-  // Affiche les éléments sélectionnés
-  if (allSelectedItems.length > 0) {
-    displayDiv.innerHTML = "<p>Vous avez sélectionné :</p><ul>" +
-      allSelectedItems.map(item => 
-        `<li>${item.name} ${item.quantity ? `- ${item.quantity}` : ''} ${item.datePeremption ? `- ${item.datePeremption}` : ''}</li>`
-      ).join('') +
-      "</ul>";
-  } else {
-    displayDiv.innerHTML = "<p>Aucune sélection</p>";
-  }
-};
-
-// Écouteur d'événement pour le bouton de validation
-document.getElementById('validate-all').addEventListener('click', function(event) {
-  event.preventDefault();
-  var divIds = ['vegetable-list', 'fruit-list', 'fresh-list', 'milk-list', 'keep-list', 'condiment-list']; // Liste des divs à valider
-  var displayId = 'selected-items';
-  
-  displaySelectedItemsFromMultipleDivs(divIds, displayId);
-  
-  // Cacher toutes les listes après validation
-  divIds.forEach(function(divId) {
-    document.getElementById(divId).classList.add('hidden');
-  });
-  
-  // Basculer l'affichage de la liste des éléments sélectionnés
-  toggleSelectedItemsDisplay();
-
-});
-// Écouteurs d'événements pour les boutons de basculement de liste
-document.querySelectorAll('.toggle-list').forEach(button => {
-  button.addEventListener('click', function() {
-    var targetId = this.getAttribute('data-target');
-    toggleList(targetId);
-  });
-});
-
-// Écouteurs d'événements pour les boutons de validation de sélection
-document.querySelectorAll('.validate-selection').forEach(button => {
-  button.addEventListener('click', function() {
-    var targetId = this.getAttribute('data-target');
-    var displayId = this.getAttribute('data-display');
-    displaySelectedItems(targetId, displayId);
-  });
-});
-
-// Gère l'affichage du dropdown (choix multiple)
-document.querySelectorAll('.toggle-dropdown').forEach(function(checkbox) {
-  checkbox.addEventListener('change', function() {
-    var targetId = this.getAttribute('data-target');
-    var dropdown = document.getElementById(targetId);
-    
-
-    if (this.checked) {
-      dropdown.style.display = "block";  // Affiche le dropdown
-    } else {
-      dropdown.style.display = "none";   // Cache le dropdown
-      
-    }
-  });
-});
-	// Affichage de la date de péremption si la case est cochée
-	const dateCheckboxes = document.querySelectorAll(".date-peremption");
-	dateCheckboxes.forEach((checkbox) => {
-		checkbox.addEventListener("change", function () {
-			const dateInput = document.getElementById(
-				this.id.replace("Checkbox", ""),
-			);
-			dateInput.style.display = this.checked ? "block" : "none";
-		});
-	});
-
-// Gère l'affichage du menu déroulant si "Quantité" est coché
-document.querySelectorAll('.quantite').forEach(function(checkbox) {
-  checkbox.addEventListener('change', function() {
-    var targetId = this.getAttribute('data-target');
-    var quantitySelect = document.getElementById(targetId);
-
-    if (this.checked) {
-      quantitySelect.style.display = "block";  // Affiche le menu déroulant
-    } else {
-      quantitySelect.style.display = "none";   // Cache le menu déroulant
-    }
-  });
-});
-// Gère l'affichage du champ texte si "Autre" est coché
-document.querySelectorAll('.autre').forEach(function(checkbox) {
-  checkbox.addEventListener('change', function() {
-    var targetId = this.getAttribute('data-target');
-    var otherTextField = document.getElementById(targetId);
-
-    if (this.checked) {
-      otherTextField.style.display = "block";  // Affiche le champ texte
-    } else {
-      otherTextField.style.display = "none";   // Cache le champ texte
-    }
-  });
-});
-document.getElementById('view-map').addEventListener('click', function() {
-        var quartier = document.getElementById('quartier').value;
-        
-        if (quartier === "#") {
-            alert("Veuillez sélectionner un quartier !");
-        } else {
-            // Redirige vers Google Maps avec une recherche spécifique pour chaque quartier
-            var mapLinks = {
-                "republique": "https://www.google.com/maps?q=Bas+Montreuil+-+République+Montreuil",
-                "chanzy": "https://www.google.com/maps?q=Etienne+Marcel+-+Chanzy+Montreuil",
-                "bobillot": "https://www.google.com/maps?q=Bobillot+Montreuil",
-                "la noue": "https://www.google.com/maps?q=La+Noue+-+Clos+français+Montreuil",
-                "villiers": "https://www.google.com/maps?q=Villiers+-+Barbusse+Montreuil",
-                "solidarite": "https://www.google.com/maps?q=Solidarité+-+Carnot+Montreuil",
-                "centre": "https://www.google.com/maps?q=Centre-ville+Montreuil",
-                "beaumonts": "https://www.google.com/maps?q=Jean+Moulin+-+Beaumonts+Montreuil",
-                "ramenas": "https://www.google.com/maps?q=Ramenas+-+Léo+Lagrange+Montreuil",
-                "branly": "https://www.google.com/maps?q=Branly+-+Boissière+Montreuil",
-                "bel air": "https://www.google.com/maps?q=Bel+Air+-+Grands+Pêchers+-+Renan+Montreuil",
-                "signac": "https://www.google.com/maps?q=Signac+-+Murs+à+pêches+Montreuil",
-                "ruffins": "https://www.google.com/maps?q=Ruffins+-+Théophile+Sueur+Montreuil",
-                "montreau": "https://www.google.com/maps?q=Montreau+-+Le+Morillon+Montreuil"
-            };
-
-            // Redirection vers le lien correspondant
-            window.open(mapLinks[quartier], '_blank');
-        }
-    });
-    document.addEventListener('DOMContentLoaded', function () {
-    const validateButton = document.getElementById('validate-quartier');
-    const quartierSelect = document.getElementById('quartier');
-    const selectedQuartierDiv = document.getElementById('selected-quartier');
-
-    validateButton.addEventListener('click', function () {
-        const selectedQuartier = quartierSelect.value;
-
-        // Vérifiez si une option a été sélectionnée
-        if (selectedQuartier) {
-            selectedQuartierDiv.innerText = `Quartier sélectionné : ${selectedQuartier}`;
-        } else {
-            alert("Veuillez sélectionner un quartier avant de valider.");
-        }
-    });
-    document.getElementById('choose-time').addEventListener('click', function() {
-        var date = document.getElementById('date').value;
-        var time = document.getElementById('time').value;
-
-        // Vérification si la date est sélectionnée
-        if (!date) {
-            alert("Veuillez sélectionner une date !");
-        } else {
-            // Si l'heure n'est pas sélectionnée, elle est optionnelle
-            var timeDisplay = time ? time : "Heure non spécifiée";
-
-            // Afficher la date et l'heure validées
-            var selectedItemsDiv = document.getElementById('date-time');
-            selectedItemsDiv.innerHTML = `<p>Date : ${date}</p><p>Heure : ${timeDisplay}</p>`;
-        }
-    });
-    document.getElementById('validate-comment').addEventListener('click', function() {
-    // Récupérer le contenu du textarea
-    const message = document.getElementById('msg').value;
-
-    // Vérifier si le champ n'est pas vide
-    if (message.trim() !== '') {
-        // Créer un nouvel élément pour afficher le commentaire
-        const commentDiv = document.getElementById('comment');
-        const newComment = document.createElement('p');
-        newComment.textContent = message;
-
-        // Ajouter le nouveau commentaire à la div
-        commentDiv.appendChild(newComment);
-
-        // Vider le textarea après validation
-        document.getElementById('msg').value = '';
-    } else {
-        alert('Veuillez entrer un commentaire avant de valider.');
-    }
-});
-
-});
-// Écouteur d'événement pour le bouton de validation de don
-document.getElementById('validate-donation').addEventListener('click', function(event) {
-    event.preventDefault(); // Empêche le comportement par défaut du formulaire si c'est un formulaire
-
-    // Vérifiez toutes les validations que vous avez
-    const selectedQuartier = document.getElementById('quartier').value;
-    const date = document.getElementById('date').value;
-    const time = document.getElementById('time').value;
-    const message = document.getElementById('msg').value.trim();
-
-    // Vérifiez les validations du bouton validate-all
-    const divIds = ['vegetable-list', 'fruit-list', 'fresh-list', 'milk-list', 'keep-list', 'condiment-list'];
-    let allValid = true;
-
-    // Vérifiez si les éléments existent et ont été sélectionnés
-    divIds.forEach(function(divId) {
-        const div = document.getElementById(divId);
-        if (div) { // Assurez-vous que l'élément existe avant de l'utiliser
-            const checkedItems = div.querySelectorAll('input[type="checkbox"]:checked');
-            if (checkedItems.length === 0) {
-                allValid = false; // S'il n'y a pas d'éléments sélectionnés, on définit allValid à false
-            }
-        } else {
-            console.error(`L'élément avec l'ID ${divId} est introuvable.`);
-        }
-    });
-
-    // Debug: afficher les valeurs pour chaque validation
-    console.log("Quartier sélectionné: ", selectedQuartier);
-    console.log("Date sélectionnée: ", date);
-    console.log("Tous les éléments validés dans les listes: ", allValid);
-    console.log("Message: ", message);
-
-    // Assurez-vous que toutes les validations sont remplies
-    if (!selectedQuartier || !date || !allValid || message === '') {
-        alert("Veuillez vous assurer que toutes les sélections et champs sont remplis.");
-        return; // Si ce n'est pas valide, sortez de la fonction
-    }
-
-    // Si toutes les validations sont remplies, affichez le pop-up
-    alert("Merci pour votre don !");
-
-    // Appelle la fonction pour afficher les éléments sélectionnés (seulement si les éléments sont validés)
-    displaySelectedItemsFromMultipleDivs(divIds, 'selected-items');
-
-    // Vous pouvez également cacher toutes les listes après validation si nécessaire
-    divIds.forEach(function(divId) {
-        const div = document.getElementById(divId);
-        if (div) {
-            div.classList.add('hidden');
-        }
-    });
-
-    // Basculer l'affichage de la liste des éléments sélectionnés
-    toggleSelectedItemsDisplay();
-});
-
-// POP-UP
-// Écouteur d'événement pour le bouton de validation du don
-document.getElementById('validate-donation').addEventListener('click', function(event) {
-    event.preventDefault(); // Empêche l'envoi du formulaire (si applicable)
-
-    // Affiche la modale
-    document.getElementById('donation-modal').style.display = "block";
-});
-
-// Écouteur d'événement pour fermer la modale
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById('donation-modal').style.display = "none";
-});
-
-// Ferme la modale si l'utilisateur clique en dehors de celle-ci
-window.onclick = function(event) {
-    if (event.target == document.getElementById('donation-modal')) {
-        document.getElementById('donation-modal').style.display = "none";
-    }
-}
-
-</script>
 </body>
 </html>

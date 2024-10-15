@@ -1,0 +1,91 @@
+:root{
+    --bleu: #163a53;
+    --vert: #256864;
+    --creme: #f6ecde;
+    --orange-clair:#EF9F64;
+    --orange-foncé: #DE6A38;
+    --h:'Noto Sans', sans-serif;
+    --p:'Work Sans', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--creme);
+}
+h1{
+    font-family: var(--h);
+    font-size: 3rem;
+    color: var(--vert);
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 2vh 0;
+    margin: 2vh;
+}
+h3{
+    font-family: var(--h);
+    font-size: 1.5rem;
+    font-style: normal;
+    color: var(--vert);
+  }
+ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+/* Style de base du lien */
+a {
+    color: var(--bleu);
+    text-decoration: none;
+    transition: color 0.3s ease; /* Ajout d'une transition douce */
+}
+
+li{
+    font-family: var(--p);
+    font-size: 1rem;
+    color: var(--bleu);
+}
+ul li a:hover,
+ul li a:focus 
+{
+    color: var(--orange-foncé);
+}
+/* Effet de hover pour le h3 à l'intérieur du lien */
+ul li a:hover h3,
+ul li a:focus h3 {
+    color: var(--orange-foncé);
+}
+ul li a:active {
+    color: var(--orange-foncé);
+}
+ul li a:active h3 {
+    color: var(--orange-foncé);
+}
+#site{
+    margin: 2vw;
+}
+.categorie{
+    margin: 2vw;
+    padding: 1vh;
+}
+@media screen and (max-width: 769px) {
+    h1{
+        font-size: 1.5rem;
+    }
+
+
+
+
+  #fleche{
+    display: flex;
+  }
+  #fleche {
+    max-width: 8vw;
+    max-height: 8vh;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    }

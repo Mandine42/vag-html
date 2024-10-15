@@ -529,9 +529,7 @@ input[type="submit"]{
     height: 60px; 
     cursor: pointer; 
 }
-.hidden {
-    display: none;
-  }
+
   .dropdown-options {
     display: none;
   }
@@ -737,7 +735,7 @@ ul{
 }
 /* Style de base du lien */
 a {
-    color: var(--bleu);
+    color: var(--vert);
     text-decoration: none;
     transition: color 0.3s ease; /* Ajout d'une transition douce */
 }
@@ -761,10 +759,12 @@ h3{
 }
 
 /* Style pour le pop-up (modal) */
-.popup {
-    display: none; /* Masqué par défaut */
+.popup3 {
+    display: flex; /* Masqué par défaut */
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    z-index: 1; /* Placer devant les autres éléments */
+    z-index: 5; /* Placer devant les autres éléments */
     left: 0;
     top: 0;
     width: 100%; /* Prend toute la largeur de l'écran */
@@ -773,9 +773,11 @@ h3{
     padding: 10px; /* Ajouter un padding pour petits écrans */
     overflow: auto; /* Gérer le débordement si nécessaire */
 }
-
+.hidden {
+    display: none;
+  }
 /* Contenu du pop-up */
-.popup-content {
+.popup-content3 {
     background-color: var(--creme);
     margin: 10% auto; /* Centre verticalement */
     padding: 20px;
