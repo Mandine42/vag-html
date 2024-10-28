@@ -132,6 +132,7 @@ document.getElementById("validate-all").addEventListener("click", (event) => {
 		"milk-list",
 		"keep-list",
 		"condiment-list",
+		"legumineuse-list",
 	];
 	// biome-ignore lint/style/noVar: <explanation>
 	var displayId = "selected-items";
@@ -372,6 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // 			"milk-list",
 // 			"keep-list",
 // 			"condiment-list",
+// 			"legumineuse-list",
 // 		];
 // 		var displayId = "selected-items"; // ID où les éléments sélectionnés sont affichés
 
@@ -418,6 +420,7 @@ document
 		);
 
 		// Récupération des éléments sélectionnés
+		// biome-ignore lint/style/noVar: <explanation>
 		var divIds = [
 			"vegetable-list",
 			"fruit-list",
@@ -425,7 +428,9 @@ document
 			"milk-list",
 			"keep-list",
 			"condiment-list",
+			"legumineuse-list",
 		];
+		// biome-ignore lint/style/noVar: <explanation>
 		var displayId = "selected-items"; // ID où les éléments sélectionnés sont affichés
 
 		// Récupérer les éléments sélectionnés
