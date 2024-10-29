@@ -17,7 +17,7 @@
             <ul>
                 <li><a href="collect.html">Points de Collecte</a></li>
                 <li><a href="formulaire-dons.html">Faire un don</a></li>
-                <li><a href="#">Réserver un don</a></li>
+                <li><a href="voir-dons.html">Réserver un don</a></li>
                 <li><a href="connexion.html">Connexion|Inscription</a></li>
             </ul>
         </nav>
@@ -1941,6 +1941,75 @@
                               </div>
                             </div>
 
+                            
+                <button type="button" class="toggle-list btn-feculent" data-target="feculent-list">Féculents</button>
+                <div id="feculent-list" class="content-feculent" style="display: none;">
+                    <div class="form-group">
+                        <input type="checkbox" id="pates" name="msg_feculent[]" value="pates" class="input-feculent">
+                        <label for="pates"  class="label-feculent">Pâtes</label>
+                        <select class="quantity quantity-feculent" id="quantitySelect95" name="quantity95">
+                        <option value="Non spécifiée">Quantité</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            </select>
+                            </div> 
+                            <div class="form-group">
+                                <input type="checkbox" id="semoule" name="msg_feculent[]" value="semoule" class="input-feculent">
+                                <label for="semoule"  class="label-feculent">Semoule</label>
+                                <select class="quantity quantity-feculent" id="quantitySelect95" name="quantity95">
+                                <option value="Non spécifiée">Quantité</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    </select>
+                                    </div> 
+                            <div>
+                                <div class="form-group">
+                                    <input type="checkbox" id="riz" name="msg_feculent[]" value="riz" class="input-feculent">
+                                    <label for="riz"  class="label-feculent">Riz</label>
+                                    <select class="quantity quantity-feculent" id="quantitySelect96" name="quantity96">
+                                    <option value="Non spécifiée">Quantité</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        </select>
+                                        </div> 
+                                        <div class="form-group">
+                                            <input type="checkbox" id="polenta" name="msg_feculent[]" value="polenta" class="input-feculent">
+                                            <label for="polenta"  class="label-feculent">Polenta</label>
+                                            <select class="quantity quantity-feculent" id="quantitySelect97" name="quantity97">
+                                            <option value="Non spécifiée">Quantité</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                </select>
+                                                </div> 
+                                                <div class="form-group">
+                                                    <input type="checkbox" id="quinoa" name="msg_feculent[]" value="quinoa" class="input-feculent">
+                                                    <label for="quinoa"  class="label-feculent">Quinoa</label>
+                                                    <select class="quantity quantity-feculent" id="quantitySelect98" name="quantity98">
+                                                    <option value="Non spécifiée">Quantité</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        </select>
+                                                        </div> 
+                                <input type="checkbox" class="autre" data-target="otherTextField19" name="msg_feculent[]" value="other19" class="input-feculent">
+                                <label for="autre">Autre</label>
+                                <input type="text" id="otherTextField19" name="other_input19" placeholder="Veuillez préciser..." style="display: none;" class="input-feculent">
+                              </div>
+                            </div>
 <!-- Bouton de validation -->
 <button type="button" id="validate-all">Voir ma sélection</button>
 
@@ -2035,7 +2104,7 @@
         <ul id="smartphone">
             <li><a href="collect.html"><img src="asset/img-smartphone/Profil.svg" alt="Logo de la collect"></img></a></li>
             <li><a href="formulaire-dons.html"><img src="asset/img-smartphone/Dons.svg" alt="Logo de la don"></img></a></li>
-            <li><a href="#"><img src="asset/img-smartphone/Voir les dons.svg" alt="Logo Réserver"></img></a></li>
+            <li><a href="voir-dons.html"><img src="asset/img-smartphone/Voir les dons.svg" alt="Logo Réserver"></img></a></li>
             <li><a href="connexion.html"><img src="asset/img-smartphone/Collect.svg" alt="Logo de la profil"></img></a></li>
         </ul>
     </nav>

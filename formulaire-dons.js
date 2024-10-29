@@ -25,101 +25,8 @@ function toggleList(targetId) {
 	list.style.display = list.style.display === "none" ? "block" : "none";
 }
 
-// Fonction pour afficher les éléments sélectionnés depuis plusieurs divs
-function displaySelectedItemsFromMultipleDivs(divIds, displayId) {
-	// biome-ignore lint/style/noVar: <explanation>
-	var displayDiv = document.getElementById(displayId);
-	if (!displayDiv) {
-		console.error(`L'élément avec l'ID "${displayId}" n'existe pas.`);
-		return;
-	}
 
-	// biome-ignore lint/style/noVar: <explanation>
-	var allSelectedItems = [];
 
-	// biome-ignore lint/complexity/noForEach: <explanation>
-	divIds.forEach((divId) => {
-		// biome-ignore lint/style/noVar: <explanation>
-		var div = document.getElementById(divId);
-		if (!div) {
-			console.error(`L'élément avec l'ID "${divId}" n'existe pas.`);
-			return;
-		}
-
-		var selectedItems = Array.from(
-			div.querySelectorAll('input[type="checkbox"]:checked'),
-		)
-			.map((checkbox) => {
-				// biome-ignore lint/style/noVar: <explanation>
-				var parentDiv = checkbox.parentElement;
-				// biome-ignore lint/style/noVar: <explanation>
-				var quantitySelect = parentDiv.querySelector("select");
-				// biome-ignore lint/style/noVar: <explanation>
-				var dateInput = parentDiv.querySelector('input[type="date"]');
-				// biome-ignore lint/style/noVar: <explanation>
-				var otherTextField = parentDiv.querySelector('input[type="text"]');
-				// biome-ignore lint/style/noVar: <explanation>
-				var isSubCategory = parentDiv.closest(".dropdown-options") !== null;
-
-				// biome-ignore lint/style/noVar: <explanation>
-				var itemName = checkbox.nextElementSibling.textContent;
-				if (
-					otherTextField &&
-					otherTextField.style.display !== "none" &&
-					otherTextField.value.trim() !== ""
-				) {
-					itemName = otherTextField.value;
-				}
-
-				// biome-ignore lint/style/noVar: <explanation>
-				var quantity = quantitySelect ? quantitySelect.value : "";
-				// biome-ignore lint/style/noVar: <explanation>
-				var datePeremption = dateInput ? dateInput.value : "";
-
-				if (
-					!isSubCategory &&
-					parentDiv.querySelector(".dropdown-options input:checked")
-				) {
-					return null;
-				}
-
-				return {
-					name: itemName,
-					quantity: quantity,
-					datePeremption: datePeremption,
-				};
-			})
-			.filter((item) => item !== null && item.name.trim() !== "");
-
-		allSelectedItems = allSelectedItems.concat(selectedItems);
-	});
-
-	allSelectedItems = allSelectedItems.filter(
-		(item, index, self) =>
-			index ===
-			self.findIndex(
-				(i) =>
-					i.name === item.name &&
-					i.quantity === item.quantity &&
-					i.datePeremption === item.datePeremption,
-			),
-	);
-
-	if (allSelectedItems.length > 0) {
-		displayDiv.innerHTML =
-			// biome-ignore lint/style/useTemplate: <explanation>
-			"<p>Je donne :</p><ul>" +
-			allSelectedItems
-				.map(
-					(item) =>
-						`<li>${item.name} ${item.quantity ? `- ${item.quantity}` : ""} ${item.datePeremption ? `- ${item.datePeremption}` : ""}</li>`,
-				)
-				.join("") +
-			"</ul>";
-	} else {
-		displayDiv.innerHTML = "<p>Aucune sélection</p>";
-	}
-}
 
 // Écouteur d'événement pour le bouton de validation
 document.getElementById("validate-all").addEventListener("click", (event) => {
@@ -133,6 +40,7 @@ document.getElementById("validate-all").addEventListener("click", (event) => {
 		"keep-list",
 		"condiment-list",
 		"legumineuse-list",
+		"feculent-list",
 	];
 	// biome-ignore lint/style/noVar: <explanation>
 	var displayId = "selected-items";
@@ -285,20 +193,38 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 
-	document.getElementById("validate-comment").addEventListener("click", () => {
-		const message = document.getElementById("msg").value;
+	// document.getElementById("validate-comment").addEventListener("click", () => {
+	// 	const message = document.getElementById("msg").value;
 
-		if (message.trim() !== "") {
-			const commentDiv = document.getElementById("comment");
-			const newComment = document.createElement("p");
-			newComment.textContent = message;
-			commentDiv.appendChild(newComment);
-			document.getElementById("msg").value = "";
-		} else {
-			alert("Veuillez entrer un commentaire avant de valider.");
-		}
+	// 	if (message.trim() !== "") {
+	// 		const commentDiv = document.getElementById("comment");
+	// 		const newComment = document.createElement("p");
+	// 		newComment.textContent = message;
+	// 		commentDiv.appendChild(newComment);
+	// 		document.getElementById("msg").value = "";
+	// 	} else {
+	// 		alert("Veuillez entrer un commentaire avant de valider.");
+	// 	}
+	// });
 	});
+
+	let validatedComment = ""; // Variable globale pour stocker le commentaire validé
+
+	// Écouteur de clic sur le bouton "Valider le commentaire"
+	document.getElementById("validate-comment").addEventListener("click", () => {
+		// Récupérer le commentaire et le stocker dans la variable globale
+		validatedComment = document.getElementById("msg").value.trim();
+		
+		// Afficher le commentaire validé dans la div correspondante
+		document.getElementById("comment").innerHTML = `
+			<p>Commentaire validé : ${validatedComment || "Aucun commentaire fourni."}</p>
+		`;
+		console.log("Commentaire validé :", validatedComment); // Log pour vérifier la valeur
+	
+    // Réinitialiser le champ de texte après validation
+    document.getElementById("msg").value = "";
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
 	const validateButton = document.getElementById("validate-donation");
@@ -340,171 +266,96 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 });
 
-// Écouteur d'événement pour le bouton de validation de don
-// document
-// 	.getElementById("validate-donation")
-// 	.addEventListener("click", (event) => {
-// 		event.preventDefault(); // Empêche le comportement par défaut du formulaire
 
-// 		const selectedQuartier = document.getElementById("quartier").value;
-// 		const date = document.getElementById("date").value;
-// 		const time = document.getElementById("time").value;
-// 		const message = document.getElementById("msg").value;
+// Fonction pour récupérer les éléments sélectionnés
+function displaySelectedItemsFromMultipleDivs(divIds, displayId) {
+	const selectedItems = [];
 
-// 		if (!selectedQuartier) {
-// 			alert("Veuillez sélectionner un quartier !");
-// 			return;
-// 		}
-
-// 		if (!date) {
-// 			alert("Veuillez sélectionner une date !");
-// 			return;
-// 		}
-
-// 		const donationConfirmation = document.getElementById(
-// 			"donationConfirmation",
-// 		);
-
-// 		// Récupération des éléments sélectionnés
-// 		var divIds = [
-// 			"vegetable-list",
-// 			"fruit-list",
-// 			"fresh-list",
-// 			"milk-list",
-// 			"keep-list",
-// 			"condiment-list",
-// 			"legumineuse-list",
-// 		];
-// 		var displayId = "selected-items"; // ID où les éléments sélectionnés sont affichés
-
-// 		displaySelectedItemsFromMultipleDivs(divIds, displayId); // Récupérer les éléments sélectionnés
-
-// 		// Ajouter les éléments sélectionnés à la confirmation de don
-// 		const selectedItemsList = displayDiv.innerHTML; // Récupérer la liste affichée
-// 		donationConfirmation.innerHTML = `
-//       <h3>Merci pour votre don !</h3>
-//       <p>Je donne dans le quartier de ${selectedQuartier} le ${date} à ${time ? time : "Heure non spécifiée"}</p>
-//       <p>Commentaire : ${message.trim() !== "" ? message : "Aucun commentaire fourni."}</p>
-//       <p>Éléments sélectionnés : ${selectedItemsList}</p> <!-- Ajout des éléments sélectionnés -->
-//     `;
-
-// 		// Réinitialiser le formulaire
-// 		document.getElementById("quartier").value = "#";
-// 		document.getElementById("date").value = "";
-// 		document.getElementById("time").value = "";
-// 		document.getElementById("msg").value = "";
-// 	});
-// Récupérer les dons existants ou initialiser un tableau vide
-document
-	.getElementById("validate-donation")
-	.addEventListener("click", (event) => {
-		event.preventDefault(); // Empêche le comportement par défaut du formulaire
-
-		const selectedQuartier = document.getElementById("quartier").value;
-		const date = document.getElementById("date").value;
-		const time = document.getElementById("time").value;
-		const message = document.getElementById("msg").value;
-
-		if (!selectedQuartier) {
-			alert("Veuillez sélectionner un quartier !");
-			return;
+	divIds.forEach((divId) => {
+		const divElement = document.getElementById(divId);
+		if (divElement) {
+			const checkboxes = divElement.querySelectorAll("input[type='checkbox']:checked");
+			checkboxes.forEach((checkbox) => {
+				selectedItems.push(checkbox.value); // Récupère les valeurs des éléments cochés
+			});
+		} else {
+			console.warn(`Div avec l'ID "${divId}" non trouvée.`);
 		}
-
-		if (!date) {
-			alert("Veuillez sélectionner une date !");
-			return;
-		}
-
-		const donationConfirmation = document.getElementById(
-			"donationConfirmation",
-		);
-
-		// Récupération des éléments sélectionnés
-		// biome-ignore lint/style/noVar: <explanation>
-		var divIds = [
-			"vegetable-list",
-			"fruit-list",
-			"fresh-list",
-			"milk-list",
-			"keep-list",
-			"condiment-list",
-			"legumineuse-list",
-		];
-		// biome-ignore lint/style/noVar: <explanation>
-		var displayId = "selected-items"; // ID où les éléments sélectionnés sont affichés
-
-		// Récupérer les éléments sélectionnés
-		const selectedItems = displaySelectedItemsFromMultipleDivs(
-			divIds,
-			displayId,
-		);
-
-		// Créer un objet pour le don actuel
-		const currentDonation = {
-			quartier: selectedQuartier,
-			date: date,
-			time: time,
-			message: message,
-			selectedItems: selectedItems, // Assurez-vous que cela retourne une chaîne ou un tableau
-		};
-
-		// Récupérer les dons existants ou initialiser un tableau vide
-		const existingDonations =
-			JSON.parse(localStorage.getItem("donations")) || [];
-
-		// Ajouter le don actuel au tableau des dons existants
-		existingDonations.push(currentDonation);
-
-		// Sauvegarder le tableau mis à jour dans localStorage
-		localStorage.setItem("donations", JSON.stringify(existingDonations));
-
-		// Afficher la confirmation de don
-		donationConfirmation.innerHTML = `
-	  <h3>Merci pour votre don !</h3>
-	  <p>Je donne dans le quartier de ${selectedQuartier} le ${date} à ${time ? time : "Heure non spécifiée"}</p>
-	  <p>Commentaire : ${message.trim() !== "" ? message : "Aucun commentaire fourni."}</p>
-	  <p>Éléments sélectionnés : ${selectedItems}</p>
-	`;
-
-		// Réinitialiser le formulaire
-		document.getElementById("quartier").value = "#";
-		document.getElementById("date").value = "";
-		document.getElementById("time").value = "";
-		document.getElementById("msg").value = "";
 	});
 
-document
-	.getElementById("validate-donation")
-	.addEventListener("click", (event) => {
-		event.preventDefault();
+	// Mettre à jour l'affichage des éléments sélectionnés (facultatif)
+	const displayDiv = document.getElementById(displayId);
+	displayDiv.innerHTML = selectedItems.join(", "); // Affiche les éléments sélectionnés
 
-		// Collecter les données du formulaire
-		const selectedQuartier = document.getElementById("quartier").value;
-		const date = document.getElementById("date").value;
-		const time = document.getElementById("time").value;
-		const message = document.getElementById("msg").value;
+	return selectedItems; // Retourner un tableau des éléments sélectionnés
 
-		// Vérification des champs requis
-		if (!selectedQuartier || !date) {
-			alert("Veuillez remplir tous les champs requis !");
-			return;
-		}
+}
+// Écouteur de clic sur le bouton "Valider mon don"
+document.getElementById("validate-donation").addEventListener("click", (event) => {
+    event.preventDefault(); // Empêche le comportement par défaut du formulaire
 
-		// Créer un objet pour le don
-		const donationData = {
-			quartier: selectedQuartier,
-			date: date,
-			time: time,
-			message: message,
-			selectedItems: displayDiv.innerHTML, // Assurez-vous que displayDiv est bien défini
-		};
+    const selectedQuartier = document.getElementById("quartier").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
 
-		// Récupérer les données existantes du localStorage
-		const existingDonations =
-			JSON.parse(localStorage.getItem("donations")) || [];
-		existingDonations.push(donationData);
+    // Vérification des champs requis
+    if (!selectedQuartier || !date) {
+        alert("Veuillez remplir tous les champs requis !");
+        return;
+    }
 
-		// Sauvegarder les données mises à jour dans le localStorage
-		localStorage.setItem("donations", JSON.stringify(existingDonations));
-		console.log("Dons enregistrés :", existingDonations); // Ajoutez ce log pour vérifier
-	});
+    // Récupérer les éléments sélectionnés
+    const divIds = [
+        "vegetable-list",
+        "fruit-list",
+        "fresh-list",
+        "milk-list",
+        "keep-list",
+        "condiment-list",
+        "legumineuse-list",
+        "feculent-list"
+    ];
+    const displayId = "selected-items";
+    const selectedItems = displaySelectedItemsFromMultipleDivs(divIds, displayId);
+
+    // Vérifier si le commentaire validé est présent
+    console.log("Commentaire récupéré :", validatedComment);
+
+    // Créer un objet pour le don actuel
+    const currentDonation = {
+        quartier: selectedQuartier,
+        date: date,
+        time: time,
+        message: validatedComment || "Aucun commentaire fourni.", // Utiliser le commentaire validé
+        selectedItems: selectedItems.join(", ") || "Aucun élément sélectionné.", // Convertir les éléments en chaîne
+    };
+
+    // Récupérer les dons existants ou initialiser un tableau vide
+    const existingDonations = JSON.parse(localStorage.getItem("donations")) || [];
+
+    // Ajouter le don actuel au tableau des dons existants
+    existingDonations.push(currentDonation);
+
+    // Sauvegarder le tableau mis à jour dans localStorage
+    localStorage.setItem("donations", JSON.stringify(existingDonations));
+    console.log("Dons enregistrés :", existingDonations); // Log pour vérifier les dons enregistrés
+
+    // Afficher la confirmation de don
+    const donationConfirmation = document.getElementById("donationConfirmation");
+    donationConfirmation.innerHTML = `
+        <h3>Merci pour votre don !</h3>
+        <p>Je donne dans le quartier de ${selectedQuartier} le ${date} à ${time ? time : "Heure non spécifiée"}</p>
+        <p>Commentaire : ${currentDonation.message}</p>
+        <p>Éléments sélectionnés : ${currentDonation.selectedItems}</p>
+    `;
+
+    // Supprimer la classe 'hidden' pour rendre la confirmation visible
+    donationConfirmation.classList.remove("hidden");
+
+    // Réinitialiser le formulaire
+    document.getElementById("quartier").value = "#";
+    document.getElementById("date").value = "";
+    document.getElementById("time").value = "";
+    document.getElementById("msg").value = "";
+});
+

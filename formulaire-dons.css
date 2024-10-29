@@ -386,12 +386,12 @@ fieldset {
 }
 
 .btn-condiment, .content-condiment {
-    background-color: var(--orange-clair);
-    color: var(--bleu);
+    background-color: var(--bleu);
+    color: var(--creme);
 }
 
 .btn-condiment {
-    border: 1px solid var(--bleu);
+    border: 1px solid var(--orange-clair);
     border-radius: 30px;
     padding: 10px 20px;
     font-family: var(--h);
@@ -402,23 +402,27 @@ fieldset {
 }
 
 .btn-condiment:hover {
-    background-color: var(--bleu);
-    color: var(--orange-clair);
-    border: 1px solid var(--bleu);
+    background-color: var(--creme);
+    color: var(--bleu);
+    border: 1px solid var(--orange-clair);
 }
-
+.label-condiment{
+    color: var(--creme)
+}
 .content-condiment {
     color: var(--bleu);
     width: 80%;
     margin: 2vh 2vh;
     padding: 1vh;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .input-condiment, .quantity-condiment {
-    background-color: var(--orange-clair);
-    color: var(--bleu);
-    border: 1px solid var(--bleu);
+    background-color: var(--bleu);
+    color: var(--creme);
+    border: 1px solid var(--orange-clair);
 }
 
 .input-condiment:checked + .label-condiment {
@@ -427,6 +431,67 @@ fieldset {
 
 /* Spécificités pour les éléments de sélection */
 .quantity-condiment, .input-condiment {
+    border: 1px solid var(--orange-clair);
+    border-radius: 8px;
+    padding: 5px;
+    background: var(--bleu);
+    font-family: var(--p);
+    font-size: 0.9rem;
+    color: var(--creme);
+}
+
+.dropdown-options-condiment{
+    margin-top: 10px; /* Espacement au-dessus des sous-options */
+    padding-left: 20px; /* Un léger décalage à gauche pour une meilleure lisibilité */
+    background-color: var(--bleu); /* Conserver votre couleur de fond */
+    border: 1px solid var(--orange-clair); /* Bordure selon votre charte graphique */
+    border-radius: 8px;
+    width: fit-content; /* Adapte la largeur à son contenu */
+}
+
+
+.btn-legumineuse, .content-legumineuse {
+    background-color: var(--orange-clair);
+    color: var(--bleu);
+}
+
+.btn-legumineuse {
+    border: 1px solid var(--bleu);
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family: var(--h);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+
+.btn-legumineuse:hover {
+    background-color: var(--bleu);
+    color: var(--orange-clair);
+    border: 1px solid var(--bleu);
+}
+
+.content-legumineuse {
+    color: var(--bleu);
+    width: 80%;
+    margin: 2vh 2vh;
+    padding: 1vh;
+    border-radius: 30px;
+}
+
+.input-legumineuse, .quantity-legumineuse {
+    background-color: var(--orange-clair);
+    color: var(--bleu);
+    border: 1px solid var(--bleu);
+}
+
+.input-legumineuse:checked + .label-legumineuse {
+    color: var(--creme);
+}
+
+/* Spécificités pour les éléments de sélection */
+.quantity-legumineuse, .input-legumineuse {
     border: 1px solid var(--bleu);
     border-radius: 8px;
     padding: 5px;
@@ -436,7 +501,7 @@ fieldset {
     color: var(--bleu);
 }
 
-.dropdown-options-condiment{
+.dropdown-options-legumineuse{
     margin-top: 10px; /* Espacement au-dessus des sous-options */
     padding-left: 20px; /* Un léger décalage à gauche pour une meilleure lisibilité */
     background-color: var(--orange-clair); /* Conserver votre couleur de fond */
@@ -444,7 +509,71 @@ fieldset {
     border-radius: 8px;
     width: fit-content; /* Adapte la largeur à son contenu */
 }
+.btn-feculent, .content-feculent {
+    background-color: var(--vert);
+    color: var(--creme);
+}
 
+.btn-feculent {
+    border: 1px solid var(--orange-clair);
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family: var(--h);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+
+.btn-feculent:hover {
+    background-color: var(--creme);
+    color: var(--vert);
+    border: 1px solid var(--orange-clair);
+}
+
+.content-feculent {
+    color: var(--vert);
+    width: 80%;
+    margin: 2vh 2vh;
+    padding: 1vh;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-feculent, .quantity-feculent {
+    background-color: var(--vert);
+    color: var(--creme);
+    border: 1px solid var(--orange-clair);
+}
+
+.input-feculent:checked + .label-feculent {
+    color: var(--creme);
+}
+
+.label-feculent{
+    color:var(--creme);
+}
+
+/* Spécificités pour les éléments de sélection */
+.quantity-feculent, .input-feculent {
+    border: 1px solid var(--orange-clair);
+    border-radius: 8px;
+    padding: 5px;
+    background: var(--vert);
+    font-family: var(--p);
+    font-size: 0.9rem;
+    color: var(--creme);
+}
+
+.dropdown-options-feculent{
+    margin-top: 10px; /* Espacement au-dessus des sous-options */
+    padding-left: 20px; /* Un léger décalage à gauche pour une meilleure lisibilité */
+    background-color: var(--vert); /* Conserver votre couleur de fond */
+    border: 1px solid var(--orange-clair); /* Bordure selon votre charte graphique */
+    border-radius: 8px;
+    width: fit-content; /* Adapte la largeur à son contenu */
+}
 /* Style spécifique pour l'input date ayant la classe .quantity */
 .form-group input[type="date"].quantity {
     background: var(--orange-clair);

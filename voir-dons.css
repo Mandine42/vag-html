@@ -1,0 +1,125 @@
+:root{
+    --bleu: #163a53;
+    --vert: #256864;
+    --creme: #f6ecde;
+    --orange-clair:#EF9F64;
+    --orange-foncé: #DE6A38;
+    --h:'Noto Sans', sans-serif;
+    --p:'Work Sans', sans-serif;
+}
+ 
+
+main {
+    padding-top: 20vh;
+    height: 200vh;
+} 
+
+/* Styles généraux */
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: var(--creme); /* Utilise la couleur crème de votre charte graphique */
+    color: var(--bleu); /* Utilise la couleur bleue de votre charte graphique */
+    margin: 0;
+    padding: 0;
+}
+
+/* En-tête */
+h1 {
+    font-family: 'Noto Sans', sans-serif; /* Utilise la police Noto Sans pour le titre */
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--vert); /* Utilise la couleur verte de votre charte graphique */
+    margin: 20px 0;
+}
+
+/* Liste des dons */
+#donation-list {
+    list-style-type: none; /* Enlever les puces */
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px; /* Limiter la largeur pour une meilleure lisibilité */
+}
+
+/* Élément individuel de don */
+#donation-list li {
+    background: var(--bleu); /* Utilise la couleur bleue de votre charte graphique */
+    color: var(--creme); /* Texte en couleur crème pour le contraste */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet de carte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effet de transition */
+}
+
+/* Effet au survol */
+#donation-list li:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus profonde au survol */
+}
+#donation-list li p {
+    margin: 10px 0;
+    color: var(--creme); /* Couleur de texte pour plus de contraste */
+    font-size: 1.1rem; /* Taille de texte légèrement plus grande */
+}
+
+/* Mettre en gras les titres des sections */
+#donation-list li p strong {
+    font-weight: bold;
+    color: var(--orange-clair); /* Couleur orange clair pour les sous-titres */
+}
+/* Styles pour le contenu de chaque don */
+#donation-list p {
+    margin: 10px 0;
+}
+
+/* Ajouter un style de transition */
+#donation-list li {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Ajout d'un espace entre les sections de chaque don */
+#donation-list p + p {
+    margin-top: 15px;
+}
+#donation-list {
+    list-style: none; /* Supprime les puces de la liste */
+    padding: 0;
+}
+
+.donation-item {
+    background: var(--vert); /* Couleur de fond des éléments de la liste */
+    color: var(--creme); /* Couleur de texte */
+    border-radius: 8px; /* Bords arrondis */
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.donation-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.donation-item h3 {
+    font-size: 1.5rem; /* Taille de la police */
+    color: var(--orange-foncé); /* Couleur du titre */
+    margin-bottom: 10px;
+}
+
+.reserve-donation {
+    background-color: var(--orange-clair);
+    color: var(--bleu);
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reserve-donation:hover {
+    background-color: var(--orange-foncé);
+    transform: translateY(-2px);
+}

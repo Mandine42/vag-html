@@ -3,15 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="voir-dons.css">
+    <link rel="stylesheet" href="nav.css">
+    <script src="voir-dons.js" defer type="module"></script>
+
     <title>Voir Dons</title>
 </head>
+<header id="scrolled" class="scrolled" role="banner">
+    <ol>
+        <li><a href="accueil.html"><img src="asset/Group 5.svg" alt="Logo"></img></a></li>
+    </ol>
+        <nav id="desktop-nav" role="navigation">
+            <ul>
+                <li><a href="collect.html">Points de Collecte</a></li>
+                <li><a href="formulaire-dons.html">Faire un don</a></li>
+                <li><a href="voir-dons.html">Réserver un don</a></li>
+                <li><a href="connexion.html">Connexion|Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
 <body>
     <h1>Liste des Dons</h1>
-    <ul id="donation-list"></ul> <!-- Élément pour afficher les dons -->
+  
+
+
+       
+        <ul id="donation-list">
+            <!-- Les dons seront ajoutés ici dynamiquement -->
+        </ul>
+    
+    
+    
 
     <script>
      
-        document.addEventListener("DOMContentLoaded", () => {
+     document.addEventListener("DOMContentLoaded", () => {
     const donationList = document.getElementById("donation-list");
     const storedDonations = JSON.parse(localStorage.getItem("donations")) || [];
 
@@ -20,20 +46,66 @@
         donationList.innerHTML = "<p>Aucun don à afficher.</p>";
     } else {
         storedDonations.forEach(donation => {
+            // Crée un élément de liste <li> pour chaque don
             const li = document.createElement("li");
+            li.classList.add("donation-item"); // Pour appliquer des styles spécifiques
+
+            // Contenu HTML pour chaque don
             li.innerHTML = `
-                <p><strong>Quartier :</strong> ${donation.quartier}</p>
+                <h3>Mon don</h3>
+                <p><strong>Ma liste :</strong> ${donation.selectedItems}</p>
+                <p><strong>Mon quartier :</strong> ${donation.quartier}</p>
                 <p><strong>Date :</strong> ${donation.date} ${donation.time ? donation.time : ""}</p>
                 <p><strong>Commentaire :</strong> ${donation.message}</p>
-                <p><strong>Éléments sélectionnés :</strong> ${donation.selectedItems}</p>
+                <button class="reserve-donation">Réserver ce don</button>
             `;
+
+            // Ajouter l'élément <li> au conteneur de la liste
             donationList.appendChild(li);
         });
     }
+
+    // Ajoute un événement de clic pour tous les boutons de réservation
+    donationList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("reserve-donation")) {
+            alert("Don réservé !");
+        }
+    });
 });
 
+
     </script>
-    
+      <nav id="smartphone-nav" role="navigation">
+        <ol>
+        <li><a href="accueil.html"><img src="asset/img-smartphone/logo smartphone.svg" alt="Logo"></img></a></li>
+    </ol>
+        <ul id="smartphone">
+            <li><a href="collect.html"><img src="asset/img-smartphone/Profil.svg" alt="Logo de la collect"></img></a></li>
+            <li><a href="formulaire-dons.html"><img src="asset/img-smartphone/Dons.svg" alt="Logo de la don"></img></a></li>
+            <li><a href="voir-dons.html"><img src="asset/img-smartphone/Voir les dons.svg" alt="Logo Réserver"></img></a></li>
+            <li><a href="connexion.html"><img src="asset/img-smartphone/Collect.svg" alt="Logo de la profil"></img></a></li>
+        </ul>
+    </nav>
+
+    <footer role="footer">
+        <section id="footer">
+            <h3>VOISINS ANTI-GASPI</h3>
+            <ul id="menu-footer">
+                <li><a href="plan-site.html">Plan du site</a></li>
+                <li><a href="mentions-legales.html">Mentions légales</a></li>
+                <li><a href="CGU.html">CGU</a></li>
+                <li><a href="formulaire-contact.html"><img src="asset/Contactez-nous.svg" alt="Logo de Contactez-nous"></img></a></li>
+               </ul>
+               <p>Copyright © 2024 Voisins anti-gaspi.Tous droits réservés.</p>
+            <ul id="reseaux-sociaux">
+                <li><a href="#"><img src="asset/TwitterX.svg" alt="Logo TwitterX"></img></a></li>
+                <li><a href="#"><img src="asset/Instagram.svg" alt="Logo Instagram"></img></a></li> 
+                <li><a href="#"><img src="asset/Facebook F.svg" alt="Logo Facebook"></img></a></li>
+             </ul>
+            
+     
+        </section>
+    </footer>
 </body>
 </html>
 
