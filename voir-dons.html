@@ -32,35 +32,52 @@
             <!-- Les dons seront ajoutés ici dynamiquement -->
         </ul>
     
-    
-    
-
-    <script>
-     
-     document.addEventListener("DOMContentLoaded", () => {
+        <div id="popup4" class="popup4 hidden">
+            <section class="popup-content4">
+                <span class="close" id="close-popup4">&times;</span>
+                <h2>Félicitations !</h2>
+                <h3>Votre don a bien été réservé</h3>
+                <figure>
+                    <img src="asset/img-pop-up/pop-up-dons.svg" alt="illustration d'un personnage qui fait un don">
+                </figure>
+    </section>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
     const donationList = document.getElementById("donation-list");
     const storedDonations = JSON.parse(localStorage.getItem("donations")) || [];
+    const reservationPopup = document.getElementById("popup4");
+    const closePopupBtn = document.getElementById("close-popup4");
+
+    // Fonction pour reformater la date de "YYYY-MM-DD" à "DD-MM-YYYY"
+    const formatDate = (dateString) => {
+        const [year, month, day] = dateString.split("-");
+        return `${day}-${month}-${year}`;
+    };
+
+    // Vérifie si chaque don a une date valide avant de trier
+    storedDonations.sort((a, b) => {
+        const dateA = new Date(a.date + ' ' + (a.time || "00:00"));
+        const dateB = new Date(b.date + ' ' + (b.time || "00:00"));
+        return dateB - dateA;
+    });
 
     // Afficher un message s'il n'y a pas de dons
     if (storedDonations.length === 0) {
         donationList.innerHTML = "<p>Aucun don à afficher.</p>";
     } else {
         storedDonations.forEach(donation => {
-            // Crée un élément de liste <li> pour chaque don
             const li = document.createElement("li");
-            li.classList.add("donation-item"); // Pour appliquer des styles spécifiques
+            li.classList.add("donation-item");
 
-            // Contenu HTML pour chaque don
             li.innerHTML = `
                 <h3>Mon don</h3>
                 <p><strong>Ma liste :</strong> ${donation.selectedItems}</p>
                 <p><strong>Mon quartier :</strong> ${donation.quartier}</p>
-                <p><strong>Date :</strong> ${donation.date} ${donation.time ? donation.time : ""}</p>
+                <p><strong>Date :</strong> ${formatDate(donation.date)} ${donation.time ? donation.time : ""}</p>
                 <p><strong>Commentaire :</strong> ${donation.message}</p>
                 <button class="reserve-donation">Réserver ce don</button>
             `;
-
-            // Ajouter l'élément <li> au conteneur de la liste
             donationList.appendChild(li);
         });
     }
@@ -68,8 +85,14 @@
     // Ajoute un événement de clic pour tous les boutons de réservation
     donationList.addEventListener("click", (event) => {
         if (event.target.classList.contains("reserve-donation")) {
-            alert("Don réservé !");
+            // Affiche le pop-up de réservation
+            reservationPopup.classList.remove("hidden");
         }
+    });
+
+    // Fermer le pop-up lors du clic sur le bouton "OK"
+    closePopupBtn.addEventListener("click", () => {
+        reservationPopup.classList.add("hidden");
     });
 });
 

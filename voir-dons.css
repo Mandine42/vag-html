@@ -1,72 +1,66 @@
-:root{
+:root {
     --bleu: #163a53;
     --vert: #256864;
     --creme: #f6ecde;
-    --orange-clair:#EF9F64;
+    --orange-clair: #EF9F64;
     --orange-foncé: #DE6A38;
-    --h:'Noto Sans', sans-serif;
-    --p:'Work Sans', sans-serif;
+    --h: 'Noto Sans', sans-serif;
+    --p: 'Work Sans', sans-serif;
 }
- 
 
-main {
+body {
+    font-family: var(--p);
+    background: var(--creme);
+    color: var(--bleu);
     padding-top: 20vh;
     height: 200vh;
-} 
-
-/* Styles généraux */
-body {
-    font-family: 'Work Sans', sans-serif;
-    background: var(--creme); /* Utilise la couleur crème de votre charte graphique */
-    color: var(--bleu); /* Utilise la couleur bleue de votre charte graphique */
-    margin: 0;
-    padding: 0;
 }
 
 /* En-tête */
 h1 {
-    font-family: 'Noto Sans', sans-serif; /* Utilise la police Noto Sans pour le titre */
+    font-family: var(--h);
     font-size: 2.5rem;
     text-align: center;
-    color: var(--vert); /* Utilise la couleur verte de votre charte graphique */
+    color: var(--vert);
     margin: 20px 0;
 }
 
 /* Liste des dons */
 #donation-list {
-    list-style-type: none; /* Enlever les puces */
+    list-style-type: none;
     padding: 0;
     margin: 0 auto;
-    max-width: 800px; /* Limiter la largeur pour une meilleure lisibilité */
+    max-width: 800px;
 }
 
 /* Élément individuel de don */
 #donation-list li {
-    background: var(--bleu); /* Utilise la couleur bleue de votre charte graphique */
-    color: var(--creme); /* Texte en couleur crème pour le contraste */
-    border-radius: 8px; /* Coins arrondis */
+    background: var(--creme);
+    color: var(--bleu);
+    border: 1px solid var(--vert);
+    border-radius: 8px;
     padding: 20px;
     margin: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet de carte */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effet de transition */
 }
 
 /* Effet au survol */
 #donation-list li:hover {
-    transform: translateY(-5px); /* Légère élévation au survol */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus profonde au survol */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
 #donation-list li p {
     margin: 10px 0;
-    color: var(--creme); /* Couleur de texte pour plus de contraste */
-    font-size: 1.1rem; /* Taille de texte légèrement plus grande */
+    color: var(--bleu);
+    font-size: 1.1rem;
 }
 
 /* Mettre en gras les titres des sections */
 #donation-list li p strong {
     font-weight: bold;
-    color: var(--orange-clair); /* Couleur orange clair pour les sous-titres */
+    color: var(--orange-clair);
 }
+
 /* Styles pour le contenu de chaque don */
 #donation-list p {
     margin: 10px 0;
@@ -81,15 +75,12 @@ h1 {
 #donation-list p + p {
     margin-top: 15px;
 }
-#donation-list {
-    list-style: none; /* Supprime les puces de la liste */
-    padding: 0;
-}
 
+/* Élément individuel du don */
 .donation-item {
-    background: var(--vert); /* Couleur de fond des éléments de la liste */
-    color: var(--creme); /* Couleur de texte */
-    border-radius: 8px; /* Bords arrondis */
+    background: var(--vert);
+    color: var(--creme);
+    border-radius: 8px;
     padding: 15px;
     margin: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -102,14 +93,14 @@ h1 {
 }
 
 .donation-item h3 {
-    font-size: 1.5rem; /* Taille de la police */
-    color: var(--orange-foncé); /* Couleur du titre */
+    font-size: 1.5rem;
+    color: var(--orange-foncé);
     margin-bottom: 10px;
 }
 
 .reserve-donation {
-    background-color: var(--orange-clair);
-    color: var(--bleu);
+    background-color: var(--vert);
+    color: var(--creme);
     font-size: 1.2rem;
     border: none;
     border-radius: 8px;
@@ -119,7 +110,112 @@ h1 {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.reserve-donation:hover {
+.reserve-donation:hover,
+.reserve-donation:focus,
+.reserve-donation:active {
     background-color: var(--orange-foncé);
     transform: translateY(-2px);
+}
+/* pop-up */
+
+
+.popup-content4 h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.popup-content4 h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.popup-content4 figure img {
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+/* Style pour le pop-up (modal) */
+.popup4 {
+    display: flex; /* Masqué par défaut */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 5; /* Placer devant les autres éléments */
+    left: 0;
+    top: 0;
+    width: 100%; /* Prend toute la largeur de l'écran */
+    height: 100%; /* Prend toute la hauteur de l'écran */
+    background-color: rgba(246, 236, 222, 0.5); /* Fond transparent */
+    padding: 10px; /* Ajouter un padding pour petits écrans */
+    overflow: auto; /* Gérer le débordement si nécessaire */
+}
+.hidden {
+    display: none;
+  }
+/* Contenu du pop-up */
+.popup-content4 {
+    background-color: var(--creme);
+    margin: 10% auto; /* Centre verticalement */
+    padding: 20px;
+    border: 1px solid var(--bleu);
+    border-radius: 30px;
+    width: 100%; /* S'assure que le pop-up prend toute la largeur disponible */
+    max-width: 400px; /* Largeur maximale */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre */
+    overflow: hidden; /* Empêche le débordement du contenu */
+}
+
+/* Bouton de fermeture (croix) */
+.close {
+    color: rgba(22, 58, 83, 0.5);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--bleu);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styles Responsives */
+@media screen and (max-width: 769px) {
+    body {
+        padding-top: 5vh;
+        height: 250vh;
+    }
+
+    h1 {
+        font-size: 2rem; /* Réduction de la taille du texte */
+        margin: 10px 0;
+    }
+
+    #donation-list {
+        max-width: 90%;
+        width: 90%;
+    }
+
+    #donation-list li {
+        padding: 15px;
+    }
+
+    .donation-item {
+        padding: 10px;
+    }
+
+    .donation-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .reserve-donation {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+
+    #donation-list li p {
+        font-size: 1rem;
+    }
 }
